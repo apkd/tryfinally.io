@@ -47,9 +47,9 @@ But still, try looking for a more legitimate workaround before you resort to thi
 
 So where exactly can we use this?
 
-| Unity 2022 (Windows Editor) | Unity 2022 (Mono Player, Win x86/x64) | Unity 2022 (IL2CPP)             |
-|-----------------------------|---------------------------------------|---------------------------------|
-| **Works!** [^0]             | **Works!** [^0]                       | **Nope :<**{:.text-danger} [^1] |
+| Unity (Editor, Win) | Unity (Mono Player, Win x86/x64) | Unity (IL2CPP)                  |
+|---------------------|----------------------------------|---------------------------------|
+| **Works!** [^0]     | **Works!** [^0]                  | **Nope :<**{:.text-danger} [^1] |
 
 IL2CPP doesn't work. Either way, you probably shouldn't be shipping your PlayStation games with hacks like this...
 
@@ -67,8 +67,6 @@ And as for usage outside Unity:
 
 ## Other issues
 
-* Detours for some functions will refuse to work no matter how hard you try.
-  * For example due to JIT inlining. Methods with a small instruction count are bad candidates for detours. `[MethodImpl(MethodImplOptions.NoInlining)]`{{site.code.cs}} helps, but the whole point of Detours is to avoid having to modify the DLL... I do suppose that's still easier than replacing the entire method body using [dnSpy](https://github.com/dnSpy/dnSpy) or [Mono.Cecil](https://www.mono-project.com/docs/tools+libraries/libraries/Mono.Cecil/).
 * Playing with private APIs is a recipe for disaster.
   * They are prone to breaking changes, so your hacks are likely to blow up in your face when you update Unity.
   * Sometimes you'll have to replicate a lot of internal code.
@@ -77,6 +75,8 @@ And as for usage outside Unity:
   * Unfortunately, there is currently no way to call the original method after you've patched it. You need to reimplement it from scratch.
 * Once a detour is applied, the effects are permanent for the loaded assembly.
   * In the Unity editor, you can reload the script assemblies. This makes `[InitializeOnLoad]` a good place for detour initialization.
+* Detours for some functions will refuse to work no matter how hard you try.
+  * For example due to JIT inlining. Methods with a small instruction count are bad candidates for detours. `[MethodImpl(MethodImplOptions.NoInlining)]`{{site.code.cs}} helps, but the whole point of Detours is to avoid having to modify the DLL... I do suppose that's still easier than replacing the entire method body using [dnSpy](https://github.com/dnSpy/dnSpy) or [Mono.Cecil](https://www.mono-project.com/docs/tools+libraries/libraries/Mono.Cecil/).
 
 # ✝ Let's do it ✝
 
