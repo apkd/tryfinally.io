@@ -63,7 +63,9 @@ html {
   body {
     color: #222;
   }
+}
 
+@media screen and (min-width: 576px) {
   /*
       fix for browsers breaking pixel-perfect images based on DPI
       this results in an ugly margin around images.
