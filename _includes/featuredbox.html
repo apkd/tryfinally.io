@@ -8,7 +8,7 @@
                         <div class="featuredbox-thumb">
                             <img class="featuredbox-img-cover{% if post.image contains '.gif' %} crisp-edges{% endif %}"
                                  src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image | replace_first: 'assets/img-min/cover/', 'assets/img-min/thumb/' }}{% endif %}"
-                                 alt="{{ post.title }}">
+                                 alt="{{ post.title | xml_escape }}">
                         </div>
                     </a>
                 </div>

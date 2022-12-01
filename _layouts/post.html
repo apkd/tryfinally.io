@@ -15,7 +15,7 @@ post_class: post-template
         <div class="mainheading">
 
             {% if page.author %}
-            <div class="d-flex align-items-center mb-2 post-top-meta">
+            <div class="d-flex align-items-center mb-4 post-top-meta">
                 <div class="text-start mb-md-0 me-1 flex-shrink-0">
                     {% if author.avatar %}
                     <img class="author-thumb" src="{{site.baseurl}}/{{ author.avatar }}"
@@ -81,7 +81,7 @@ post_class: post-template
                         <ol start="0">
                             {% assign series = site.categories[category] | reverse %}
                             {% for post in series %}
-                            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                            <li><a href="{{ post.url }}">{{ post.title | xml_escape }}</a></li>
                             {% endfor %}
                         </ol>
                     </div>

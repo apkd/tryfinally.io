@@ -21,7 +21,7 @@
                     {% if post.image %}
                     <img style="height:250px; width:100%" class="{% if post.image contains '.gif' %}crisp-edges{% endif %}"
                          src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image | replace_first: 'assets/img-min/cover/', 'assets/img-min/thumb/' }}{% endif %}" 
-                         alt="{{ post.title }}"
+                         alt="{{ post.title | xml_escape }}"
                          {% if forloop.index0 > 0 %}loading="lazy"{% endif %}
                          >
                     {% endif %}
@@ -33,7 +33,7 @@
         </a>
         <div class="card-body pb-0">
             <h2 class="card-title">
-                <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+                <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.title | markdownify }}</a>
             </h2>
             <h4 class="card-text">{{ post.excerpt | strip_html | truncatewords:30 | markdownify }}</h4>
         </div>

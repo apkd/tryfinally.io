@@ -12,6 +12,8 @@ body {
 
 html {
   scroll-padding-top: 80px;
+  scrollbar-color: #d2cbbe rgb(18, 19, 20);
+  scrollbar-width: thin;
 }
 
 
@@ -76,8 +78,9 @@ html {
   @media (min-resolution: 1.25dppx) {
     img.pixel-perfect {
       transform: scale(calc(1 / 1.25), calc(1 / 1.25));
+      max-width: calc(100% * 1.25);
       transform-origin: left;
-      image-rendering: crisp-edges;
+      //image-rendering: crisp-edges;
       margin-top: -25px;
       margin-bottom: -25px;
     }
@@ -86,8 +89,7 @@ html {
   @media (min-resolution: 1.5dppx) {
     img.pixel-perfect {
       transform: scale(calc(1 / 1.5), calc(1 / 1.5));
-      transform-origin: left;
-      image-rendering: crisp-edges;
+      max-width: calc(100% * 1.5);
       margin-top: -50px;
       margin-bottom: -50px;
     }
@@ -96,8 +98,7 @@ html {
   @media (min-resolution: 1.75dppx) {
     img.pixel-perfect {
       transform: scale(calc(1 / 1.75), calc(1 / 1.75));
-      transform-origin: left;
-      image-rendering: crisp-edges;
+      max-width: calc(100% * 1.75);
       margin-top: -75px;
       margin-bottom: -75px;
     }
@@ -106,8 +107,7 @@ html {
   @media (min-resolution: 2dppx) {
     img.pixel-perfect {
       transform: scale(calc(1 / 2), calc(1 / 2));
-      transform-origin: left;
-      image-rendering: crisp-edges;
+      max-width: calc(100% * 2);
       margin-top: -100px;
       margin-bottom: -100px;
     }
@@ -116,8 +116,7 @@ html {
   @media (min-resolution: 2.5dppx) {
     img.pixel-perfect {
       transform: scale(calc(1 / 2.5), calc(1 / 2.5));
-      transform-origin: left;
-      image-rendering: crisp-edges;
+      max-width: calc(100% * 2.5);
       margin-top: -150px;
       margin-bottom: -150px;
     }
@@ -126,8 +125,7 @@ html {
   @media (min-resolution: 3dppx) {
     img.pixel-perfect {
       transform: scale(calc(1 / 3), calc(1 / 3));
-      transform-origin: left;
-      image-rendering: crisp-edges;
+      max-width: calc(100% * 3);
       margin-top: -200px;
       margin-bottom: -200px;
     }
@@ -150,18 +148,14 @@ img {
   max-width: 100%;
 }
 
-img.pixel-perfect {
-  max-width: 90vw;
-}
-
 .featured-image-container {
   position: relative;
 }
 
 .article-content img,
 .featured-image {
-  margin-left: 8px;
-  margin-right: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .featured-image {
@@ -851,7 +845,29 @@ ul.tags li a:hover {
   margin: 0 auto 1.2rem;
 }
 
-
+.form-range::-webkit-slider-thumb {
+  background-color: #49F3C3;
+}
+.form-range::-moz-range-thumb {
+  background-color: #49F3C3;
+}
+.form-range::-webkit-slider-thumb:active {
+  background-color: #49F3C3;
+}
+.form-check-input:checked {
+  background-color: #49F3C3;
+  border-color: #49F3C3;
+}
+.form-check-input[type=checkbox]:indeterminate {
+  background-color: #49F3C3;
+  border-color: #49F3C3;
+}
+.form-select:focus,
+.form-range:focus::-moz-range-thumb,
+.form-check-input:focus {
+   border-color: #49F3C3;
+   box-shadow: rgba(3, 161, 187, 0.25) 0 0 0 0.25rem;
+}
 .form-control::-webkit-input-placeholder {
   color: rgba(0, 0, 0, .5);
 }
