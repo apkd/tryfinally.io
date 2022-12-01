@@ -2,6 +2,7 @@ exclude: [
   .git/,
   .idea/,
   .run/,
+  _drafts/maybenot/,
   node_modules/,
   ruby_modules/,
   assets/js/,
@@ -16,7 +17,5 @@ exclude: [
   Gemfile,
   Gemfile.lock,
   yarn.lock,
-  yarn-error.log,
-  assets/pagefind/,
-  assets/pagefind-unity-docs/,
+  yarn-error.log
 ]

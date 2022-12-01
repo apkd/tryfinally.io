@@ -2050,10 +2050,10 @@ p-timeout@^2.0.1:
   dependencies:
     p-finally "^1.0.0"
 
-pagefind@0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/pagefind/-/pagefind-0.6.1.tgz#d3b388cae8f848d39a58ebe29aba7701f745e356"
-  integrity sha512-e8ZEAR6N7gdpZFJHVWqkS2iEIkZblgZ04+MslxF7I7p/dbku20I2z/dpvbuNdu+1aKloqFb9KHrMq5xXg6Wa5Q==
+pagefind@0.10.1:
+  version "0.10.1"
+  resolved "https://registry.yarnpkg.com/pagefind/-/pagefind-0.10.1.tgz#97c306fd70b8e2c9a156e90c5aa9e5ae810c6b91"
+  integrity sha512-55L2gQmj37oRbh8ZXmcHMx2cpIKJHFUWHA3H0F0tFXQmQUfArwijGPlufyDu7tRmYzjpRit7k1qyqtymdQErCg==
   dependencies:
     https-proxy-agent "^5.0.0"
     proxy-from-env "^1.1.0"

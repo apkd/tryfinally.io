@@ -12,7 +12,7 @@
     "imagemin-cli": "7.0.0",
     "imagemin-webp": "7.0.0",
     "clean-css-cli": "5.6.1",
-    "pagefind": "0.6.1"
+    "pagefind": "0.10.1"
   },
   "scripts": {
     "serve": "yarn build && bundle exec jekyll serve --watch --drafts",
