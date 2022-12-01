@@ -6231,6 +6231,10 @@ function InitDarkModeButton() {
 function InitAccelerate() {
     accelerate(BeforeAcceleratedPageLoad, AfterAcceleratedPageLoad, ShowNetworkError);
     function BeforeAcceleratedPageLoad() {
+        if (window.unityWebGLInstance != undefined) {
+            window.unityWebGLInstance.Quit();
+            window.unityWebGLInstance = undefined;
+        }
     }
     function AfterAcceleratedPageLoad() {
         InitSpoilers();
@@ -6256,13 +6260,11 @@ function InitSearch() {
 }
 InitDarkMode();
 InitAccelerate();
-window.addEventListener('DOMContentLoaded', () => {
-    InitDarkModeButton();
-    InitSpoilers();
-    InitApplauseButton();
-    InitGistEmbed();
-    GoatCounterCountHit();
-    InitGoatCounterEvents();
-    InitSearch();
-    setTimeout(InitGiscus, 4000);
-});
+InitDarkModeButton();
+InitSpoilers();
+InitApplauseButton();
+InitGistEmbed();
+GoatCounterCountHit();
+InitGoatCounterEvents();
+InitSearch();
+setTimeout(InitGiscus, 4000);

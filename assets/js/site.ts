@@ -5,6 +5,7 @@
 /// <reference path='./giscus.ts' />
 /// <reference path='../../node_modules/darkreader/darkreader.js' />
 /// <reference types='darkreader' />
+declare var unityWebGLInstance: any;
 
 function InitSpoilers() {
     const spoilers = document.querySelectorAll('.spoiler');
@@ -53,6 +54,10 @@ function InitAccelerate() {
     accelerate(BeforeAcceleratedPageLoad, AfterAcceleratedPageLoad, ShowNetworkError);
 
     function BeforeAcceleratedPageLoad() {
+        if (window.unityWebGLInstance != undefined) {
+            window.unityWebGLInstance.Quit();
+            window.unityWebGLInstance = undefined;
+        }
     }
 
     function AfterAcceleratedPageLoad() {
@@ -84,14 +89,11 @@ function InitSearch() {
 
 InitDarkMode();
 InitAccelerate();
-
-window.addEventListener('DOMContentLoaded', () => {
-    InitDarkModeButton();
-    InitSpoilers();
-    InitApplauseButton();
-    InitGistEmbed();
-    GoatCounterCountHit();
-    InitGoatCounterEvents();
-    InitSearch();
-    setTimeout(InitGiscus, 4000);
-});
+InitDarkModeButton();
+InitSpoilers();
+InitApplauseButton();
+InitGistEmbed();
+GoatCounterCountHit();
+InitGoatCounterEvents();
+InitSearch();
+setTimeout(InitGiscus, 4000);
