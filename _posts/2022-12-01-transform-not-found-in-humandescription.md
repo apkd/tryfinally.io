@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Quick fix: `Transform 'X' not found in HumanDescription`"
-excerpt: ""
+excerpt: "When you're attaching a GameObject to a bone of an animated character using the Humanoid rig you might encounter the error (Unity 2021.3.2f1)."
 thumbtext: ""
 image: assets/img-min/cover/YBg0ptVCOOU.webp
 categories: []
@@ -14,13 +14,14 @@ license: cc-by
 contributors: []
 ---
 
-When you're attaching a GameObject to a bone of animated characters that is based on the Humanoid animation rig type you might encounter the error (Unity 2021.3.2f1):
+When you're attaching a GameObject to a bone of an animated character using the Humanoid rig you might encounter the error (Unity 2021.3.2f1):
 
-```txt
+```log
 Transform 'Attachment' not found in HumanDescription.
 ```
+{:.h5}
 
-The character `Animator`{{site.code.cs}} will stop working, so sweeping the error under the rug is not an option. Enabling stack traces reveals that during scene rendering, the animator attempts to initialize itself and it fails while binding avatar bones to the transform hierarchy in the scene.
+The character `Animator`{{site.code.cs}} will stop working, so sweeping it under the rug is not an option. `Attachment` refers to the name of a game object attached to the character hierarchy. Enabling stack traces reveals that during scene rendering, the animator attempts to initialize itself and it fails while binding avatar bones to the transform hierarchy in the scene.
 
 ```cpp
 0x00007ff6a094b5cd (Unity) StackWalker::GetCurrentCallstack
