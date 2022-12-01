@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Quick fix: `Transform 'X' not found in HumanDescription`"
-excerpt: "When you're attaching a GameObject to a bone of an animated character using the Humanoid rig you might encounter the error (Unity 2021.3.2f1)."
+excerpt: "When you're attaching a GameObject to a bone of an animated character using the Humanoid rig you might encounter this error (Unity 2021.3.2f1)."
 thumbtext: ""
 image: assets/img-min/cover/YBg0ptVCOOU.webp
 categories: []
@@ -14,7 +14,7 @@ license: cc-by
 contributors: []
 ---
 
-When you're attaching a GameObject to a bone of an animated character using the Humanoid rig you might encounter the error (Unity 2021.3.2f1):
+When you're attaching a GameObject to a bone of an animated character using the Humanoid rig you might encounter the error (as of Unity 2021.3.2f1):
 
 ```log
 Transform 'Attachment' not found in HumanDescription.
