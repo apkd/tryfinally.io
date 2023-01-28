@@ -361,6 +361,7 @@ The topic of post-processors deserves a separate post, but in the meanwhile, her
   * Automatically setup import settings (eg. based on texture type)
 * Animations
   * Procedurally generate animation events (eg. for footstep sfx/vfx)
+    * The post-processing runs *after* the import pipeline, which means you can read the events you created manually and create new ones based on that. The new events are read-only and you won't see them in the model importer. To verify that they're there, you can double click the animation clip to open the animation window, and check the event list at the top.
   * Fix/transform/optimize the animation procedurally
   * Remove meshes and unnecessary objects from animation-only FBX files (see examples above)
 * Other uses
