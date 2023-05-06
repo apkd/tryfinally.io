@@ -616,55 +616,101 @@ function InitGiscus() {
     });
 }
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-        typeof define === 'function' && define.amd ? define(['exports'], factory) :
-            (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.DarkReader = {}));
-})(this, (function (exports) {
-    'use strict';
+    typeof exports === "object" && typeof module !== "undefined"
+        ? factory(exports)
+        : typeof define === "function" && define.amd
+            ? define(["exports"], factory)
+            : ((global =
+                typeof globalThis !== "undefined" ? globalThis : global || self),
+                factory((global.DarkReader = {})));
+})(this, function (exports) {
+    "use strict";
     var __assign = function () {
-        __assign = Object.assign || function __assign(t) {
-            for (var s, i = 1, n = arguments.length; i < n; i++) {
-                s = arguments[i];
-                for (var p in s)
-                    if (Object.prototype.hasOwnProperty.call(s, p))
-                        t[p] = s[p];
-            }
-            return t;
-        };
+        __assign =
+            Object.assign ||
+                function __assign(t) {
+                    for (var s, i = 1, n = arguments.length; i < n; i++) {
+                        s = arguments[i];
+                        for (var p in s)
+                            if (Object.prototype.hasOwnProperty.call(s, p))
+                                t[p] = s[p];
+                    }
+                    return t;
+                };
         return __assign.apply(this, arguments);
     };
     function __awaiter(thisArg, _arguments, P, generator) {
-        function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+        function adopt(value) {
+            return value instanceof P
+                ? value
+                : new P(function (resolve) {
+                    resolve(value);
+                });
+        }
         return new (P || (P = Promise))(function (resolve, reject) {
-            function fulfilled(value) { try {
-                step(generator.next(value));
+            function fulfilled(value) {
+                try {
+                    step(generator.next(value));
+                }
+                catch (e) {
+                    reject(e);
+                }
             }
-            catch (e) {
-                reject(e);
-            } }
-            function rejected(value) { try {
-                step(generator["throw"](value));
+            function rejected(value) {
+                try {
+                    step(generator["throw"](value));
+                }
+                catch (e) {
+                    reject(e);
+                }
             }
-            catch (e) {
-                reject(e);
-            } }
-            function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+            function step(result) {
+                result.done
+                    ? resolve(result.value)
+                    : adopt(result.value).then(fulfilled, rejected);
+            }
             step((generator = generator.apply(thisArg, _arguments || [])).next());
         });
     }
     function __generator(thisArg, body) {
-        var _ = { label: 0, sent: function () { if (t[0] & 1)
-                throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-        return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function () { return this; }), g;
-        function verb(n) { return function (v) { return step([n, v]); }; }
+        var _ = {
+            label: 0,
+            sent: function () {
+                if (t[0] & 1)
+                    throw t[1];
+                return t[1];
+            },
+            trys: [],
+            ops: []
+        }, f, y, t, g;
+        return ((g = { next: verb(0), throw: verb(1), return: verb(2) }),
+            typeof Symbol === "function" &&
+                (g[Symbol.iterator] = function () {
+                    return this;
+                }),
+            g);
+        function verb(n) {
+            return function (v) {
+                return step([n, v]);
+            };
+        }
         function step(op) {
             if (f)
                 throw new TypeError("Generator is already executing.");
             while (_)
                 try {
-                    if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done)
+                    if (((f = 1),
+                        y &&
+                            (t =
+                                op[0] & 2
+                                    ? y["return"]
+                                    : op[0]
+                                        ? y["throw"] ||
+                                            ((t = y["return"]) && t.call(y), 0)
+                                        : y.next) &&
+                            !(t = t.call(y, op[1])).done))
                         return t;
-                    if (y = 0, t)
+                    if (((y = 0), t))
                         op = [op[0] & 2, t.value];
                     switch (op[0]) {
                         case 0:
@@ -684,11 +730,14 @@ function InitGiscus() {
                             _.trys.pop();
                             continue;
                         default:
-                            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                            if (!((t = _.trys),
+                                (t = t.length > 0 && t[t.length - 1])) &&
+                                (op[0] === 6 || op[0] === 2)) {
                                 _ = 0;
                                 continue;
                             }
-                            if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) {
+                            if (op[0] === 3 &&
+                                (!t || (op[1] > t[0] && op[1] < t[3]))) {
                                 _.label = op[1];
                                 break;
                             }
@@ -770,108 +819,159 @@ function InitGiscus() {
             }
         return to.concat(ar || Array.prototype.slice.call(from));
     }
-    var MessageType = {
-        UI_GET_DATA: 'ui-get-data',
-        UI_SUBSCRIBE_TO_CHANGES: 'ui-subscribe-to-changes',
-        UI_UNSUBSCRIBE_FROM_CHANGES: 'ui-unsubscribe-from-changes',
-        UI_CHANGE_SETTINGS: 'ui-change-settings',
-        UI_SET_THEME: 'ui-set-theme',
-        UI_SET_SHORTCUT: 'ui-set-shortcut',
-        UI_TOGGLE_ACTIVE_TAB: 'ui-toggle-active-tab',
-        UI_MARK_NEWS_AS_READ: 'ui-mark-news-as-read',
-        UI_MARK_NEWS_AS_DISPLAYED: 'ui-mark-news-as-displayed',
-        UI_LOAD_CONFIG: 'ui-load-config',
-        UI_APPLY_DEV_DYNAMIC_THEME_FIXES: 'ui-apply-dev-dynamic-theme-fixes',
-        UI_RESET_DEV_DYNAMIC_THEME_FIXES: 'ui-reset-dev-dynamic-theme-fixes',
-        UI_APPLY_DEV_INVERSION_FIXES: 'ui-apply-dev-inversion-fixes',
-        UI_RESET_DEV_INVERSION_FIXES: 'ui-reset-dev-inversion-fixes',
-        UI_APPLY_DEV_STATIC_THEMES: 'ui-apply-dev-static-themes',
-        UI_RESET_DEV_STATIC_THEMES: 'ui-reset-dev-static-themes',
-        UI_SAVE_FILE: 'ui-save-file',
-        UI_REQUEST_EXPORT_CSS: 'ui-request-export-css',
-        BG_CHANGES: 'bg-changes',
-        BG_ADD_CSS_FILTER: 'bg-add-css-filter',
-        BG_ADD_STATIC_THEME: 'bg-add-static-theme',
-        BG_ADD_SVG_FILTER: 'bg-add-svg-filter',
-        BG_ADD_DYNAMIC_THEME: 'bg-add-dynamic-theme',
-        BG_EXPORT_CSS: 'bg-export-css',
-        BG_UNSUPPORTED_SENDER: 'bg-unsupported-sender',
-        BG_CLEAN_UP: 'bg-clean-up',
-        BG_RELOAD: 'bg-reload',
-        BG_FETCH_RESPONSE: 'bg-fetch-response',
-        BG_UI_UPDATE: 'bg-ui-update',
-        BG_CSS_UPDATE: 'bg-css-update',
-        CS_COLOR_SCHEME_CHANGE: 'cs-color-scheme-change',
-        CS_FRAME_CONNECT: 'cs-frame-connect',
-        CS_FRAME_FORGET: 'cs-frame-forget',
-        CS_FRAME_FREEZE: 'cs-frame-freeze',
-        CS_FRAME_RESUME: 'cs-frame-resume',
-        CS_EXPORT_CSS_RESPONSE: 'cs-export-css-response',
-        CS_FETCH: 'cs-fetch',
-        CS_DARK_THEME_DETECTED: 'cs-dark-theme-detected',
-        CS_DARK_THEME_NOT_DETECTED: 'cs-dark-theme-not-detected',
-    };
-    var userAgent = typeof navigator === 'undefined' ? 'some useragent' : navigator.userAgent.toLowerCase();
-    var platform = typeof navigator === 'undefined' ? 'some platform' : navigator.platform.toLowerCase();
-    var isChromium = userAgent.includes('chrome') || userAgent.includes('chromium');
-    var isThunderbird = userAgent.includes('thunderbird');
-    var isFirefox = userAgent.includes('firefox') || userAgent.includes('librewolf') || isThunderbird;
-    userAgent.includes('vivaldi');
-    userAgent.includes('yabrowser');
-    userAgent.includes('opr') || userAgent.includes('opera');
-    userAgent.includes('edg');
-    var isSafari = userAgent.includes('safari') && !isChromium;
-    var isWindows = platform.startsWith('win');
-    var isMacOS = platform.startsWith('mac');
-    userAgent.includes('mobile');
-    var isShadowDomSupported = typeof ShadowRoot === 'function';
-    var isMatchMediaChangeEventListenerSupported = (typeof MediaQueryList === 'function' &&
-        typeof MediaQueryList.prototype.addEventListener === 'function');
-    ((function () {
-        var m = userAgent.match(/chrom[e|ium]\/([^ ]+)/);
+    var MessageType;
+    (function (MessageType) {
+        MessageType["UI_GET_DATA"] = "ui-get-data";
+        MessageType["UI_SUBSCRIBE_TO_CHANGES"] = "ui-subscribe-to-changes";
+        MessageType["UI_UNSUBSCRIBE_FROM_CHANGES"] =
+            "ui-unsubscribe-from-changes";
+        MessageType["UI_CHANGE_SETTINGS"] = "ui-change-settings";
+        MessageType["UI_SET_THEME"] = "ui-set-theme";
+        MessageType["UI_SET_SHORTCUT"] = "ui-set-shortcut";
+        MessageType["UI_TOGGLE_ACTIVE_TAB"] = "ui-toggle-active-tab";
+        MessageType["UI_MARK_NEWS_AS_READ"] = "ui-mark-news-as-read";
+        MessageType["UI_MARK_NEWS_AS_DISPLAYED"] = "ui-mark-news-as-displayed";
+        MessageType["UI_LOAD_CONFIG"] = "ui-load-config";
+        MessageType["UI_APPLY_DEV_DYNAMIC_THEME_FIXES"] =
+            "ui-apply-dev-dynamic-theme-fixes";
+        MessageType["UI_RESET_DEV_DYNAMIC_THEME_FIXES"] =
+            "ui-reset-dev-dynamic-theme-fixes";
+        MessageType["UI_APPLY_DEV_INVERSION_FIXES"] =
+            "ui-apply-dev-inversion-fixes";
+        MessageType["UI_RESET_DEV_INVERSION_FIXES"] =
+            "ui-reset-dev-inversion-fixes";
+        MessageType["UI_APPLY_DEV_STATIC_THEMES"] =
+            "ui-apply-dev-static-themes";
+        MessageType["UI_RESET_DEV_STATIC_THEMES"] =
+            "ui-reset-dev-static-themes";
+        MessageType["UI_SAVE_FILE"] = "ui-save-file";
+        MessageType["UI_REQUEST_EXPORT_CSS"] = "ui-request-export-css";
+        MessageType["UI_COLOR_SCHEME_CHANGE"] = "ui-color-scheme-change";
+        MessageType["BG_CHANGES"] = "bg-changes";
+        MessageType["BG_ADD_CSS_FILTER"] = "bg-add-css-filter";
+        MessageType["BG_ADD_STATIC_THEME"] = "bg-add-static-theme";
+        MessageType["BG_ADD_SVG_FILTER"] = "bg-add-svg-filter";
+        MessageType["BG_ADD_DYNAMIC_THEME"] = "bg-add-dynamic-theme";
+        MessageType["BG_EXPORT_CSS"] = "bg-export-css";
+        MessageType["BG_UNSUPPORTED_SENDER"] = "bg-unsupported-sender";
+        MessageType["BG_CLEAN_UP"] = "bg-clean-up";
+        MessageType["BG_RELOAD"] = "bg-reload";
+        MessageType["BG_FETCH_RESPONSE"] = "bg-fetch-response";
+        MessageType["BG_UI_UPDATE"] = "bg-ui-update";
+        MessageType["BG_CSS_UPDATE"] = "bg-css-update";
+        MessageType["CS_COLOR_SCHEME_CHANGE"] = "cs-color-scheme-change";
+        MessageType["CS_FRAME_CONNECT"] = "cs-frame-connect";
+        MessageType["CS_FRAME_FORGET"] = "cs-frame-forget";
+        MessageType["CS_FRAME_FREEZE"] = "cs-frame-freeze";
+        MessageType["CS_FRAME_RESUME"] = "cs-frame-resume";
+        MessageType["CS_EXPORT_CSS_RESPONSE"] = "cs-export-css-response";
+        MessageType["CS_FETCH"] = "cs-fetch";
+        MessageType["CS_DARK_THEME_DETECTED"] = "cs-dark-theme-detected";
+        MessageType["CS_DARK_THEME_NOT_DETECTED"] =
+            "cs-dark-theme-not-detected";
+        MessageType["CS_LOG"] = "cs-log";
+    })(MessageType || (MessageType = {}));
+    var isNavigatorDefined = typeof navigator !== "undefined";
+    var userAgent = isNavigatorDefined
+        ? navigator.userAgentData &&
+            Array.isArray(navigator.userAgentData.brands)
+            ? navigator.userAgentData.brands
+                .map(function (brand) {
+                return ""
+                    .concat(brand.brand.toLowerCase(), " ")
+                    .concat(brand.version);
+            })
+                .join(" ")
+            : navigator.userAgent.toLowerCase()
+        : "some useragent";
+    var platform = isNavigatorDefined
+        ? navigator.userAgentData &&
+            typeof navigator.userAgentData.platform === "string"
+            ? navigator.userAgentData.platform.toLowerCase()
+            : navigator.platform.toLowerCase()
+        : "some platform";
+    var isChromium = userAgent.includes("chrome") || userAgent.includes("chromium");
+    var isThunderbird = userAgent.includes("thunderbird");
+    var isFirefox = userAgent.includes("firefox") ||
+        userAgent.includes("librewolf") ||
+        isThunderbird;
+    userAgent.includes("vivaldi");
+    userAgent.includes("yabrowser");
+    userAgent.includes("opr") || userAgent.includes("opera");
+    userAgent.includes("edg");
+    var isSafari = userAgent.includes("safari") && !isChromium;
+    var isWindows = platform.startsWith("win");
+    var isMacOS = platform.startsWith("mac");
+    isNavigatorDefined && navigator.userAgentData
+        ? navigator.userAgentData.mobile
+        : userAgent.includes("mobile");
+    var isShadowDomSupported = typeof ShadowRoot === "function";
+    var isMatchMediaChangeEventListenerSupported = typeof MediaQueryList === "function" &&
+        typeof MediaQueryList.prototype.addEventListener === "function";
+    (function () {
+        var m = userAgent.match(/chrom(?:e|ium)(?:\/| )([^ ]+)/);
         if (m && m[1]) {
             return m[1];
         }
-        return '';
-    }))();
+        return "";
+    })();
+    (function () {
+        var m = userAgent.match(/(?:firefox|librewolf)(?:\/| )([^ ]+)/);
+        if (m && m[1]) {
+            return m[1];
+        }
+        return "";
+    })();
     var isDefinedSelectorSupported = (function () {
         try {
-            document.querySelector(':defined');
+            document.querySelector(":defined");
             return true;
         }
         catch (err) {
             return false;
         }
     })();
-    globalThis.chrome && globalThis.chrome.runtime && globalThis.chrome.runtime.getManifest && globalThis.chrome.runtime.getManifest().manifest_version === 3;
     var isCSSColorSchemePropSupported = (function () {
-        if (typeof document === 'undefined') {
+        if (typeof document === "undefined") {
             return false;
         }
-        var el = document.createElement('div');
-        el.setAttribute('style', 'color-scheme: dark');
-        return el.style && el.style.colorScheme === 'dark';
+        var el = document.createElement("div");
+        el.setAttribute("style", "color-scheme: dark");
+        return el.style && el.style.colorScheme === "dark";
     })();
     function getOKResponse(url, mimeType, origin) {
         return __awaiter(this, void 0, void 0, function () {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4, fetch(url, {
-                            cache: 'force-cache',
-                            credentials: 'omit',
-                            referrer: origin
-                        })];
+                    case 0:
+                        return [
+                            4,
+                            fetch(url, {
+                                cache: "force-cache",
+                                credentials: "omit",
+                                referrer: origin
+                            })
+                        ];
                     case 1:
                         response = _a.sent();
-                        if (isFirefox && mimeType === 'text/css' && url.startsWith('moz-extension://') && url.endsWith('.css')) {
+                        if (isFirefox &&
+                            mimeType === "text/css" &&
+                            url.startsWith("moz-extension://") &&
+                            url.endsWith(".css")) {
                             return [2, response];
                         }
-                        if (mimeType && !response.headers.get('Content-Type').startsWith(mimeType)) {
+                        if (mimeType &&
+                            !response.headers
+                                .get("Content-Type")
+                                .startsWith(mimeType)) {
                             throw new Error("Mime type mismatch when loading ".concat(url));
                         }
                         if (!response.ok) {
-                            throw new Error("Unable to load ".concat(url, " ").concat(response.status, " ").concat(response.statusText));
+                            throw new Error("Unable to load "
+                                .concat(url, " ")
+                                .concat(response.status, " ")
+                                .concat(response.statusText));
                         }
                         return [2, response];
                 }
@@ -883,11 +983,13 @@ function InitGiscus() {
             var response;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4, getOKResponse(url, mimeType)];
+                    case 0:
+                        return [4, getOKResponse(url, mimeType)];
                     case 1:
                         response = _a.sent();
                         return [4, readResponseAsDataURL(response)];
-                    case 2: return [2, _a.sent()];
+                    case 2:
+                        return [2, _a.sent()];
                 }
             });
         });
@@ -897,14 +999,20 @@ function InitGiscus() {
             var blob, dataURL;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4, response.blob()];
+                    case 0:
+                        return [4, response.blob()];
                     case 1:
                         blob = _a.sent();
-                        return [4, (new Promise(function (resolve) {
+                        return [
+                            4,
+                            new Promise(function (resolve) {
                                 var reader = new FileReader();
-                                reader.onloadend = function () { return resolve(reader.result); };
+                                reader.onloadend = function () {
+                                    return resolve(reader.result);
+                                };
                                 reader.readAsDataURL(blob);
-                            }))];
+                            })
+                        ];
                     case 2:
                         dataURL = _a.sent();
                         return [2, dataURL];
@@ -915,14 +1023,17 @@ function InitGiscus() {
     var throwCORSError = function (url) {
         return __awaiter(void 0, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2, Promise.reject(new Error([
-                        'Embedded Dark Reader cannot access a cross-origin resource',
+                return [
+                    2,
+                    Promise.reject(new Error([
+                        "Embedded Dark Reader cannot access a cross-origin resource",
                         url,
-                        'Overview your URLs and CORS policies or use',
-                        '`DarkReader.setFetchMethod(fetch: (url) => Promise<Response>))`.',
-                        'See if using `DarkReader.setFetchMethod(window.fetch)`',
-                        'before `DarkReader.enable()` works.'
-                    ].join(' ')))];
+                        "Overview your URLs and CORS policies or use",
+                        "`DarkReader.setFetchMethod(fetch: (url) => Promise<Response>))`.",
+                        "See if using `DarkReader.setFetchMethod(window.fetch)`",
+                        "before `DarkReader.enable()` works."
+                    ].join(" ")))
+                ];
             });
         });
     };
@@ -939,8 +1050,10 @@ function InitGiscus() {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4, fetcher(url)];
-                    case 1: return [2, _a.sent()];
+                    case 0:
+                        return [4, fetcher(url)];
+                    case 1:
+                        return [2, _a.sent()];
                 }
             });
         });
@@ -968,29 +1081,47 @@ function InitGiscus() {
                         _b.label = 1;
                     case 1:
                         _b.trys.push([1, 7, , 8]);
-                        _a = args[0].data, url = _a.url, responseType = _a.responseType;
+                        (_a = args[0].data),
+                            (url = _a.url),
+                            (responseType = _a.responseType);
                         return [4, callFetchMethod(url)];
                     case 2:
                         response = _b.sent();
-                        if (!(responseType === 'data-url'))
+                        if (!(responseType === "data-url"))
                             return [3, 4];
                         return [4, readResponseAsDataURL(response)];
                     case 3:
                         text_1 = _b.sent();
                         return [3, 6];
-                    case 4: return [4, response.text()];
+                    case 4:
+                        return [4, response.text()];
                     case 5:
                         text_1 = _b.sent();
                         _b.label = 6;
                     case 6:
-                        messageListeners.forEach(function (cb) { return cb({ type: MessageType.BG_FETCH_RESPONSE, data: text_1, error: null, id: id_1 }); });
+                        messageListeners.forEach(function (cb) {
+                            return cb({
+                                type: MessageType.BG_FETCH_RESPONSE,
+                                data: text_1,
+                                error: null,
+                                id: id_1
+                            });
+                        });
                         return [3, 8];
                     case 7:
                         error_1 = _b.sent();
                         console.error(error_1);
-                        messageListeners.forEach(function (cb) { return cb({ type: MessageType.BG_FETCH_RESPONSE, data: null, error: error_1, id: id_1 }); });
+                        messageListeners.forEach(function (cb) {
+                            return cb({
+                                type: MessageType.BG_FETCH_RESPONSE,
+                                data: null,
+                                error: error_1,
+                                id: id_1
+                            });
+                        });
                         return [3, 8];
-                    case 8: return [2];
+                    case 8:
+                        return [2];
                 }
             });
         });
@@ -998,7 +1129,7 @@ function InitGiscus() {
     function addMessageListener(callback) {
         messageListeners.add(callback);
     }
-    if (typeof chrome.runtime.sendMessage === 'function') {
+    if (typeof chrome.runtime.sendMessage === "function") {
         var nativeSendMessage_1 = chrome.runtime.sendMessage;
         chrome.runtime.sendMessage = function () {
             var args = [];
@@ -1015,7 +1146,7 @@ function InitGiscus() {
     if (!chrome.runtime.onMessage) {
         chrome.runtime.onMessage = {};
     }
-    if (typeof chrome.runtime.onMessage.addListener === 'function') {
+    if (typeof chrome.runtime.onMessage.addListener === "function") {
         var nativeAddListener_1 = chrome.runtime.onMessage.addListener;
         chrome.runtime.onMessage.addListener = function () {
             var args = [];
@@ -1035,21 +1166,29 @@ function InitGiscus() {
             return addMessageListener(args[0]);
         };
     }
-    var ThemeEngines = {
-        cssFilter: 'cssFilter',
-        svgFilter: 'svgFilter',
-        staticTheme: 'staticTheme',
-        dynamicTheme: 'dynamicTheme',
-    };
+    var ThemeEngine;
+    (function (ThemeEngine) {
+        ThemeEngine["cssFilter"] = "cssFilter";
+        ThemeEngine["svgFilter"] = "svgFilter";
+        ThemeEngine["staticTheme"] = "staticTheme";
+        ThemeEngine["dynamicTheme"] = "dynamicTheme";
+    })(ThemeEngine || (ThemeEngine = {}));
+    var AutomationMode;
+    (function (AutomationMode) {
+        AutomationMode["NONE"] = "";
+        AutomationMode["TIME"] = "time";
+        AutomationMode["SYSTEM"] = "system";
+        AutomationMode["LOCATION"] = "location";
+    })(AutomationMode || (AutomationMode = {}));
     var DEFAULT_COLORS = {
         darkScheme: {
-            background: '#181a1b',
-            text: '#e8e6e3',
+            background: "#181a1b",
+            text: "#e8e6e3"
         },
         lightScheme: {
-            background: '#dcdad7',
-            text: '#181a1b',
-        },
+            background: "#dcdad7",
+            text: "#181a1b"
+        }
     };
     var DEFAULT_THEME = {
         mode: 1,
@@ -1058,21 +1197,56 @@ function InitGiscus() {
         grayscale: 0,
         sepia: 0,
         useFont: false,
-        fontFamily: isMacOS ? 'Helvetica Neue' : isWindows ? 'Segoe UI' : 'Open Sans',
+        fontFamily: isMacOS
+            ? "Helvetica Neue"
+            : isWindows
+                ? "Segoe UI"
+                : "Open Sans",
         textStroke: 0,
-        engine: ThemeEngines.dynamicTheme,
-        stylesheet: '',
+        engine: ThemeEngine.dynamicTheme,
+        stylesheet: "",
         darkSchemeBackgroundColor: DEFAULT_COLORS.darkScheme.background,
         darkSchemeTextColor: DEFAULT_COLORS.darkScheme.text,
         lightSchemeBackgroundColor: DEFAULT_COLORS.lightScheme.background,
         lightSchemeTextColor: DEFAULT_COLORS.lightScheme.text,
-        scrollbarColor: isMacOS ? '' : 'auto',
-        selectionColor: 'auto',
+        scrollbarColor: isMacOS ? "" : "auto",
+        selectionColor: "auto",
         styleSystemControls: !isCSSColorSchemePropSupported,
-        lightColorScheme: 'Default',
-        darkColorScheme: 'Default',
-        immediateModify: false,
+        lightColorScheme: "Default",
+        darkColorScheme: "Default",
+        immediateModify: false
     };
+    ({
+        enabled: true,
+        fetchNews: true,
+        theme: DEFAULT_THEME,
+        presets: [],
+        customThemes: [],
+        siteList: [],
+        siteListEnabled: [],
+        applyToListedOnly: false,
+        changeBrowserTheme: false,
+        syncSettings: true,
+        syncSitesFixes: false,
+        automation: {
+            enabled: false,
+            mode: AutomationMode.NONE,
+            behavior: "OnOff"
+        },
+        time: {
+            activation: "18:00",
+            deactivation: "9:00"
+        },
+        location: {
+            latitude: null,
+            longitude: null
+        },
+        previewNewDesign: false,
+        enableForPDF: true,
+        enableForProtectedPages: false,
+        enableContextMenus: false,
+        detectDarkTheme: false
+    });
     function isArrayLike(items) {
         return items.length != null;
     }
@@ -1106,7 +1280,9 @@ function InitGiscus() {
         }
     }
     function push(array, addition) {
-        forEach(addition, function (a) { return array.push(a); });
+        forEach(addition, function (a) {
+            return array.push(a);
+        });
     }
     function toArray(items) {
         var results = [];
@@ -1115,23 +1291,13 @@ function InitGiscus() {
         }
         return results;
     }
-    function logInfo() {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i] = arguments[_i];
-        }
-    }
-    function logWarn() {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            args[_i] = arguments[_i];
-        }
-    }
+    function logInfo() { }
+    function logWarn() { }
     function throttle(callback) {
         var pending = false;
         var frameId = null;
         var lastArgs;
-        var throttled = (function () {
+        var throttled = function () {
             var args = [];
             for (var _i = 0; _i < arguments.length; _i++) {
                 args[_i] = arguments[_i];
@@ -1150,7 +1316,7 @@ function InitGiscus() {
                     }
                 });
             }
-        });
+        };
         var cancel = function () {
             cancelAnimationFrame(frameId);
             pending = false;
@@ -1210,10 +1376,10 @@ function InitGiscus() {
         var prevSibling = node.previousSibling;
         var parent = node.parentNode;
         if (!parent) {
-            throw new Error('Unable to watch for node position: parent element not found');
+            throw new Error("Unable to watch for node position: parent element not found");
         }
-        if (mode === 'prev-sibling' && !prevSibling) {
-            throw new Error('Unable to watch for node position: there is no previous sibling');
+        if (mode === "prev-sibling" && !prevSibling) {
+            throw new Error("Unable to watch for node position: there is no previous sibling");
         }
         var attempts = 0;
         var start = null;
@@ -1229,7 +1395,6 @@ function InitGiscus() {
             }
             else if (attempts >= MAX_ATTEMPTS_COUNT) {
                 if (now - start < ATTEMPTS_INTERVAL) {
-                    logWarn("Node position watcher paused: retry in ".concat(RETRY_TIMEOUT, "ms"), node, prevSibling);
                     timeoutId = setTimeout(function () {
                         start = null;
                         attempts = 0;
@@ -1241,32 +1406,29 @@ function InitGiscus() {
                 start = now;
                 attempts = 1;
             }
-            if (mode === 'parent') {
+            if (mode === "parent") {
                 if (prevSibling && prevSibling.parentNode !== parent) {
-                    logWarn('Unable to restore node position: sibling parent changed', node, prevSibling, parent);
                     stop();
                     return;
                 }
             }
-            if (mode === 'prev-sibling') {
+            if (mode === "prev-sibling") {
                 if (prevSibling.parentNode == null) {
-                    logWarn('Unable to restore node position: sibling was removed', node, prevSibling, parent);
                     stop();
                     return;
                 }
                 if (prevSibling.parentNode !== parent) {
-                    logWarn('Style was moved to another parent', node, prevSibling, parent);
                     updateParent(prevSibling.parentNode);
                 }
             }
-            logWarn('Restoring node position', node, prevSibling, parent);
             parent.insertBefore(node, prevSibling ? prevSibling.nextSibling : parent.firstChild);
             observer.takeRecords();
             onRestore && onRestore();
         });
         var observer = new MutationObserver(function () {
-            if ((mode === 'parent' && node.parentNode !== parent) ||
-                (mode === 'prev-sibling' && node.previousSibling !== prevSibling)) {
+            if ((mode === "parent" && node.parentNode !== parent) ||
+                (mode === "prev-sibling" &&
+                    node.previousSibling !== prevSibling)) {
                 restore();
             }
         });
@@ -1295,11 +1457,13 @@ function InitGiscus() {
         }
         var walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT, {
             acceptNode: function (node) {
-                return node.shadowRoot == null ? NodeFilter.FILTER_SKIP : NodeFilter.FILTER_ACCEPT;
+                return node.shadowRoot == null
+                    ? NodeFilter.FILTER_SKIP
+                    : NodeFilter.FILTER_ACCEPT;
             }
         });
-        for (var node = (root.shadowRoot ? walker.currentNode : walker.nextNode()); node != null; node = walker.nextNode()) {
-            if (node.classList.contains('surfingkeys_hints_host')) {
+        for (var node = root.shadowRoot ? walker.currentNode : walker.nextNode(); node != null; node = walker.nextNode()) {
+            if (node.classList.contains("surfingkeys_hints_host")) {
                 continue;
             }
             iterator(node);
@@ -1307,7 +1471,8 @@ function InitGiscus() {
         }
     }
     var isDOMReady = function () {
-        return document.readyState === 'complete' || document.readyState === 'interactive';
+        return (document.readyState === "complete" ||
+            document.readyState === "interactive");
     };
     function setIsDOMReady(newFunc) {
         isDOMReady = newFunc;
@@ -1320,11 +1485,13 @@ function InitGiscus() {
         readyStateListeners.delete(listener);
     }
     function isReadyStateComplete() {
-        return document.readyState === 'complete';
+        return document.readyState === "complete";
     }
     var readyStateCompleteListeners = new Set();
     function addReadyStateCompleteListener(listener) {
-        isReadyStateComplete() ? listener() : readyStateCompleteListeners.add(listener);
+        isReadyStateComplete()
+            ? listener()
+            : readyStateCompleteListeners.add(listener);
     }
     function cleanReadyStateCompleteListeners() {
         readyStateCompleteListeners.clear();
@@ -1332,16 +1499,20 @@ function InitGiscus() {
     if (!isDOMReady()) {
         var onReadyStateChange_1 = function () {
             if (isDOMReady()) {
-                readyStateListeners.forEach(function (listener) { return listener(); });
+                readyStateListeners.forEach(function (listener) {
+                    return listener();
+                });
                 readyStateListeners.clear();
                 if (isReadyStateComplete()) {
-                    document.removeEventListener('readystatechange', onReadyStateChange_1);
-                    readyStateCompleteListeners.forEach(function (listener) { return listener(); });
+                    document.removeEventListener("readystatechange", onReadyStateChange_1);
+                    readyStateCompleteListeners.forEach(function (listener) {
+                        return listener();
+                    });
                     readyStateCompleteListeners.clear();
                 }
             }
         };
-        document.addEventListener('readystatechange', onReadyStateChange_1);
+        document.addEventListener("readystatechange", onReadyStateChange_1);
     }
     var HUGE_MUTATIONS_COUNT = 1000;
     function isHugeMutation(mutations) {
@@ -1391,8 +1562,12 @@ function InitGiscus() {
                 duplicateDeletions.push(node);
             }
         });
-        duplicateAdditions.forEach(function (node) { return additions.delete(node); });
-        duplicateDeletions.forEach(function (node) { return deletions.delete(node); });
+        duplicateAdditions.forEach(function (node) {
+            return additions.delete(node);
+        });
+        duplicateDeletions.forEach(function (node) {
+            return deletions.delete(node);
+        });
         return { additions: additions, moves: moves, deletions: deletions };
     }
     var optimizedTreeObservers = new Map();
@@ -1453,14 +1628,14 @@ function InitGiscus() {
                     optimizedTreeCallbacks.delete(observer);
                     optimizedTreeObservers.delete(root);
                 }
-            },
+            }
         };
     }
     var anchor;
     var parsedURLCache = new Map();
     function fixBaseURL($url) {
         if (!anchor) {
-            anchor = document.createElement('a');
+            anchor = document.createElement("a");
         }
         anchor.href = $url;
         return anchor.href;
@@ -1469,7 +1644,7 @@ function InitGiscus() {
         if ($base === void 0) {
             $base = null;
         }
-        var key = "".concat($url).concat($base ? ";".concat($base) : '');
+        var key = "".concat($url).concat($base ? ";".concat($base) : "");
         if (parsedURLCache.has(key)) {
             return parsedURLCache.get(key);
         }
@@ -1494,7 +1669,7 @@ function InitGiscus() {
         return a.href;
     }
     function isRelativeHrefOnAbsolutePath(href) {
-        if (href.startsWith('data:')) {
+        if (href.startsWith("data:")) {
             return true;
         }
         var url = parseURL(href);
@@ -1525,8 +1700,14 @@ function InitGiscus() {
             }
             else if (rule.media) {
                 var media = Array.from(rule.media);
-                var isScreenOrAllOrQuery = media.some(function (m) { return m.startsWith('screen') || m.startsWith('all') || m.startsWith('('); });
-                var isPrintOrSpeech = media.some(function (m) { return m.startsWith('print') || m.startsWith('speech'); });
+                var isScreenOrAllOrQuery = media.some(function (m) {
+                    return (m.startsWith("screen") ||
+                        m.startsWith("all") ||
+                        m.startsWith("("));
+                });
+                var isPrintOrSpeech = media.some(function (m) {
+                    return m.startsWith("print") || m.startsWith("speech");
+                });
                 if (isScreenOrAllOrQuery || !isPrintOrSpeech) {
                     iterateCSSRules(rule.cssRules, iterate, onMediaRuleError);
                 }
@@ -1542,20 +1723,22 @@ function InitGiscus() {
         });
     }
     var shorthandVarDependantProperties = [
-        'background',
-        'border',
-        'border-color',
-        'border-bottom',
-        'border-left',
-        'border-right',
-        'border-top',
-        'outline',
-        'outline-color',
+        "background",
+        "border",
+        "border-color",
+        "border-bottom",
+        "border-left",
+        "border-right",
+        "border-top",
+        "outline",
+        "outline-color"
     ];
-    var shorthandVarDepPropRegexps = isSafari ? shorthandVarDependantProperties.map(function (prop) {
-        var regexp = new RegExp("".concat(prop, ":\\s*(.*?)\\s*;"));
-        return [prop, regexp];
-    }) : null;
+    var shorthandVarDepPropRegexps = isSafari
+        ? shorthandVarDependantProperties.map(function (prop) {
+            var regexp = new RegExp("".concat(prop, ":\\s*(.*?)\\s*;"));
+            return [prop, regexp];
+        })
+        : null;
     function iterateCSSDeclarations(style, iterate) {
         forEach(style, function (property) {
             var value = style.getPropertyValue(property).trim();
@@ -1565,7 +1748,7 @@ function InitGiscus() {
             iterate(property, value);
         });
         var cssText = style.cssText;
-        if (cssText.includes('var(')) {
+        if (cssText.includes("var(")) {
             if (isSafari) {
                 shorthandVarDepPropRegexps.forEach(function (_a) {
                     var _b = __read(_a, 2), prop = _b[0], regexp = _b[1];
@@ -1579,41 +1762,51 @@ function InitGiscus() {
             else {
                 shorthandVarDependantProperties.forEach(function (prop) {
                     var val = style.getPropertyValue(prop);
-                    if (val && val.includes('var(')) {
+                    if (val && val.includes("var(")) {
                         iterate(prop, val);
                     }
                 });
             }
         }
     }
-    var cssURLRegex = /url\((('.+?')|(".+?")|([^\)]*?))\)/g;
+    var cssURLRegex = /url\((('.*?')|(".*?")|([^\)]*?))\)/g;
     var cssImportRegex = /@import\s*(url\()?(('.+?')|(".+?")|([^\)]*?))\)? ?(screen)?;?/gi;
     function getCSSURLValue(cssURL) {
-        return cssURL.trim().replace(/^url\((.*)\)$/, '$1').trim().replace(/^"(.*)"$/, '$1').replace(/^'(.*)'$/, '$1').replace(/(?:\\(.))/g, '$1');
+        return cssURL
+            .trim()
+            .replace(/[\n\r\\]+/g, "")
+            .replace(/^url\((.*)\)$/, "$1")
+            .trim()
+            .replace(/^"(.*)"$/, "$1")
+            .replace(/^'(.*)'$/, "$1")
+            .replace(/(?:\\(.))/g, "$1");
     }
     function getCSSBaseBath(url) {
         var cssURL = parseURL(url);
-        return "".concat(cssURL.origin).concat(cssURL.pathname.replace(/\?.*$/, '').replace(/(\/)([^\/]+)$/i, '$1'));
+        return ""
+            .concat(cssURL.origin)
+            .concat(cssURL.pathname
+            .replace(/\?.*$/, "")
+            .replace(/(\/)([^\/]+)$/i, "$1"));
     }
     function replaceCSSRelativeURLsWithAbsolute($css, cssBasePath) {
         return $css.replace(cssURLRegex, function (match) {
             var pathValue = getCSSURLValue(match);
             try {
-                return "url(\"".concat(getAbsoluteURL(cssBasePath, pathValue), "\")");
+                return "url('".concat(getAbsoluteURL(cssBasePath, pathValue), "')");
             }
             catch (err) {
-                logWarn('Not able to replace relative URL with Absolute URL, skipping');
                 return match;
             }
         });
     }
     var cssCommentsRegex = /\/\*[\s\S]*?\*\//g;
     function removeCSSComments($css) {
-        return $css.replace(cssCommentsRegex, '');
+        return $css.replace(cssCommentsRegex, "");
     }
     var fontFaceRegex = /@font-face\s*{[^}]*}/g;
     function replaceCSSFontFace($css) {
-        return $css.replace(fontFaceRegex, '');
+        return $css.replace(fontFaceRegex, "");
     }
     function evalMath(expression) {
         var rpnStack = [];
@@ -1621,7 +1814,7 @@ function InitGiscus() {
         var lastToken;
         for (var i = 0, len = expression.length; i < len; i++) {
             var token = expression[i];
-            if (!token || token === ' ') {
+            if (!token || token === " ") {
                 continue;
             }
             if (operators.has(token)) {
@@ -1674,12 +1867,32 @@ function InitGiscus() {
             return this.precendce <= op.precendce;
         };
         return Operator;
-    }());
+    })();
     var operators = new Map([
-        ['+', new Operator(1, function (left, right) { return left + right; })],
-        ['-', new Operator(1, function (left, right) { return left - right; })],
-        ['*', new Operator(2, function (left, right) { return left * right; })],
-        ['/', new Operator(2, function (left, right) { return left / right; })],
+        [
+            "+",
+            new Operator(1, function (left, right) {
+                return left + right;
+            })
+        ],
+        [
+            "-",
+            new Operator(1, function (left, right) {
+                return left - right;
+            })
+        ],
+        [
+            "*",
+            new Operator(2, function (left, right) {
+                return left * right;
+            })
+        ],
+        [
+            "/",
+            new Operator(2, function (left, right) {
+                return left / right;
+            })
+        ]
     ]);
     function getMatches(regex, input, group) {
         if (group === void 0) {
@@ -1694,43 +1907,43 @@ function InitGiscus() {
     }
     function formatCSS(text) {
         function trimLeft(text) {
-            return text.replace(/^\s+/, '');
+            return text.replace(/^\s+/, "");
         }
         function getIndent(depth) {
             if (depth === 0) {
-                return '';
+                return "";
             }
-            return ' '.repeat(4 * depth);
+            return " ".repeat(4 * depth);
         }
         if (text.length < 50000) {
             var emptyRuleRegexp = /[^{}]+{\s*}/;
             while (emptyRuleRegexp.test(text)) {
-                text = text.replace(emptyRuleRegexp, '');
+                text = text.replace(emptyRuleRegexp, "");
             }
         }
-        var css = (text
-            .replace(/\s{2,}/g, ' ')
-            .replace(/\{/g, '{\n')
-            .replace(/\}/g, '\n}\n')
-            .replace(/\;(?![^\(|\"]*(\)|\"))/g, ';\n')
-            .replace(/\,(?![^\(|\"]*(\)|\"))/g, ',\n')
-            .replace(/\n\s*\n/g, '\n')
-            .split('\n'));
+        var css = text
+            .replace(/\s{2,}/g, " ")
+            .replace(/\{/g, "{\n")
+            .replace(/\}/g, "\n}\n")
+            .replace(/\;(?![^\(|\"]*(\)|\"))/g, ";\n")
+            .replace(/\,(?![^\(|\"]*(\)|\"))/g, ",\n")
+            .replace(/\n\s*\n/g, "\n")
+            .split("\n");
         var depth = 0;
         var formatted = [];
         for (var x = 0, len = css.length; x < len; x++) {
             var line = "".concat(css[x], "\n");
-            if (line.includes('{')) {
+            if (line.includes("{")) {
                 formatted.push(getIndent(depth++) + trimLeft(line));
             }
-            else if (line.includes('\}')) {
+            else if (line.includes("}")) {
                 formatted.push(getIndent(--depth) + trimLeft(line));
             }
             else {
                 formatted.push(getIndent(depth) + trimLeft(line));
             }
         }
-        return formatted.join('').trim();
+        return formatted.join("").trim();
     }
     function getParenthesesRange(input, searchStartIndex) {
         if (searchStartIndex === void 0) {
@@ -1741,7 +1954,7 @@ function InitGiscus() {
         var firstOpenIndex = -1;
         for (var i = searchStartIndex; i < length; i++) {
             if (depth === 0) {
-                var openIndex = input.indexOf('(', i);
+                var openIndex = input.indexOf("(", i);
                 if (openIndex < 0) {
                     break;
                 }
@@ -1750,11 +1963,11 @@ function InitGiscus() {
                 i = openIndex;
             }
             else {
-                var closingIndex = input.indexOf(')', i);
+                var closingIndex = input.indexOf(")", i);
                 if (closingIndex < 0) {
                     break;
                 }
-                var openIndex = input.indexOf('(', i);
+                var openIndex = input.indexOf("(", i);
                 if (openIndex < 0 || closingIndex < openIndex) {
                     depth--;
                     if (depth === 0) {
@@ -1770,21 +1983,60 @@ function InitGiscus() {
         }
         return null;
     }
+    var hslaParseCache = new Map();
+    var rgbaParseCache = new Map();
+    function parseColorWithCache($color) {
+        $color = $color.trim();
+        if (rgbaParseCache.has($color)) {
+            return rgbaParseCache.get($color);
+        }
+        if ($color.includes("calc(")) {
+            $color = lowerCalcExpression($color);
+        }
+        var color = parse($color);
+        color && rgbaParseCache.set($color, color);
+        return color;
+    }
+    function parseToHSLWithCache(color) {
+        if (hslaParseCache.has(color)) {
+            return hslaParseCache.get(color);
+        }
+        var rgb = parseColorWithCache(color);
+        if (!rgb) {
+            return null;
+        }
+        var hsl = rgbToHSL(rgb);
+        hslaParseCache.set(color, hsl);
+        return hsl;
+    }
+    function clearColorCache() {
+        hslaParseCache.clear();
+        rgbaParseCache.clear();
+    }
     function hslToRGB(_a) {
         var h = _a.h, s = _a.s, l = _a.l, _b = _a.a, a = _b === void 0 ? 1 : _b;
         if (s === 0) {
-            var _c = __read([l, l, l].map(function (x) { return Math.round(x * 255); }), 3), r_1 = _c[0], b_1 = _c[1], g_1 = _c[2];
+            var _c = __read([l, l, l].map(function (x) {
+                return Math.round(x * 255);
+            }), 3), r_1 = _c[0], b_1 = _c[1], g_1 = _c[2];
             return { r: r_1, g: g_1, b: b_1, a: a };
         }
         var c = (1 - Math.abs(2 * l - 1)) * s;
-        var x = c * (1 - Math.abs((h / 60) % 2 - 1));
+        var x = c * (1 - Math.abs(((h / 60) % 2) - 1));
         var m = l - c / 2;
-        var _d = __read((h < 60 ? [c, x, 0] :
-            h < 120 ? [x, c, 0] :
-                h < 180 ? [0, c, x] :
-                    h < 240 ? [0, x, c] :
-                        h < 300 ? [x, 0, c] :
-                            [c, 0, x]).map(function (n) { return Math.round((n + m) * 255); }), 3), r = _d[0], g = _d[1], b = _d[2];
+        var _d = __read((h < 60
+            ? [c, x, 0]
+            : h < 120
+                ? [x, c, 0]
+                : h < 180
+                    ? [0, c, x]
+                    : h < 240
+                        ? [0, x, c]
+                        : h < 300
+                            ? [x, 0, c]
+                            : [c, 0, x]).map(function (n) {
+            return Math.round((n + m) * 255);
+        }), 3), r = _d[0], g = _d[1], b = _d[2];
         return { r: r, g: g, b: b, a: a };
     }
     function rgbToHSL(_a) {
@@ -1799,9 +2051,11 @@ function InitGiscus() {
         if (c === 0) {
             return { h: 0, s: 0, l: l, a: a };
         }
-        var h = (max === r ? (((g - b) / c) % 6) :
-            max === g ? ((b - r) / c + 2) :
-                ((r - g) / c + 4)) * 60;
+        var h = (max === r
+            ? ((g - b) / c) % 6
+            : max === g
+                ? (b - r) / c + 2
+                : (r - g) / c + 4) * 60;
         if (h < 0) {
             h += 360;
         }
@@ -1816,7 +2070,7 @@ function InitGiscus() {
         if (digits === 0) {
             return fixed;
         }
-        var dot = fixed.indexOf('.');
+        var dot = fixed.indexOf(".");
         if (dot >= 0) {
             var zerosMatch = fixed.match(/0+$/);
             if (zerosMatch) {
@@ -1831,22 +2085,38 @@ function InitGiscus() {
     function rgbToString(rgb) {
         var r = rgb.r, g = rgb.g, b = rgb.b, a = rgb.a;
         if (a != null && a < 1) {
-            return "rgba(".concat(toFixed(r), ", ").concat(toFixed(g), ", ").concat(toFixed(b), ", ").concat(toFixed(a, 2), ")");
+            return "rgba("
+                .concat(toFixed(r), ", ")
+                .concat(toFixed(g), ", ")
+                .concat(toFixed(b), ", ")
+                .concat(toFixed(a, 2), ")");
         }
-        return "rgb(".concat(toFixed(r), ", ").concat(toFixed(g), ", ").concat(toFixed(b), ")");
+        return "rgb("
+            .concat(toFixed(r), ", ")
+            .concat(toFixed(g), ", ")
+            .concat(toFixed(b), ")");
     }
     function rgbToHexString(_a) {
         var r = _a.r, g = _a.g, b = _a.b, a = _a.a;
-        return "#".concat((a != null && a < 1 ? [r, g, b, Math.round(a * 255)] : [r, g, b]).map(function (x) {
-            return "".concat(x < 16 ? '0' : '').concat(x.toString(16));
-        }).join(''));
+        return "#".concat((a != null && a < 1 ? [r, g, b, Math.round(a * 255)] : [r, g, b])
+            .map(function (x) {
+            return "".concat(x < 16 ? "0" : "").concat(x.toString(16));
+        })
+            .join(""));
     }
     function hslToString(hsl) {
         var h = hsl.h, s = hsl.s, l = hsl.l, a = hsl.a;
         if (a != null && a < 1) {
-            return "hsla(".concat(toFixed(h), ", ").concat(toFixed(s * 100), "%, ").concat(toFixed(l * 100), "%, ").concat(toFixed(a, 2), ")");
+            return "hsla("
+                .concat(toFixed(h), ", ")
+                .concat(toFixed(s * 100), "%, ")
+                .concat(toFixed(l * 100), "%, ")
+                .concat(toFixed(a, 2), ")");
         }
-        return "hsl(".concat(toFixed(h), ", ").concat(toFixed(s * 100), "%, ").concat(toFixed(l * 100), "%)");
+        return "hsl("
+            .concat(toFixed(h), ", ")
+            .concat(toFixed(s * 100), "%, ")
+            .concat(toFixed(l * 100), "%)");
     }
     var rgbMatch = /^rgba?\([^\(\)]+\)$/;
     var hslMatch = /^hsla?\([^\(\)]+\)$/;
@@ -1868,23 +2138,23 @@ function InitGiscus() {
         if (systemColors.has(c)) {
             return getSystemColor(c);
         }
-        if ($color === 'transparent') {
+        if ($color === "transparent") {
             return { r: 0, g: 0, b: 0, a: 0 };
         }
-        throw new Error("Unable to parse ".concat($color));
+        return null;
     }
     function getNumbers($color) {
         var numbers = [];
         var prevPos = 0;
         var isMining = false;
-        var startIndex = $color.indexOf('(');
+        var startIndex = $color.indexOf("(");
         $color = $color.substring(startIndex + 1, $color.length - 1);
         for (var i = 0; i < $color.length; i++) {
             var c = $color[i];
-            if (c >= '0' && c <= '9' || c === '.' || c === '+' || c === '-') {
+            if ((c >= "0" && c <= "9") || c === "." || c === "+" || c === "-") {
                 isMining = true;
             }
-            else if (isMining && (c === ' ' || c === ',')) {
+            else if (isMining && (c === " " || c === ",")) {
                 numbers.push($color.substring(prevPos, i));
                 isMining = false;
                 prevPos = i + 1;
@@ -1901,14 +2171,21 @@ function InitGiscus() {
     function getNumbersFromString(str, range, units) {
         var raw = getNumbers(str);
         var unitsList = Object.entries(units);
-        var numbers = raw.map(function (r) { return r.trim(); }).map(function (r, i) {
+        var numbers = raw
+            .map(function (r) {
+            return r.trim();
+        })
+            .map(function (r, i) {
             var n;
             var unit = unitsList.find(function (_a) {
                 var _b = __read(_a, 1), u = _b[0];
                 return r.endsWith(u);
             });
             if (unit) {
-                n = parseFloat(r.substring(0, r.length - unit[0].length)) / unit[1] * range[i];
+                n =
+                    (parseFloat(r.substring(0, r.length - unit[0].length)) /
+                        unit[1]) *
+                        range[i];
             }
             else {
                 n = parseFloat(r);
@@ -1921,13 +2198,13 @@ function InitGiscus() {
         return numbers;
     }
     var rgbRange = [255, 255, 255, 1];
-    var rgbUnits = { '%': 100 };
+    var rgbUnits = { "%": 100 };
     function parseRGB($rgb) {
         var _a = __read(getNumbersFromString($rgb, rgbRange, rgbUnits), 4), r = _a[0], g = _a[1], b = _a[2], _b = _a[3], a = _b === void 0 ? 1 : _b;
         return { r: r, g: g, b: b, a: a };
     }
     var hslRange = [360, 1, 1, 1];
-    var hslUnits = { '%': 100, 'deg': 360, 'rad': 2 * Math.PI, 'turn': 1 };
+    var hslUnits = { "%": 100, "deg": 360, "rad": 2 * Math.PI, "turn": 1 };
     function parseHSL($hsl) {
         var _a = __read(getNumbersFromString($hsl, hslRange, hslUnits), 4), h = _a[0], s = _a[1], l = _a[2], _b = _a[3], a = _b === void 0 ? 1 : _b;
         return hslToRGB({ h: h, s: s, l: l, a: a });
@@ -1937,18 +2214,24 @@ function InitGiscus() {
         switch (h.length) {
             case 3:
             case 4: {
-                var _a = __read([0, 1, 2].map(function (i) { return parseInt("".concat(h[i]).concat(h[i]), 16); }), 3), r = _a[0], g = _a[1], b = _a[2];
-                var a = h.length === 3 ? 1 : (parseInt("".concat(h[3]).concat(h[3]), 16) / 255);
+                var _a = __read([0, 1, 2].map(function (i) {
+                    return parseInt("".concat(h[i]).concat(h[i]), 16);
+                }), 3), r = _a[0], g = _a[1], b = _a[2];
+                var a = h.length === 3
+                    ? 1
+                    : parseInt("".concat(h[3]).concat(h[3]), 16) / 255;
                 return { r: r, g: g, b: b, a: a };
             }
             case 6:
             case 8: {
-                var _b = __read([0, 2, 4].map(function (i) { return parseInt(h.substring(i, i + 2), 16); }), 3), r = _b[0], g = _b[1], b = _b[2];
-                var a = h.length === 6 ? 1 : (parseInt(h.substring(6, 8), 16) / 255);
+                var _b = __read([0, 2, 4].map(function (i) {
+                    return parseInt(h.substring(i, i + 2), 16);
+                }), 3), r = _b[0], g = _b[1], b = _b[2];
+                var a = h.length === 6 ? 1 : parseInt(h.substring(6, 8), 16) / 255;
                 return { r: r, g: g, b: b, a: a };
             }
         }
-        throw new Error("Unable to parse ".concat($hex));
+        return null;
     }
     function getColorByName($color) {
         var n = knownColors.get($color);
@@ -1971,18 +2254,19 @@ function InitGiscus() {
     function lowerCalcExpression(color) {
         var searchIndex = 0;
         var replaceBetweenIndices = function (start, end, replacement) {
-            color = color.substring(0, start) + replacement + color.substring(end);
+            color =
+                color.substring(0, start) + replacement + color.substring(end);
         };
-        while ((searchIndex = color.indexOf('calc(')) !== -1) {
+        while ((searchIndex = color.indexOf("calc(")) !== -1) {
             var range = getParenthesesRange(color, searchIndex);
             if (!range) {
                 break;
             }
             var slice = color.slice(range.start + 1, range.end - 1);
-            var includesPercentage = slice.includes('%');
-            slice = slice.split('%').join('');
+            var includesPercentage = slice.includes("%");
+            slice = slice.split("%").join("");
             var output = Math.round(evalMath(slice));
-            replaceBetweenIndices(range.start - 4, range.end, output + (includesPercentage ? '%' : ''));
+            replaceBetweenIndices(range.start - 4, range.end, output + (includesPercentage ? "%" : ""));
         }
         return color;
     }
@@ -2134,38 +2418,38 @@ function InitGiscus() {
         white: 0xffffff,
         whitesmoke: 0xf5f5f5,
         yellow: 0xffff00,
-        yellowgreen: 0x9acd32,
+        yellowgreen: 0x9acd32
     }));
     var systemColors = new Map(Object.entries({
-        ActiveBorder: 0x3b99fc,
-        ActiveCaption: 0x000000,
-        AppWorkspace: 0xaaaaaa,
-        Background: 0x6363ce,
-        ButtonFace: 0xffffff,
-        ButtonHighlight: 0xe9e9e9,
-        ButtonShadow: 0x9fa09f,
-        ButtonText: 0x000000,
-        CaptionText: 0x000000,
-        GrayText: 0x7f7f7f,
-        Highlight: 0xb2d7ff,
-        HighlightText: 0x000000,
-        InactiveBorder: 0xffffff,
-        InactiveCaption: 0xffffff,
-        InactiveCaptionText: 0x000000,
-        InfoBackground: 0xfbfcc5,
-        InfoText: 0x000000,
-        Menu: 0xf6f6f6,
-        MenuText: 0xffffff,
-        Scrollbar: 0xaaaaaa,
-        ThreeDDarkShadow: 0x000000,
-        ThreeDFace: 0xc0c0c0,
-        ThreeDHighlight: 0xffffff,
-        ThreeDLightShadow: 0xffffff,
-        ThreeDShadow: 0x000000,
-        Window: 0xececec,
-        WindowFrame: 0xaaaaaa,
-        WindowText: 0x000000,
-        '-webkit-focus-ring-color': 0xe59700
+        "ActiveBorder": 0x3b99fc,
+        "ActiveCaption": 0x000000,
+        "AppWorkspace": 0xaaaaaa,
+        "Background": 0x6363ce,
+        "ButtonFace": 0xffffff,
+        "ButtonHighlight": 0xe9e9e9,
+        "ButtonShadow": 0x9fa09f,
+        "ButtonText": 0x000000,
+        "CaptionText": 0x000000,
+        "GrayText": 0x7f7f7f,
+        "Highlight": 0xb2d7ff,
+        "HighlightText": 0x000000,
+        "InactiveBorder": 0xffffff,
+        "InactiveCaption": 0xffffff,
+        "InactiveCaptionText": 0x000000,
+        "InfoBackground": 0xfbfcc5,
+        "InfoText": 0x000000,
+        "Menu": 0xf6f6f6,
+        "MenuText": 0xffffff,
+        "Scrollbar": 0xaaaaaa,
+        "ThreeDDarkShadow": 0x000000,
+        "ThreeDFace": 0xc0c0c0,
+        "ThreeDHighlight": 0xffffff,
+        "ThreeDLightShadow": 0xffffff,
+        "ThreeDShadow": 0x000000,
+        "Window": 0xececec,
+        "WindowFrame": 0xaaaaaa,
+        "WindowText": 0x000000,
+        "-webkit-focus-ring-color": 0xe59700
     }).map(function (_a) {
         var _b = __read(_a, 2), key = _b[0], value = _b[1];
         return [key.toLowerCase(), value];
@@ -2174,7 +2458,7 @@ function InitGiscus() {
         return (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
     }
     function scale(x, inLow, inHigh, outLow, outHigh) {
-        return (x - inLow) * (outHigh - outLow) / (inHigh - inLow) + outLow;
+        return ((x - inLow) * (outHigh - outLow)) / (inHigh - inLow) + outLow;
     }
     function clamp(x, min, max) {
         return Math.min(max, Math.max(min, x));
@@ -2216,7 +2500,9 @@ function InitGiscus() {
         var _b = __read(_a, 3), r = _b[0], g = _b[1], b = _b[2];
         var rgb = [[r / 255], [g / 255], [b / 255], [1], [1]];
         var result = multiplyMatrices(matrix, rgb);
-        return [0, 1, 2].map(function (i) { return clamp(Math.round(result[i][0] * 255), 0, 255); });
+        return [0, 1, 2].map(function (i) {
+            return clamp(Math.round(result[i][0] * 255), 0, 255);
+        });
     }
     var Matrix = {
         identity: function () {
@@ -2258,52 +2544,91 @@ function InitGiscus() {
         },
         sepia: function (v) {
             return [
-                [(0.393 + 0.607 * (1 - v)), (0.769 - 0.769 * (1 - v)), (0.189 - 0.189 * (1 - v)), 0, 0],
-                [(0.349 - 0.349 * (1 - v)), (0.686 + 0.314 * (1 - v)), (0.168 - 0.168 * (1 - v)), 0, 0],
-                [(0.272 - 0.272 * (1 - v)), (0.534 - 0.534 * (1 - v)), (0.131 + 0.869 * (1 - v)), 0, 0],
+                [
+                    0.393 + 0.607 * (1 - v),
+                    0.769 - 0.769 * (1 - v),
+                    0.189 - 0.189 * (1 - v),
+                    0,
+                    0
+                ],
+                [
+                    0.349 - 0.349 * (1 - v),
+                    0.686 + 0.314 * (1 - v),
+                    0.168 - 0.168 * (1 - v),
+                    0,
+                    0
+                ],
+                [
+                    0.272 - 0.272 * (1 - v),
+                    0.534 - 0.534 * (1 - v),
+                    0.131 + 0.869 * (1 - v),
+                    0,
+                    0
+                ],
                 [0, 0, 0, 1, 0],
                 [0, 0, 0, 0, 1]
             ];
         },
         grayscale: function (v) {
             return [
-                [(0.2126 + 0.7874 * (1 - v)), (0.7152 - 0.7152 * (1 - v)), (0.0722 - 0.0722 * (1 - v)), 0, 0],
-                [(0.2126 - 0.2126 * (1 - v)), (0.7152 + 0.2848 * (1 - v)), (0.0722 - 0.0722 * (1 - v)), 0, 0],
-                [(0.2126 - 0.2126 * (1 - v)), (0.7152 - 0.7152 * (1 - v)), (0.0722 + 0.9278 * (1 - v)), 0, 0],
+                [
+                    0.2126 + 0.7874 * (1 - v),
+                    0.7152 - 0.7152 * (1 - v),
+                    0.0722 - 0.0722 * (1 - v),
+                    0,
+                    0
+                ],
+                [
+                    0.2126 - 0.2126 * (1 - v),
+                    0.7152 + 0.2848 * (1 - v),
+                    0.0722 - 0.0722 * (1 - v),
+                    0,
+                    0
+                ],
+                [
+                    0.2126 - 0.2126 * (1 - v),
+                    0.7152 - 0.7152 * (1 - v),
+                    0.0722 + 0.9278 * (1 - v),
+                    0,
+                    0
+                ],
                 [0, 0, 0, 1, 0],
                 [0, 0, 0, 0, 1]
             ];
-        },
+        }
     };
     function getBgPole(theme) {
         var isDarkScheme = theme.mode === 1;
-        var prop = isDarkScheme ? 'darkSchemeBackgroundColor' : 'lightSchemeBackgroundColor';
+        var prop = isDarkScheme
+            ? "darkSchemeBackgroundColor"
+            : "lightSchemeBackgroundColor";
         return theme[prop];
     }
     function getFgPole(theme) {
         var isDarkScheme = theme.mode === 1;
-        var prop = isDarkScheme ? 'darkSchemeTextColor' : 'lightSchemeTextColor';
+        var prop = isDarkScheme
+            ? "darkSchemeTextColor"
+            : "lightSchemeTextColor";
         return theme[prop];
     }
     var colorModificationCache = new Map();
-    var colorParseCache$1 = new Map();
-    function parseToHSLWithCache(color) {
-        if (colorParseCache$1.has(color)) {
-            return colorParseCache$1.get(color);
-        }
-        var rgb = parse(color);
-        var hsl = rgbToHSL(rgb);
-        colorParseCache$1.set(color, hsl);
-        return hsl;
-    }
     function clearColorModificationCache() {
         colorModificationCache.clear();
-        colorParseCache$1.clear();
     }
-    var rgbCacheKeys = ['r', 'g', 'b', 'a'];
-    var themeCacheKeys$1 = ['mode', 'brightness', 'contrast', 'grayscale', 'sepia', 'darkSchemeBackgroundColor', 'darkSchemeTextColor', 'lightSchemeBackgroundColor', 'lightSchemeTextColor'];
+    var rgbCacheKeys = ["r", "g", "b", "a"];
+    var themeCacheKeys$1 = [
+        "mode",
+        "brightness",
+        "contrast",
+        "grayscale",
+        "sepia",
+        "darkSchemeBackgroundColor",
+        "darkSchemeTextColor",
+        "lightSchemeBackgroundColor",
+        "lightSchemeTextColor"
+    ];
     function getCacheId(rgb, theme) {
-        var resultId = '';
+        var resultId = "";
         rgbCacheKeys.forEach(function (key) {
             resultId += "".concat(rgb[key], ";");
         });
@@ -2327,14 +2652,16 @@ function InitGiscus() {
         }
         var hsl = rgbToHSL(rgb);
         var pole = poleColor == null ? null : parseToHSLWithCache(poleColor);
-        var anotherPole = anotherPoleColor == null ? null : parseToHSLWithCache(anotherPoleColor);
+        var anotherPole = anotherPoleColor == null
+            ? null
+            : parseToHSLWithCache(anotherPoleColor);
         var modified = modifyHSL(hsl, pole, anotherPole);
         var _a = hslToRGB(modified), r = _a.r, g = _a.g, b = _a.b, a = _a.a;
         var matrix = createFilterMatrix(theme);
         var _b = __read(applyColorMatrix([r, g, b], matrix), 3), rf = _b[0], gf = _b[1], bf = _b[2];
-        var color = (a === 1 ?
-            rgbToHexString({ r: rf, g: gf, b: bf }) :
-            rgbToString({ r: rf, g: gf, b: bf, a: a }));
+        var color = a === 1
+            ? rgbToHexString({ r: rf, g: gf, b: bf })
+            : rgbToString({ r: rf, g: gf, b: bf, a: a });
         fnCache.set(id, color);
         return color;
     }
@@ -2508,18 +2835,18 @@ function InitGiscus() {
             lines.push("  -webkit-text-stroke: ".concat(config.textStroke, "px !important;"));
             lines.push("  text-stroke: ".concat(config.textStroke, "px !important;"));
         }
-        lines.push('}');
-        return lines.join('\n');
+        lines.push("}");
+        return lines.join("\n");
     }
     var FilterMode;
     (function (FilterMode) {
-        FilterMode[FilterMode["light"] = 0] = "light";
-        FilterMode[FilterMode["dark"] = 1] = "dark";
+        FilterMode[(FilterMode["light"] = 0)] = "light";
+        FilterMode[(FilterMode["dark"] = 1)] = "dark";
     })(FilterMode || (FilterMode = {}));
     function getCSSFilterValue(config) {
         var filters = [];
         if (config.mode === FilterMode.dark) {
-            filters.push('invert(100%) hue-rotate(180deg)');
+            filters.push("invert(100%) hue-rotate(180deg)");
         }
         if (config.brightness !== 100) {
             filters.push("brightness(".concat(config.brightness, "%)"));
@@ -2536,10 +2863,19 @@ function InitGiscus() {
         if (filters.length === 0) {
             return null;
         }
-        return filters.join(' ');
+        return filters.join(" ");
     }
     function toSVGMatrix(matrix) {
-        return matrix.slice(0, 4).map(function (m) { return m.map(function (m) { return m.toFixed(3); }).join(' '); }).join(' ');
+        return matrix
+            .slice(0, 4)
+            .map(function (m) {
+            return m
+                .map(function (m) {
+                return m.toFixed(3);
+            })
+                .join(" ");
+        })
+            .join(" ");
     }
     function getSVGFilterMatrixValue(config) {
         return toSVGMatrix(createFilterMatrix(config));
@@ -2550,12 +2886,19 @@ function InitGiscus() {
     function bgFetch(request) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2, new Promise(function (resolve, reject) {
+                return [
+                    2,
+                    new Promise(function (resolve, reject) {
                         var id = ++counter;
                         resolvers$1.set(id, resolve);
                         rejectors.set(id, reject);
-                        chrome.runtime.sendMessage({ type: MessageType.CS_FETCH, data: request, id: id });
-                    })];
+                        chrome.runtime.sendMessage({
+                            type: MessageType.CS_FETCH,
+                            data: request,
+                            id: id
+                        });
+                    })
+                ];
             });
         });
     }
@@ -2610,19 +2953,21 @@ function InitGiscus() {
             });
         };
         return AsyncQueue;
-    }());
+    })();
     var imageManager = new AsyncQueue();
     function getImageDetails(url) {
         return __awaiter(this, void 0, void 0, function () {
             var _this = this;
             return __generator(this, function (_a) {
-                return [2, new Promise(function (resolve, reject) {
+                return [
+                    2,
+                    new Promise(function (resolve, reject) {
                         return __awaiter(_this, void 0, void 0, function () {
                             var dataURL, error_1, image_1, error_2;
                             return __generator(this, function (_a) {
                                 switch (_a.label) {
                                     case 0:
-                                        if (!url.startsWith('data:'))
+                                        if (!url.startsWith("data:"))
                                             return [3, 1];
                                         dataURL = url;
                                         return [3, 4];
@@ -2642,18 +2987,25 @@ function InitGiscus() {
                                     case 5:
                                         image_1 = _a.sent();
                                         imageManager.addToQueue(function () {
-                                            resolve(__assign({ src: url, dataURL: dataURL, width: image_1.naturalWidth, height: image_1.naturalHeight }, analyzeImage(image_1)));
+                                            resolve(__assign({
+                                                src: url,
+                                                dataURL: dataURL,
+                                                width: image_1.naturalWidth,
+                                                height: image_1.naturalHeight
+                                            }, analyzeImage(image_1)));
                                         });
                                         return [3, 7];
                                     case 6:
                                         error_2 = _a.sent();
                                         reject(error_2);
                                         return [3, 7];
-                                    case 7: return [2];
+                                    case 7:
+                                        return [2];
                                 }
                             });
                         });
-                    })];
+                    })
+                ];
             });
         });
     }
@@ -2667,9 +3019,15 @@ function InitGiscus() {
                         if (!(parsedURL.origin === location.origin))
                             return [3, 2];
                         return [4, loadAsDataURL(url)];
-                    case 1: return [2, _a.sent()];
-                    case 2: return [4, bgFetch({ url: url, responseType: 'data-url' })];
-                    case 3: return [2, _a.sent()];
+                    case 1:
+                        return [2, _a.sent()];
+                    case 2:
+                        return [
+                            4,
+                            bgFetch({ url: url, responseType: "data-url" })
+                        ];
+                    case 3:
+                        return [2, _a.sent()];
                 }
             });
         });
@@ -2677,12 +3035,19 @@ function InitGiscus() {
     function urlToImage(url) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2, new Promise(function (resolve, reject) {
+                return [
+                    2,
+                    new Promise(function (resolve, reject) {
                         var image = new Image();
-                        image.onload = function () { return resolve(image); };
-                        image.onerror = function () { return reject("Unable to load image ".concat(url)); };
+                        image.onload = function () {
+                            return resolve(image);
+                        };
+                        image.onerror = function () {
+                            return reject("Unable to load image ".concat(url));
+                        };
                         image.src = url;
-                    })];
+                    })
+                ];
             });
         });
     }
@@ -2692,10 +3057,10 @@ function InitGiscus() {
     function createCanvas() {
         var maxWidth = MAX_ANALIZE_PIXELS_COUNT;
         var maxHeight = MAX_ANALIZE_PIXELS_COUNT;
-        canvas = document.createElement('canvas');
+        canvas = document.createElement("canvas");
         canvas.width = maxWidth;
         canvas.height = maxHeight;
-        context = canvas.getContext('2d');
+        context = canvas.getContext("2d");
         context.imageSmoothingEnabled = false;
     }
     function removeCanvas() {
@@ -2714,13 +3079,12 @@ function InitGiscus() {
         }
         var size = naturalWidth * naturalHeight * 4;
         if (size > MAX_IMAGE_SIZE) {
-            logInfo('Skipped large image analyzing(Larger than 5mb in memory)');
             return {
                 isDark: false,
                 isLight: false,
                 isTransparent: false,
                 isLarge: false,
-                isTooLarge: true,
+                isTooLarge: true
             };
         }
         var naturalPixelsCount = naturalWidth * naturalHeight;
@@ -2768,37 +3132,43 @@ function InitGiscus() {
         var TRANSPARENT_IMAGE_THRESHOLD = 0.1;
         var LARGE_IMAGE_PIXELS_COUNT = 800 * 600;
         return {
-            isDark: ((darkPixelsCount / opaquePixelsCount) >= DARK_IMAGE_THRESHOLD),
-            isLight: ((lightPixelsCount / opaquePixelsCount) >= LIGHT_IMAGE_THRESHOLD),
-            isTransparent: ((transparentPixelsCount / totalPixelsCount) >= TRANSPARENT_IMAGE_THRESHOLD),
-            isLarge: (naturalPixelsCount >= LARGE_IMAGE_PIXELS_COUNT),
-            isTooLarge: false,
+            isDark: darkPixelsCount / opaquePixelsCount >= DARK_IMAGE_THRESHOLD,
+            isLight: lightPixelsCount / opaquePixelsCount >= LIGHT_IMAGE_THRESHOLD,
+            isTransparent: transparentPixelsCount / totalPixelsCount >=
+                TRANSPARENT_IMAGE_THRESHOLD,
+            isLarge: naturalPixelsCount >= LARGE_IMAGE_PIXELS_COUNT,
+            isTooLarge: false
         };
     }
     function getFilteredImageDataURL(_a, theme) {
         var dataURL = _a.dataURL, width = _a.width, height = _a.height;
         var matrix = getSVGFilterMatrixValue(theme);
         var svg = [
-            "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"".concat(width, "\" height=\"").concat(height, "\">"),
-            '<defs>',
+            '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="'
+                .concat(width, '" height="')
+                .concat(height, '">'),
+            "<defs>",
             '<filter id="darkreader-image-filter">',
-            "<feColorMatrix type=\"matrix\" values=\"".concat(matrix, "\" />"),
-            '</filter>',
-            '</defs>',
-            "<image width=\"".concat(width, "\" height=\"").concat(height, "\" filter=\"url(#darkreader-image-filter)\" xlink:href=\"").concat(dataURL, "\" />"),
-            '</svg>',
-        ].join('');
+            '<feColorMatrix type="matrix" values="'.concat(matrix, '" />'),
+            "</filter>",
+            "</defs>",
+            '<image width="'
+                .concat(width, '" height="')
+                .concat(height, '" filter="url(#darkreader-image-filter)" xlink:href="')
+                .concat(dataURL, '" />'),
+            "</svg>"
+        ].join("");
         return "data:image/svg+xml;base64,".concat(btoa(svg));
     }
     function cleanImageProcessingCache() {
         imageManager && imageManager.stopQueue();
         removeCanvas();
     }
-    var gradientLength = 'gradient'.length;
-    var conicGradient = 'conic-';
+    var gradientLength = "gradient".length;
+    var conicGradient = "conic-";
     var conicGradientLength = conicGradient.length;
-    var radialGradient = 'radial-';
-    var linearGradient = 'linear-';
+    var radialGradient = "radial-";
+    var linearGradient = "linear-";
     function parseGradient(value) {
         var result = [];
         var index = 0;
@@ -2809,11 +3179,11 @@ function InitGiscus() {
                 if (index - possibleType.length >= 0) {
                     var possibleGradient = value.substring(index - possibleType.length, index);
                     if (possibleGradient === possibleType) {
-                        if (value.slice(index - possibleType.length - 10, index - possibleType.length - 1) === 'repeating') {
+                        if (value.slice(index - possibleType.length - 10, index - possibleType.length - 1) === "repeating") {
                             typeGradient = "repeating-".concat(possibleType, "gradient");
                             return true;
                         }
-                        if (value.slice(index - possibleType.length - 8, index - possibleType.length - 1) === '-webkit') {
+                        if (value.slice(index - possibleType.length - 8, index - possibleType.length - 1) === "-webkit") {
                             typeGradient = "-webkit-".concat(possibleType, "gradient");
                             return true;
                         }
@@ -2833,10 +3203,10 @@ function InitGiscus() {
                 match: match,
                 offset: typeGradient.length + 2,
                 index: index - typeGradient.length + gradientLength,
-                hasComma: true,
+                hasComma: true
             });
         };
-        while ((index = value.indexOf('gradient', startIndex)) !== -1) {
+        while ((index = value.indexOf("gradient", startIndex)) !== -1) {
             var state_1 = _loop_1();
             if (state_1 === "break")
                 break;
@@ -2850,37 +3220,67 @@ function InitGiscus() {
         return Boolean(ruleStyle && ruleStyle.getPropertyPriority(property));
     }
     function getModifiableCSSDeclaration(property, value, rule, variablesStore, ignoreImageSelectors, isCancelled) {
-        if (property.startsWith('--')) {
+        if (property.startsWith("--")) {
             var modifier = getVariableModifier(variablesStore, property, value, rule, ignoreImageSelectors, isCancelled);
             if (modifier) {
-                return { property: property, value: modifier, important: getPriority(rule.style, property), sourceValue: value };
+                return {
+                    property: property,
+                    value: modifier,
+                    important: getPriority(rule.style, property),
+                    sourceValue: value
+                };
             }
         }
-        else if (value.includes('var(')) {
+        else if (value.includes("var(")) {
             var modifier = getVariableDependantModifier(variablesStore, property, value);
             if (modifier) {
-                return { property: property, value: modifier, important: getPriority(rule.style, property), sourceValue: value };
+                return {
+                    property: property,
+                    value: modifier,
+                    important: getPriority(rule.style, property),
+                    sourceValue: value
+                };
             }
         }
-        else if ((property.includes('color') && property !== '-webkit-print-color-adjust') ||
-            property === 'fill' ||
-            property === 'stroke' ||
-            property === 'stop-color') {
-            var modifier = getColorModifier(property, value);
+        else if (property === "color-scheme") {
+            return null;
+        }
+        else if ((property.includes("color") &&
+            property !== "-webkit-print-color-adjust") ||
+            property === "fill" ||
+            property === "stroke" ||
+            property === "stop-color") {
+            var modifier = getColorModifier(property, value, rule);
             if (modifier) {
-                return { property: property, value: modifier, important: getPriority(rule.style, property), sourceValue: value };
+                return {
+                    property: property,
+                    value: modifier,
+                    important: getPriority(rule.style, property),
+                    sourceValue: value
+                };
             }
         }
-        else if (property === 'background-image' || property === 'list-style-image') {
+        else if (property === "background-image" ||
+            property === "list-style-image") {
             var modifier = getBgImageModifier(value, rule, ignoreImageSelectors, isCancelled);
             if (modifier) {
-                return { property: property, value: modifier, important: getPriority(rule.style, property), sourceValue: value };
+                return {
+                    property: property,
+                    value: modifier,
+                    important: getPriority(rule.style, property),
+                    sourceValue: value
+                };
             }
         }
-        else if (property.includes('shadow')) {
+        else if (property.includes("shadow")) {
             var modifier = getShadowModifier(value);
             if (modifier) {
-                return { property: property, value: modifier, important: getPriority(rule.style, property), sourceValue: value };
+                return {
+                    property: property,
+                    value: modifier,
+                    important: getPriority(rule.style, property),
+                    sourceValue: value
+                };
             }
         }
         return null;
@@ -2890,85 +3290,88 @@ function InitGiscus() {
         for (var _i = 0; _i < arguments.length; _i++) {
             selectors[_i] = arguments[_i];
         }
-        return selectors.filter(Boolean).join(', ');
+        return selectors.filter(Boolean).join(", ");
     }
     function getModifiedUserAgentStyle(theme, isIFrame, styleSystemControls) {
         var lines = [];
         if (!isIFrame) {
-            lines.push('html {');
+            lines.push("html {");
             lines.push("    background-color: ".concat(modifyBackgroundColor({ r: 255, g: 255, b: 255 }, theme), " !important;"));
-            lines.push('}');
+            lines.push("}");
         }
         if (isCSSColorSchemePropSupported) {
-            lines.push('html {');
-            lines.push("    color-scheme: ".concat(theme.mode === 1 ? 'dark' : 'dark light', " !important;"));
-            lines.push('}');
+            lines.push("html {");
+            lines.push("    color-scheme: ".concat(theme.mode === 1 ? "dark" : "dark light", " !important;"));
+            lines.push("}");
         }
-        var bgSelectors = joinSelectors(isIFrame ? '' : 'html, body', styleSystemControls ? 'input, textarea, select, button' : '');
+        var bgSelectors = joinSelectors(isIFrame ? "" : "html, body", styleSystemControls ? "input, textarea, select, button, dialog" : "");
         if (bgSelectors) {
             lines.push("".concat(bgSelectors, " {"));
             lines.push("    background-color: ".concat(modifyBackgroundColor({ r: 255, g: 255, b: 255 }, theme), ";"));
-            lines.push('}');
+            lines.push("}");
         }
-        lines.push("".concat(joinSelectors('html, body', styleSystemControls ? 'input, textarea, select, button' : ''), " {"));
+        lines.push("".concat(joinSelectors("html, body", styleSystemControls ? "input, textarea, select, button" : ""), " {"));
         lines.push("    border-color: ".concat(modifyBorderColor({ r: 76, g: 76, b: 76 }, theme), ";"));
         lines.push("    color: ".concat(modifyForegroundColor({ r: 0, g: 0, b: 0 }, theme), ";"));
-        lines.push('}');
-        lines.push('a {');
+        lines.push("}");
+        lines.push("a {");
         lines.push("    color: ".concat(modifyForegroundColor({ r: 0, g: 64, b: 255 }, theme), ";"));
-        lines.push('}');
-        lines.push('table {');
+        lines.push("}");
+        lines.push("table {");
         lines.push("    border-color: ".concat(modifyBorderColor({ r: 128, g: 128, b: 128 }, theme), ";"));
-        lines.push('}');
-        lines.push('::placeholder {');
+        lines.push("}");
+        lines.push("::placeholder {");
         lines.push("    color: ".concat(modifyForegroundColor({ r: 169, g: 169, b: 169 }, theme), ";"));
-        lines.push('}');
-        lines.push('input:-webkit-autofill,');
-        lines.push('textarea:-webkit-autofill,');
-        lines.push('select:-webkit-autofill {');
+        lines.push("}");
+        lines.push("input:-webkit-autofill,");
+        lines.push("textarea:-webkit-autofill,");
+        lines.push("select:-webkit-autofill {");
         lines.push("    background-color: ".concat(modifyBackgroundColor({ r: 250, g: 255, b: 189 }, theme), " !important;"));
         lines.push("    color: ".concat(modifyForegroundColor({ r: 0, g: 0, b: 0 }, theme), " !important;"));
-        lines.push('}');
+        lines.push("}");
         if (theme.scrollbarColor) {
             lines.push(getModifiedScrollbarStyle(theme));
         }
         if (theme.selectionColor) {
             lines.push(getModifiedSelectionStyle(theme));
         }
-        return lines.join('\n');
+        return lines.join("\n");
     }
     function getSelectionColor(theme) {
         var backgroundColorSelection;
         var foregroundColorSelection;
-        if (theme.selectionColor === 'auto') {
+        if (theme.selectionColor === "auto") {
             backgroundColorSelection = modifyBackgroundColor({ r: 0, g: 96, b: 212 }, __assign(__assign({}, theme), { grayscale: 0 }));
             foregroundColorSelection = modifyForegroundColor({ r: 255, g: 255, b: 255 }, __assign(__assign({}, theme), { grayscale: 0 }));
         }
         else {
-            var rgb = parse(theme.selectionColor);
+            var rgb = parseColorWithCache(theme.selectionColor);
             var hsl = rgbToHSL(rgb);
             backgroundColorSelection = theme.selectionColor;
             if (hsl.l < 0.5) {
-                foregroundColorSelection = '#FFF';
+                foregroundColorSelection = "#FFF";
             }
             else {
-                foregroundColorSelection = '#000';
+                foregroundColorSelection = "#000";
             }
         }
-        return { backgroundColorSelection: backgroundColorSelection, foregroundColorSelection: foregroundColorSelection };
+        return {
+            backgroundColorSelection: backgroundColorSelection,
+            foregroundColorSelection: foregroundColorSelection
+        };
     }
     function getModifiedSelectionStyle(theme) {
         var lines = [];
         var modifiedSelectionColor = getSelectionColor(theme);
         var backgroundColorSelection = modifiedSelectionColor.backgroundColorSelection;
         var foregroundColorSelection = modifiedSelectionColor.foregroundColorSelection;
-        ['::selection', '::-moz-selection'].forEach(function (selection) {
+        ["::selection", "::-moz-selection"].forEach(function (selection) {
             lines.push("".concat(selection, " {"));
             lines.push("    background-color: ".concat(backgroundColorSelection, " !important;"));
             lines.push("    color: ".concat(foregroundColorSelection, " !important;"));
-            lines.push('}');
+            lines.push("}");
         });
-        return lines.join('\n');
+        return lines.join("\n");
     }
     function getModifiedScrollbarStyle(theme) {
         var lines = [];
@@ -2978,7 +3381,7 @@ function InitGiscus() {
         var colorThumbHover;
         var colorThumbActive;
         var colorCorner;
-        if (theme.scrollbarColor === 'auto') {
+        if (theme.scrollbarColor === "auto") {
             colorTrack = modifyBackgroundColor({ r: 241, g: 241, b: 241 }, theme);
             colorIcons = modifyForegroundColor({ r: 96, g: 96, b: 96 }, theme);
             colorThumb = modifyBackgroundColor({ r: 176, g: 176, b: 176 }, theme);
@@ -2987,98 +3390,105 @@ function InitGiscus() {
             colorCorner = modifyBackgroundColor({ r: 255, g: 255, b: 255 }, theme);
         }
         else {
-            var rgb = parse(theme.scrollbarColor);
+            var rgb = parseColorWithCache(theme.scrollbarColor);
             var hsl_1 = rgbToHSL(rgb);
             var isLight = hsl_1.l > 0.5;
-            var lighten = function (lighter) { return (__assign(__assign({}, hsl_1), { l: clamp(hsl_1.l + lighter, 0, 1) })); };
-            var darken = function (darker) { return (__assign(__assign({}, hsl_1), { l: clamp(hsl_1.l - darker, 0, 1) })); };
+            var lighten = function (lighter) {
+                return __assign(__assign({}, hsl_1), {
+                    l: clamp(hsl_1.l + lighter, 0, 1)
+                });
+            };
+            var darken = function (darker) {
+                return __assign(__assign({}, hsl_1), {
+                    l: clamp(hsl_1.l - darker, 0, 1)
+                });
+            };
             colorTrack = hslToString(darken(0.4));
             colorIcons = hslToString(isLight ? darken(0.4) : lighten(0.4));
             colorThumb = hslToString(hsl_1);
             colorThumbHover = hslToString(lighten(0.1));
             colorThumbActive = hslToString(lighten(0.2));
         }
-        lines.push('::-webkit-scrollbar {');
+        lines.push("::-webkit-scrollbar {");
         lines.push("    background-color: ".concat(colorTrack, ";"));
         lines.push("    color: ".concat(colorIcons, ";"));
-        lines.push('}');
-        lines.push('::-webkit-scrollbar-thumb {');
+        lines.push("}");
+        lines.push("::-webkit-scrollbar-thumb {");
         lines.push("    background-color: ".concat(colorThumb, ";"));
-        lines.push('}');
-        lines.push('::-webkit-scrollbar-thumb:hover {');
+        lines.push("}");
+        lines.push("::-webkit-scrollbar-thumb:hover {");
         lines.push("    background-color: ".concat(colorThumbHover, ";"));
-        lines.push('}');
-        lines.push('::-webkit-scrollbar-thumb:active {');
+        lines.push("}");
+        lines.push("::-webkit-scrollbar-thumb:active {");
         lines.push("    background-color: ".concat(colorThumbActive, ";"));
-        lines.push('}');
-        lines.push('::-webkit-scrollbar-corner {');
+        lines.push("}");
+        lines.push("::-webkit-scrollbar-corner {");
         lines.push("    background-color: ".concat(colorCorner, ";"));
-        lines.push('}');
+        lines.push("}");
         if (isFirefox) {
-            lines.push('* {');
-            lines.push("    scrollbar-color: ".concat(colorThumb, " ").concat(colorTrack, ";"));
-            lines.push('}');
+            lines.push("* {");
+            lines.push("    scrollbar-color: "
+                .concat(colorThumb, " ")
+                .concat(colorTrack, ";"));
+            lines.push("}");
         }
-        return lines.join('\n');
+        return lines.join("\n");
     }
     function getModifiedFallbackStyle(filter, _a) {
         var strict = _a.strict;
         var lines = [];
-        var isMicrosoft = ['microsoft.com', 'docs.microsoft.com'].includes(location.hostname);
-        lines.push("html, body, ".concat(strict ? "body :not(iframe)".concat(isMicrosoft ? ':not(div[style^="position:absolute;top:0;left:-"]' : '') : 'body > :not(iframe)', " {"));
+        var isMicrosoft = ["microsoft.com", "docs.microsoft.com"].includes(location.hostname);
+        lines.push("html, body, ".concat(strict
+            ? "body :not(iframe)".concat(isMicrosoft
+                ? ':not(div[style^="position:absolute;top:0;left:-"]'
+                : "")
+            : "body > :not(iframe)", " {"));
         lines.push("    background-color: ".concat(modifyBackgroundColor({ r: 255, g: 255, b: 255 }, filter), " !important;"));
         lines.push("    border-color: ".concat(modifyBorderColor({ r: 64, g: 64, b: 64 }, filter), " !important;"));
         lines.push("    color: ".concat(modifyForegroundColor({ r: 0, g: 0, b: 0 }, filter), " !important;"));
-        lines.push('}');
-        return lines.join('\n');
+        lines.push("}");
+        return lines.join("\n");
     }
     var unparsableColors = new Set([
-        'inherit',
-        'transparent',
-        'initial',
-        'currentcolor',
-        'none',
-        'unset',
+        "inherit",
+        "transparent",
+        "initial",
+        "currentcolor",
+        "none",
+        "unset"
     ]);
-    var colorParseCache = new Map();
-    function parseColorWithCache($color) {
-        $color = $color.trim();
-        if (colorParseCache.has($color)) {
-            return colorParseCache.get($color);
-        }
-        if ($color.includes('calc(')) {
-            $color = lowerCalcExpression($color);
-        }
-        var color = parse($color);
-        colorParseCache.set($color, color);
-        return color;
-    }
-    function tryParseColor($color) {
-        try {
-            return parseColorWithCache($color);
-        }
-        catch (err) {
-            return null;
-        }
-    }
-    function getColorModifier(prop, value) {
+    function getColorModifier(prop, value, rule) {
         if (unparsableColors.has(value.toLowerCase())) {
             return value;
         }
-        try {
-            var rgb_1 = parseColorWithCache(value);
-            if (prop.includes('background')) {
-                return function (filter) { return modifyBackgroundColor(rgb_1, filter); };
-            }
-            if (prop.includes('border') || prop.includes('outline')) {
-                return function (filter) { return modifyBorderColor(rgb_1, filter); };
-            }
-            return function (filter) { return modifyForegroundColor(rgb_1, filter); };
-        }
-        catch (err) {
-            logWarn('Color parse error', err);
+        var rgb = parseColorWithCache(value);
+        if (!rgb) {
             return null;
         }
+        if (prop.includes("background")) {
+            if ((rule.style.webkitMaskImage &&
+                rule.style.webkitMaskImage !== "none") ||
+                (rule.style.webkitMask &&
+                    !rule.style.webkitMask.startsWith("none")) ||
+                (rule.style.mask && rule.style.mask !== "none") ||
+                (rule.style.getPropertyValue("mask-image") &&
+                    rule.style.getPropertyValue("mask-image") !== "none")) {
+                return function (filter) {
+                    return modifyForegroundColor(rgb, filter);
+                };
+            }
+            return function (filter) {
+                return modifyBackgroundColor(rgb, filter);
+            };
+        }
+        if (prop.includes("border") || prop.includes("outline")) {
+            return function (filter) {
+                return modifyBorderColor(rgb, filter);
+            };
+        }
+        return function (filter) {
+            return modifyForegroundColor(rgb, filter);
+        };
     }
     var imageDetailsCache = new Map();
     var awaitingForImageLoading = new Map();
@@ -3086,13 +3496,17 @@ function InitGiscus() {
         if (!selectorText || selectors.length === 0) {
             return false;
         }
-        if (selectors.some(function (s) { return s === '*'; })) {
+        if (selectors.some(function (s) {
+            return s === "*";
+        })) {
             return true;
         }
         var ruleSelectors = selectorText.split(/,\s*/g);
         var _loop_1 = function (i) {
             var ignoredSelector = selectors[i];
-            if (ruleSelectors.some(function (s) { return s === ignoredSelector; })) {
+            if (ruleSelectors.some(function (s) {
+                return s === ignoredSelector;
+            })) {
                 return { value: true };
             }
         };
@@ -3119,35 +3533,64 @@ function InitGiscus() {
                     return { match: match, index: valueIndex };
                 });
             };
-            var matches_1 = gradients.map(function (i) { return (__assign({ type: 'gradient' }, i)); })
-                .concat(getIndices(urls).map(function (i) { return (__assign({ type: 'url', offset: 0 }, i)); }))
-                .sort(function (a, b) { return a.index > b.index ? 1 : -1; });
+            var matches_1 = gradients
+                .map(function (i) {
+                return __assign({ type: "gradient" }, i);
+            })
+                .concat(getIndices(urls).map(function (i) {
+                return __assign({ type: "url", offset: 0 }, i);
+            }))
+                .sort(function (a, b) {
+                return a.index > b.index ? 1 : -1;
+            });
             var getGradientModifier_1 = function (gradient) {
                 var typeGradient = gradient.typeGradient, match = gradient.match, hasComma = gradient.hasComma;
-                var partsRegex = /([^\(\),]+(\([^\(\)]*(\([^\(\)]*\)*[^\(\)]*)?\))?[^\(\),]*),?/g;
+                var partsRegex = /([^\(\),]+(\([^\(\)]*(\([^\(\)]*\)*[^\(\)]*)?\))?([^\(\), ]|( (?!calc)))*),?/g;
                 var colorStopRegex = /^(from|color-stop|to)\(([^\(\)]*?,\s*)?(.*?)\)$/;
                 var parts = getMatches(partsRegex, match, 1).map(function (part) {
                     part = part.trim();
-                    var rgb = tryParseColor(part);
+                    var rgb = parseColorWithCache(part);
                     if (rgb) {
-                        return function (filter) { return modifyGradientColor(rgb, filter); };
+                        return function (filter) {
+                            return modifyGradientColor(rgb, filter);
+                        };
                     }
-                    var space = part.lastIndexOf(' ');
-                    rgb = tryParseColor(part.substring(0, space));
+                    var space = part.lastIndexOf(" ");
+                    rgb = parseColorWithCache(part.substring(0, space));
                     if (rgb) {
-                        return function (filter) { return "".concat(modifyGradientColor(rgb, filter), " ").concat(part.substring(space + 1)); };
+                        return function (filter) {
+                            return ""
+                                .concat(modifyGradientColor(rgb, filter), " ")
+                                .concat(part.substring(space + 1));
+                        };
                     }
                     var colorStopMatch = part.match(colorStopRegex);
                     if (colorStopMatch) {
-                        rgb = tryParseColor(colorStopMatch[3]);
+                        rgb = parseColorWithCache(colorStopMatch[3]);
                         if (rgb) {
-                            return function (filter) { return "".concat(colorStopMatch[1], "(").concat(colorStopMatch[2] ? "".concat(colorStopMatch[2], ", ") : '').concat(modifyGradientColor(rgb, filter), ")"); };
+                            return function (filter) {
+                                return ""
+                                    .concat(colorStopMatch[1], "(")
+                                    .concat(colorStopMatch[2]
+                                    ? "".concat(colorStopMatch[2], ", ")
+                                    : "")
+                                    .concat(modifyGradientColor(rgb, filter), ")");
+                            };
                         }
                     }
-                    return function () { return part; };
+                    return function () {
+                        return part;
+                    };
                 });
                 return function (filter) {
-                    return "".concat(typeGradient, "(").concat(parts.map(function (modify) { return modify(filter); }).join(', '), ")").concat(hasComma ? ', ' : '');
+                    return ""
+                        .concat(typeGradient, "(")
+                        .concat(parts
+                        .map(function (modify) {
+                        return modify(filter);
+                    })
+                        .join(", "), ")")
+                        .concat(hasComma ? ", " : "");
                 };
             };
             var getURLModifier_1 = function (urlValue) {
@@ -3156,18 +3599,25 @@ function InitGiscus() {
                     return null;
                 }
                 var url = getCSSURLValue(urlValue);
+                var isURLEmpty = url.length === 0;
                 var parentStyleSheet = rule.parentStyleSheet;
-                var baseURL = (parentStyleSheet && parentStyleSheet.href) ?
-                    getCSSBaseBath(parentStyleSheet.href) :
-                    ((_a = parentStyleSheet.ownerNode) === null || _a === void 0 ? void 0 : _a.baseURI) || location.origin;
+                var baseURL = parentStyleSheet && parentStyleSheet.href
+                    ? getCSSBaseBath(parentStyleSheet.href)
+                    : ((_a = parentStyleSheet.ownerNode) === null ||
+                        _a === void 0
+                        ? void 0
+                        : _a.baseURI) || location.origin;
                 url = getAbsoluteURL(baseURL, url);
-                var absoluteValue = "url(\"".concat(url, "\")");
+                var absoluteValue = 'url("'.concat(url, '")');
                 return function (filter) {
                     return __awaiter(_this, void 0, void 0, function () {
                         var imageDetails, awaiters_1, err_1, bgImageValue;
                         return __generator(this, function (_a) {
                             switch (_a.label) {
                                 case 0:
+                                    if (isURLEmpty) {
+                                        return [2, "url('')"];
+                                    }
                                     if (!imageDetailsCache.has(url))
                                         return [3, 1];
                                     imageDetails = imageDetailsCache.get(url);
@@ -3176,8 +3626,14 @@ function InitGiscus() {
                                     _a.trys.push([1, 6, , 7]);
                                     if (!awaitingForImageLoading.has(url))
                                         return [3, 3];
-                                    awaiters_1 = awaitingForImageLoading.get(url);
-                                    return [4, new Promise(function (resolve) { return awaiters_1.push(resolve); })];
+                                    awaiters_1 =
+                                        awaitingForImageLoading.get(url);
+                                    return [
+                                        4,
+                                        new Promise(function (resolve) {
+                                            return awaiters_1.push(resolve);
+                                        })
+                                    ];
                                 case 2:
                                     imageDetails = _a.sent();
                                     if (!imageDetails) {
@@ -3190,7 +3646,11 @@ function InitGiscus() {
                                 case 4:
                                     imageDetails = _a.sent();
                                     imageDetailsCache.set(url, imageDetails);
-                                    awaitingForImageLoading.get(url).forEach(function (resolve) { return resolve(imageDetails); });
+                                    awaitingForImageLoading
+                                        .get(url)
+                                        .forEach(function (resolve) {
+                                        return resolve(imageDetails);
+                                    });
                                     awaitingForImageLoading.delete(url);
                                     _a.label = 5;
                                 case 5:
@@ -3202,12 +3662,17 @@ function InitGiscus() {
                                     err_1 = _a.sent();
                                     logWarn(err_1);
                                     if (awaitingForImageLoading.has(url)) {
-                                        awaitingForImageLoading.get(url).forEach(function (resolve) { return resolve(null); });
+                                        awaitingForImageLoading
+                                            .get(url)
+                                            .forEach(function (resolve) {
+                                            return resolve(null);
+                                        });
                                         awaitingForImageLoading.delete(url);
                                     }
                                     return [2, absoluteValue];
                                 case 7:
-                                    bgImageValue = getBgImageValue_1(imageDetails, filter) || absoluteValue;
+                                    bgImageValue =
+                                        getBgImageValue_1(imageDetails, filter) || absoluteValue;
                                     return [2, bgImageValue];
                             }
                         });
@@ -3218,27 +3683,36 @@ function InitGiscus() {
                 var isDark = imageDetails.isDark, isLight = imageDetails.isLight, isTransparent = imageDetails.isTransparent, isLarge = imageDetails.isLarge, isTooLarge = imageDetails.isTooLarge, width = imageDetails.width;
                 var result;
                 if (isTooLarge) {
-                    result = "url(\"".concat(imageDetails.src, "\")");
+                    result = 'url("'.concat(imageDetails.src, '")');
                 }
-                else if (isDark && isTransparent && filter.mode === 1 && !isLarge && width > 2) {
+                else if (isDark &&
+                    isTransparent &&
+                    filter.mode === 1 &&
+                    !isLarge &&
+                    width > 2) {
                     logInfo("Inverting dark image ".concat(imageDetails.src));
-                    var inverted = getFilteredImageDataURL(imageDetails, __assign(__assign({}, filter), { sepia: clamp(filter.sepia + 10, 0, 100) }));
-                    result = "url(\"".concat(inverted, "\")");
+                    var inverted = getFilteredImageDataURL(imageDetails, __assign(__assign({}, filter), {
+                        sepia: clamp(filter.sepia + 10, 0, 100)
+                    }));
+                    result = 'url("'.concat(inverted, '")');
                 }
                 else if (isLight && !isTransparent && filter.mode === 1) {
                     if (isLarge) {
-                        result = 'none';
+                        result = "none";
                     }
                     else {
                         logInfo("Dimming light image ".concat(imageDetails.src));
                         var dimmed = getFilteredImageDataURL(imageDetails, filter);
-                        result = "url(\"".concat(dimmed, "\")");
+                        result = 'url("'.concat(dimmed, '")');
                     }
                 }
                 else if (filter.mode === 0 && isLight && !isLarge) {
                     logInfo("Applying filter to image ".concat(imageDetails.src));
-                    var filtered = getFilteredImageDataURL(imageDetails, __assign(__assign({}, filter), { brightness: clamp(filter.brightness - 10, 5, 200), sepia: clamp(filter.sepia + 10, 0, 100) }));
-                    result = "url(\"".concat(filtered, "\")");
+                    var filtered = getFilteredImageDataURL(imageDetails, __assign(__assign({}, filter), {
+                        brightness: clamp(filter.brightness - 10, 5, 200),
+                        sepia: clamp(filter.sepia + 10, 0, 100)
+                    }));
+                    result = 'url("'.concat(filtered, '")');
                 }
                 else {
                     result = null;
@@ -3247,66 +3721,112 @@ function InitGiscus() {
             };
             var modifiers_1 = [];
             var matchIndex_1 = 0;
+            var prevHasComma_1 = false;
             matches_1.forEach(function (_a, i) {
                 var type = _a.type, match = _a.match, index = _a.index, typeGradient = _a.typeGradient, hasComma = _a.hasComma, offset = _a.offset;
                 var matchStart = index;
                 var prefixStart = matchIndex_1;
                 var matchEnd = matchStart + match.length + offset;
                 matchIndex_1 = matchEnd;
-                prefixStart !== matchStart && modifiers_1.push(function () { return value.substring(prefixStart, matchStart); });
-                if (type === 'url') {
+                if (prefixStart !== matchStart) {
+                    if (prevHasComma_1) {
+                        modifiers_1.push(function () {
+                            var betweenValue = value.substring(prefixStart, matchStart);
+                            if (betweenValue[0] === ",") {
+                                betweenValue = betweenValue.substring(1);
+                            }
+                            return betweenValue;
+                        });
+                    }
+                    else {
+                        modifiers_1.push(function () {
+                            return value.substring(prefixStart, matchStart);
+                        });
+                    }
+                }
+                prevHasComma_1 = hasComma || false;
+                if (type === "url") {
                     modifiers_1.push(getURLModifier_1(match));
                 }
-                else if (type === 'gradient') {
-                    modifiers_1.push(getGradientModifier_1({ match: match, index: index, typeGradient: typeGradient, hasComma: hasComma, offset: offset }));
+                else if (type === "gradient") {
+                    modifiers_1.push(getGradientModifier_1({
+                        match: match,
+                        index: index,
+                        typeGradient: typeGradient,
+                        hasComma: hasComma,
+                        offset: offset
+                    }));
                 }
                 if (i === matches_1.length - 1) {
-                    modifiers_1.push(function () { return value.substring(matchEnd); });
+                    modifiers_1.push(function () {
+                        return value.substring(matchEnd);
+                    });
                 }
             });
             return function (filter) {
-                var results = modifiers_1.filter(Boolean).map(function (modify) { return modify(filter); });
-                if (results.some(function (r) { return r instanceof Promise; })) {
+                var results = modifiers_1
+                    .filter(Boolean)
+                    .map(function (modify) {
+                    return modify(filter);
+                });
+                if (results.some(function (r) {
+                    return r instanceof Promise;
+                })) {
                     return Promise.all(results).then(function (asyncResults) {
-                        return asyncResults.filter(Boolean).join('');
+                        return asyncResults.filter(Boolean).join("");
                     });
                 }
-                return results.join('');
+                var combinedResult = results.join("");
+                if (combinedResult.endsWith(", initial")) {
+                    return combinedResult.slice(0, -9);
+                }
+                return combinedResult;
             };
         }
         catch (err) {
-            logWarn("Unable to parse gradient ".concat(value), err);
             return null;
         }
     }
     function getShadowModifierWithInfo(value) {
         try {
             var index_1 = 0;
-            var colorMatches_1 = getMatches(/(^|\s)(?!calc)([a-z]+\(.+?\)|#[0-9a-f]+|[a-z]+)(.*?(inset|outset)?($|,))/ig, value, 2);
+            var colorMatches_1 = getMatches(/(^|\s)(?!calc)([a-z]+\(.+?\)|#[0-9a-f]+|[a-z]+)(.*?(inset|outset)?($|,))/gi, value, 2);
             var notParsed_1 = 0;
             var modifiers_2 = colorMatches_1.map(function (match, i) {
                 var prefixIndex = index_1;
                 var matchIndex = value.indexOf(match, index_1);
                 var matchEnd = matchIndex + match.length;
                 index_1 = matchEnd;
-                var rgb = tryParseColor(match);
+                var rgb = parseColorWithCache(match);
                 if (!rgb) {
                     notParsed_1++;
-                    return function () { return value.substring(prefixIndex, matchEnd); };
+                    return function () {
+                        return value.substring(prefixIndex, matchEnd);
+                    };
                 }
-                return function (filter) { return "".concat(value.substring(prefixIndex, matchIndex)).concat(modifyShadowColor(rgb, filter)).concat(i === colorMatches_1.length - 1 ? value.substring(matchEnd) : ''); };
+                return function (filter) {
+                    return ""
+                        .concat(value.substring(prefixIndex, matchIndex))
+                        .concat(modifyShadowColor(rgb, filter))
+                        .concat(i === colorMatches_1.length - 1
+                        ? value.substring(matchEnd)
+                        : "");
+                };
             });
             return function (filter) {
-                var modified = modifiers_2.map(function (modify) { return modify(filter); }).join('');
+                var modified = modifiers_2
+                    .map(function (modify) {
+                    return modify(filter);
+                })
+                    .join("");
                 return {
                     matchesLength: colorMatches_1.length,
                     unparseableMatchesLength: notParsed_1,
-                    result: modified,
+                    result: modified
                 };
             };
         }
         catch (err) {
-            logWarn("Unable to parse shadow ".concat(value), err);
             return null;
         }
     }
@@ -3315,7 +3835,9 @@ function InitGiscus() {
         if (!shadowModifier) {
             return null;
         }
-        return function (theme) { return shadowModifier(theme).result; };
+        return function (theme) {
+            return shadowModifier(theme).result;
+        };
     }
     function getVariableModifier(variablesStore, prop, value, rule, ignoredImgSelectors, isCancelled) {
         return variablesStore.getModifierForVariable({
@@ -3323,14 +3845,13 @@ function InitGiscus() {
             sourceValue: value,
             rule: rule,
             ignoredImgSelectors: ignoredImgSelectors,
-            isCancelled: isCancelled,
+            isCancelled: isCancelled
         });
     }
     function getVariableDependantModifier(variablesStore, prop, value) {
         return variablesStore.getModifierForVarDependant(prop, value);
     }
     function cleanModificationCache() {
-        colorParseCache.clear();
         clearColorModificationCache();
         imageDetailsCache.clear();
         cleanImageProcessingCache();
@@ -3395,7 +3916,9 @@ function InitGiscus() {
                     _this.unknownBgVars.delete(v);
                     _this.resolveVariableType(v, VAR_TYPE_BGCOLOR);
                 }
-                else if (_this.isVarType(v, VAR_TYPE_BGCOLOR | VAR_TYPE_TEXTCOLOR | VAR_TYPE_BORDERCOLOR)) {
+                else if (_this.isVarType(v, VAR_TYPE_BGCOLOR |
+                    VAR_TYPE_TEXTCOLOR |
+                    VAR_TYPE_BORDERCOLOR)) {
                     _this.unknownColorVars.delete(v);
                 }
                 else {
@@ -3446,12 +3969,19 @@ function InitGiscus() {
                             if (isConstructedColorVar(sourceValue)) {
                                 var value = insertVarValues(sourceValue, _this.unstableVarValues);
                                 if (!value) {
-                                    value = typeNum === VAR_TYPE_BGCOLOR ? '#ffffff' : '#000000';
+                                    value =
+                                        typeNum === VAR_TYPE_BGCOLOR
+                                            ? "#ffffff"
+                                            : "#000000";
                                 }
                                 modifiedValue = colorModifier(value, theme);
                             }
                             else {
-                                modifiedValue = replaceCSSVariablesNames(sourceValue, function (v) { return varNameWrapper(v); }, function (fallback) { return colorModifier(fallback, theme); });
+                                modifiedValue = replaceCSSVariablesNames(sourceValue, function (v) {
+                                    return varNameWrapper(v);
+                                }, function (fallback) {
+                                    return colorModifier(fallback, theme);
+                                });
                             }
                         }
                         else {
@@ -3459,7 +3989,7 @@ function InitGiscus() {
                         }
                         declarations.push({
                             property: property,
-                            value: modifiedValue,
+                            value: modifiedValue
                         });
                     };
                     addModifiedValue(VAR_TYPE_BGCOLOR, wrapBgColorVariableName, tryModifyBgColor);
@@ -3469,13 +3999,20 @@ function InitGiscus() {
                         var property = wrapBgImgVariableName(varName);
                         var modifiedValue = sourceValue;
                         if (isVarDependant(sourceValue)) {
-                            modifiedValue = replaceCSSVariablesNames(sourceValue, function (v) { return wrapBgColorVariableName(v); }, function (fallback) { return tryModifyBgColor(fallback, theme); });
+                            modifiedValue = replaceCSSVariablesNames(sourceValue, function (v) {
+                                return wrapBgColorVariableName(v);
+                            }, function (fallback) {
+                                return tryModifyBgColor(fallback, theme);
+                            });
                         }
                         var bgModifier = getBgImageModifier(modifiedValue, rule, ignoredImgSelectors, isCancelled);
-                        modifiedValue = typeof bgModifier === 'function' ? bgModifier(theme) : bgModifier;
+                        modifiedValue =
+                            typeof bgModifier === "function"
+                                ? bgModifier(theme)
+                                : bgModifier;
                         declarations.push({
                             property: property,
-                            value: modifiedValue,
+                            value: modifiedValue
                         });
                     }
                     return declarations;
@@ -3496,35 +4033,52 @@ function InitGiscus() {
                 };
                 return {
                     declarations: getDeclarations(),
-                    onTypeChange: { addListener: addListener, removeListeners: removeListeners },
+                    onTypeChange: {
+                        addListener: addListener,
+                        removeListeners: removeListeners
+                    }
                 };
             };
         };
         VariablesStore.prototype.getModifierForVarDependant = function (property, sourceValue) {
             var _this = this;
             if (sourceValue.match(/^\s*(rgb|hsl)a?\(/)) {
-                var isBg_1 = property.startsWith('background');
-                var isText_1 = (property === 'color' || property === 'caret-color');
+                var isBg_1 = property.startsWith("background");
+                var isText_1 = isTextColorProperty(property);
                 return function (theme) {
                     var value = insertVarValues(sourceValue, _this.unstableVarValues);
                     if (!value) {
-                        value = isBg_1 ? '#ffffff' : '#000000';
+                        value = isBg_1 ? "#ffffff" : "#000000";
                     }
-                    var modifier = isBg_1 ? tryModifyBgColor : isText_1 ? tryModifyTextColor : tryModifyBorderColor;
+                    var modifier = isBg_1
+                        ? tryModifyBgColor
+                        : isText_1
+                            ? tryModifyTextColor
+                            : tryModifyBorderColor;
                     return modifier(value, theme);
                 };
             }
-            if (property === 'background-color') {
+            if (property === "background-color") {
                 return function (theme) {
-                    return replaceCSSVariablesNames(sourceValue, function (v) { return wrapBgColorVariableName(v); }, function (fallback) { return tryModifyBgColor(fallback, theme); });
+                    return replaceCSSVariablesNames(sourceValue, function (v) {
+                        return wrapBgColorVariableName(v);
+                    }, function (fallback) {
+                        return tryModifyBgColor(fallback, theme);
+                    });
                 };
             }
-            if (property === 'color' || property === 'caret-color') {
+            if (isTextColorProperty(property)) {
                 return function (theme) {
-                    return replaceCSSVariablesNames(sourceValue, function (v) { return wrapTextColorVariableName(v); }, function (fallback) { return tryModifyTextColor(fallback, theme); });
+                    return replaceCSSVariablesNames(sourceValue, function (v) {
+                        return wrapTextColorVariableName(v);
+                    }, function (fallback) {
+                        return tryModifyTextColor(fallback, theme);
+                    });
                 };
             }
-            if (property === 'background' || property === 'background-image' || property === 'box-shadow') {
+            if (property === "background" ||
+                property === "background-image" ||
+                property === "box-shadow") {
                 return function (theme) {
                     var unknownVars = new Set();
                     var modify = function () {
@@ -3537,11 +4091,14 @@ function InitGiscus() {
                             }
                             unknownVars.add(v);
                             return v;
-                        }, function (fallback) { return tryModifyBgColor(fallback, theme); });
-                        if (property === 'box-shadow') {
+                        }, function (fallback) {
+                            return tryModifyBgColor(fallback, theme);
+                        });
+                        if (property === "box-shadow") {
                             var shadowModifier = getShadowModifierWithInfo(variableReplaced);
                             var modifiedShadow = shadowModifier(theme);
-                            if (modifiedShadow.unparseableMatchesLength !== modifiedShadow.matchesLength) {
+                            if (modifiedShadow.unparseableMatchesLength !==
+                                modifiedShadow.matchesLength) {
                                 return modifiedShadow.result;
                             }
                         }
@@ -3550,7 +4107,9 @@ function InitGiscus() {
                     var modified = modify();
                     if (unknownVars.size > 0) {
                         return new Promise(function (resolve) {
-                            var firstUnknownVar = unknownVars.values().next().value;
+                            var firstUnknownVar = unknownVars
+                                .values()
+                                .next().value;
                             var callback = function () {
                                 _this.unsubscribeFromVariableTypeChanges(firstUnknownVar, callback);
                                 var newValue = modify();
@@ -3562,9 +4121,14 @@ function InitGiscus() {
                     return modified;
                 };
             }
-            if (property.startsWith('border') || property.startsWith('outline')) {
+            if (property.startsWith("border") ||
+                property.startsWith("outline")) {
                 return function (theme) {
-                    return replaceCSSVariablesNames(sourceValue, function (v) { return wrapBorderColorVariableName(v); }, function (fallback) { return tryModifyBorderColor(fallback, theme); });
+                    return replaceCSSVariablesNames(sourceValue, function (v) {
+                        return wrapBorderColorVariableName(v);
+                    }, function (fallback) {
+                        return tryModifyBorderColor(fallback, theme);
+                    });
                 };
             }
             return null;
@@ -3587,14 +4151,15 @@ function InitGiscus() {
             var _this = this;
             ruleList.forEach(function (rules) {
                 iterateCSSRules(rules, function (rule) {
-                    rule.style && iterateCSSDeclarations(rule.style, function (property, value) {
-                        if (isVariable(property)) {
-                            _this.inspectVariable(property, value);
-                        }
-                        if (isVarDependant(value)) {
-                            _this.inspectVarDependant(property, value);
-                        }
-                    });
+                    rule.style &&
+                        iterateCSSDeclarations(rule.style, function (property, value) {
+                            if (isVariable(property)) {
+                                _this.inspectVariable(property, value);
+                            }
+                            if (isVarDependant(value)) {
+                                _this.inspectVarDependant(property, value);
+                            }
+                        });
                 });
             });
         };
@@ -3616,13 +4181,13 @@ function InitGiscus() {
                 return;
             }
             this.definedVars.add(varName);
-            var color = tryParseColor(value);
+            var color = parseColorWithCache(value);
             if (color) {
                 this.unknownColorVars.add(varName);
             }
-            else if (value.includes('url(') ||
-                value.includes('linear-gradient(') ||
-                value.includes('radial-gradient(')) {
+            else if (value.includes("url(") ||
+                value.includes("linear-gradient(") ||
+                value.includes("radial-gradient(")) {
                 this.resolveVariableType(varName, VAR_TYPE_BGIMG);
             }
         };
@@ -3656,16 +4221,25 @@ function InitGiscus() {
                     _this.varRefs.get(property).add(ref);
                 });
             }
-            else if (property === 'background-color' || property === 'box-shadow') {
-                this.iterateVarDeps(value, function (v) { return _this.resolveVariableType(v, VAR_TYPE_BGCOLOR); });
+            else if (property === "background-color" ||
+                property === "box-shadow") {
+                this.iterateVarDeps(value, function (v) {
+                    return _this.resolveVariableType(v, VAR_TYPE_BGCOLOR);
+                });
             }
-            else if (property === 'color' || property === 'caret-color') {
-                this.iterateVarDeps(value, function (v) { return _this.resolveVariableType(v, VAR_TYPE_TEXTCOLOR); });
+            else if (isTextColorProperty(property)) {
+                this.iterateVarDeps(value, function (v) {
+                    return _this.resolveVariableType(v, VAR_TYPE_TEXTCOLOR);
+                });
             }
-            else if (property.startsWith('border') || property.startsWith('outline')) {
-                this.iterateVarDeps(value, function (v) { return _this.resolveVariableType(v, VAR_TYPE_BORDERCOLOR); });
+            else if (property.startsWith("border") ||
+                property.startsWith("outline")) {
+                this.iterateVarDeps(value, function (v) {
+                    return _this.resolveVariableType(v, VAR_TYPE_BORDERCOLOR);
+                });
             }
-            else if (property === 'background' || property === 'background-image') {
+            else if (property === "background" ||
+                property === "background-image") {
                 this.iterateVarDeps(value, function (v) {
                     if (_this.isVarType(v, VAR_TYPE_BGCOLOR | VAR_TYPE_BGIMG)) {
                         return;
@@ -3687,8 +4261,12 @@ function InitGiscus() {
         };
         VariablesStore.prototype.iterateVarDeps = function (value, iterator) {
             var varDeps = new Set();
-            iterateVarDependencies(value, function (v) { return varDeps.add(v); });
-            varDeps.forEach(function (v) { return iterator(v); });
+            iterateVarDependencies(value, function (v) {
+                return varDeps.add(v);
+            });
+            varDeps.forEach(function (v) {
+                return iterator(v);
+            });
         };
         VariablesStore.prototype.findVarRef = function (varName, iterator, stack) {
             var e_1, _a;
@@ -3763,7 +4341,7 @@ function InitGiscus() {
                 }
             });
             var cssLines = [];
-            cssLines.push(':root {');
+            cssLines.push(":root {");
             try {
                 for (var declarations_1 = __values(declarations), declarations_1_1 = declarations_1.next(); !declarations_1_1.done; declarations_1_1 = declarations_1.next()) {
                     var _b = __read(declarations_1_1.value, 2), property = _b[0], value = _b[1];
@@ -3775,7 +4353,9 @@ function InitGiscus() {
             }
             finally {
                 try {
-                    if (declarations_1_1 && !declarations_1_1.done && (_a = declarations_1.return))
+                    if (declarations_1_1 &&
+                        !declarations_1_1.done &&
+                        (_a = declarations_1.return))
                         _a.call(declarations_1);
                 }
                 finally {
@@ -3783,18 +4363,18 @@ function InitGiscus() {
                         throw e_2.error;
                 }
             }
-            cssLines.push('}');
-            var cssText = cssLines.join('\n');
+            cssLines.push("}");
+            var cssText = cssLines.join("\n");
             sheet.insertRule(cssText);
         };
         return VariablesStore;
-    }());
+    })();
     var variablesStore = new VariablesStore();
     function getVariableRange(input, searchStart) {
         if (searchStart === void 0) {
             searchStart = 0;
         }
-        var start = input.indexOf('var(', searchStart);
+        var start = input.indexOf("var(", searchStart);
         if (start >= 0) {
             var range = getParenthesesRange(input, start + 3);
             if (range) {
@@ -3809,7 +4389,11 @@ function InitGiscus() {
         var range;
         while ((range = getVariableRange(input, i))) {
             var start = range.start, end = range.end;
-            ranges.push({ start: start, end: end, value: input.substring(start, end) });
+            ranges.push({
+                start: start,
+                end: end,
+                value: input.substring(start, end)
+            });
             i = range.end + 1;
         }
         return ranges;
@@ -3821,7 +4405,9 @@ function InitGiscus() {
             return input;
         }
         var inputLength = input.length;
-        var replacements = matches.map(function (m) { return replacer(m.value); });
+        var replacements = matches.map(function (m) {
+            return replacer(m.value);
+        });
         var parts = [];
         parts.push(input.substring(0, matches[0].start));
         for (var i = 0; i < matchesCount; i++) {
@@ -3830,10 +4416,10 @@ function InitGiscus() {
             var end = i < matchesCount - 1 ? matches[i + 1].start : inputLength;
             parts.push(input.substring(start, end));
         }
-        return parts.join('');
+        return parts.join("");
     }
     function getVariableNameAndFallback(match) {
-        var commaIndex = match.indexOf(',');
+        var commaIndex = match.indexOf(",");
         var name;
         var fallback;
         if (commaIndex >= 0) {
@@ -3842,7 +4428,7 @@ function InitGiscus() {
         }
         else {
             name = match.substring(4, match.length - 1).trim();
-            fallback = '';
+            fallback = "";
         }
         return { name: name, fallback: fallback };
     }
@@ -3886,36 +4472,46 @@ function InitGiscus() {
         return "--darkreader-bgimg".concat(name);
     }
     function isVariable(property) {
-        return property.startsWith('--');
+        return property.startsWith("--");
     }
     function isVarDependant(value) {
-        return value.includes('var(');
+        return value.includes("var(");
     }
     function isConstructedColorVar(value) {
         return value.match(/^\s*(rgb|hsl)a?\(/);
     }
+    function isTextColorProperty(property) {
+        return (property === "color" ||
+            property === "caret-color" ||
+            property === "-webkit-text-fill-color");
+    }
     var rawValueRegex = /^\d{1,3}, ?\d{1,3}, ?\d{1,3}$/;
     function parseRawValue(color) {
         if (rawValueRegex.test(color)) {
-            var splitted = color.split(',');
-            var resultInRGB_1 = 'rgb(';
+            var splitted = color.split(",");
+            var resultInRGB_1 = "rgb(";
             splitted.forEach(function (number) {
                 resultInRGB_1 += "".concat(number.trim(), ", ");
             });
             resultInRGB_1 = resultInRGB_1.substring(0, resultInRGB_1.length - 2);
-            resultInRGB_1 += ')';
+            resultInRGB_1 += ")";
             return { isRaw: true, color: resultInRGB_1 };
         }
         return { isRaw: false, color: color };
     }
     function handleRawValue(color, theme, modifyFunction) {
         var _a = parseRawValue(color), isRaw = _a.isRaw, newColor = _a.color;
-        var rgb = tryParseColor(newColor);
+        var rgb = parseColorWithCache(newColor);
         if (rgb) {
             var outputColor = modifyFunction(rgb, theme);
             if (isRaw) {
-                var outputInRGB = tryParseColor(outputColor);
-                return outputInRGB ? "".concat(outputInRGB.r, ", ").concat(outputInRGB.g, ", ").concat(outputInRGB.b) : outputColor;
+                var outputInRGB = parseColorWithCache(outputColor);
+                return outputInRGB
+                    ? ""
+                        .concat(outputInRGB.r, ", ")
+                        .concat(outputInRGB.g, ", ")
+                        .concat(outputInRGB.b)
+                    : outputColor;
             }
             return outputColor;
         }
@@ -3965,96 +4561,111 @@ function InitGiscus() {
         return replaced;
     }
     var overrides = {
-        'background-color': {
-            customProp: '--darkreader-inline-bgcolor',
-            cssProp: 'background-color',
-            dataAttr: 'data-darkreader-inline-bgcolor',
+        "background-color": {
+            customProp: "--darkreader-inline-bgcolor",
+            cssProp: "background-color",
+            dataAttr: "data-darkreader-inline-bgcolor"
         },
-        'background-image': {
-            customProp: '--darkreader-inline-bgimage',
-            cssProp: 'background-image',
-            dataAttr: 'data-darkreader-inline-bgimage',
+        "background-image": {
+            customProp: "--darkreader-inline-bgimage",
+            cssProp: "background-image",
+            dataAttr: "data-darkreader-inline-bgimage"
         },
-        'border-color': {
-            customProp: '--darkreader-inline-border',
-            cssProp: 'border-color',
-            dataAttr: 'data-darkreader-inline-border',
+        "border-color": {
+            customProp: "--darkreader-inline-border",
+            cssProp: "border-color",
+            dataAttr: "data-darkreader-inline-border"
         },
-        'border-bottom-color': {
-            customProp: '--darkreader-inline-border-bottom',
-            cssProp: 'border-bottom-color',
-            dataAttr: 'data-darkreader-inline-border-bottom',
+        "border-bottom-color": {
+            customProp: "--darkreader-inline-border-bottom",
+            cssProp: "border-bottom-color",
+            dataAttr: "data-darkreader-inline-border-bottom"
         },
-        'border-left-color': {
-            customProp: '--darkreader-inline-border-left',
-            cssProp: 'border-left-color',
-            dataAttr: 'data-darkreader-inline-border-left',
+        "border-left-color": {
+            customProp: "--darkreader-inline-border-left",
+            cssProp: "border-left-color",
+            dataAttr: "data-darkreader-inline-border-left"
         },
-        'border-right-color': {
-            customProp: '--darkreader-inline-border-right',
-            cssProp: 'border-right-color',
-            dataAttr: 'data-darkreader-inline-border-right',
+        "border-right-color": {
+            customProp: "--darkreader-inline-border-right",
+            cssProp: "border-right-color",
+            dataAttr: "data-darkreader-inline-border-right"
         },
-        'border-top-color': {
-            customProp: '--darkreader-inline-border-top',
-            cssProp: 'border-top-color',
-            dataAttr: 'data-darkreader-inline-border-top',
+        "border-top-color": {
+            customProp: "--darkreader-inline-border-top",
+            cssProp: "border-top-color",
+            dataAttr: "data-darkreader-inline-border-top"
         },
-        'box-shadow': {
-            customProp: '--darkreader-inline-boxshadow',
-            cssProp: 'box-shadow',
-            dataAttr: 'data-darkreader-inline-boxshadow',
+        "box-shadow": {
+            customProp: "--darkreader-inline-boxshadow",
+            cssProp: "box-shadow",
+            dataAttr: "data-darkreader-inline-boxshadow"
         },
-        'color': {
-            customProp: '--darkreader-inline-color',
-            cssProp: 'color',
-            dataAttr: 'data-darkreader-inline-color',
+        "color": {
+            customProp: "--darkreader-inline-color",
+            cssProp: "color",
+            dataAttr: "data-darkreader-inline-color"
         },
-        'fill': {
-            customProp: '--darkreader-inline-fill',
-            cssProp: 'fill',
-            dataAttr: 'data-darkreader-inline-fill',
+        "fill": {
+            customProp: "--darkreader-inline-fill",
+            cssProp: "fill",
+            dataAttr: "data-darkreader-inline-fill"
         },
-        'stroke': {
-            customProp: '--darkreader-inline-stroke',
-            cssProp: 'stroke',
-            dataAttr: 'data-darkreader-inline-stroke',
+        "stroke": {
+            customProp: "--darkreader-inline-stroke",
+            cssProp: "stroke",
+            dataAttr: "data-darkreader-inline-stroke"
         },
-        'outline-color': {
-            customProp: '--darkreader-inline-outline',
-            cssProp: 'outline-color',
-            dataAttr: 'data-darkreader-inline-outline',
+        "outline-color": {
+            customProp: "--darkreader-inline-outline",
+            cssProp: "outline-color",
+            dataAttr: "data-darkreader-inline-outline"
         },
-        'stop-color': {
-            customProp: '--darkreader-inline-stopcolor',
-            cssProp: 'stop-color',
-            dataAttr: 'data-darkreader-inline-stopcolor',
-        },
+        "stop-color": {
+            customProp: "--darkreader-inline-stopcolor",
+            cssProp: "stop-color",
+            dataAttr: "data-darkreader-inline-stopcolor"
+        }
     };
     var overridesList = Object.values(overrides);
     var normalizedPropList = {};
     overridesList.forEach(function (_a) {
         var cssProp = _a.cssProp, customProp = _a.customProp;
-        return normalizedPropList[customProp] = cssProp;
+        return (normalizedPropList[customProp] = cssProp);
     });
-    var INLINE_STYLE_ATTRS = ['style', 'fill', 'stop-color', 'stroke', 'bgcolor', 'color'];
-    var INLINE_STYLE_SELECTOR = INLINE_STYLE_ATTRS.map(function (attr) { return "[".concat(attr, "]"); }).join(', ');
+    var INLINE_STYLE_ATTRS = [
+        "style",
+        "fill",
+        "stop-color",
+        "stroke",
+        "bgcolor",
+        "color"
+    ];
+    var INLINE_STYLE_SELECTOR = INLINE_STYLE_ATTRS.map(function (attr) {
+        return "[".concat(attr, "]");
+    }).join(", ");
     function getInlineOverrideStyle() {
-        return overridesList.map(function (_a) {
+        return overridesList
+            .map(function (_a) {
             var dataAttr = _a.dataAttr, customProp = _a.customProp, cssProp = _a.cssProp;
             return [
                 "[".concat(dataAttr, "] {"),
-                "  ".concat(cssProp, ": var(").concat(customProp, ") !important;"),
-                '}',
-            ].join('\n');
-        }).join('\n');
+                "  "
+                    .concat(cssProp, ": var(")
+                    .concat(customProp, ") !important;"),
+                "}"
+            ].join("\n");
+        })
+            .join("\n");
     }
     function getInlineStyleElements(root) {
         var results = [];
         if (root instanceof Element && root.matches(INLINE_STYLE_SELECTOR)) {
             results.push(root);
         }
-        if (root instanceof Element || (isShadowDomSupported && root instanceof ShadowRoot) || root instanceof Document) {
+        if (root instanceof Element ||
+            (isShadowDomSupported && root instanceof ShadowRoot) ||
+            root instanceof Document) {
             push(results, root.querySelectorAll(INLINE_STYLE_SELECTOR));
         }
         return results;
@@ -4093,11 +4704,13 @@ function InitGiscus() {
         var treeObserver = createOptimizedTreeObserver(root, {
             onMinorMutations: function (_a) {
                 var additions = _a.additions;
-                additions.forEach(function (added) { return discoverNodes(added); });
+                additions.forEach(function (added) {
+                    return discoverNodes(added);
+                });
             },
             onHugeMutations: function () {
                 discoverNodes(root);
-            },
+            }
         });
         treeObservers.set(root, treeObserver);
         var attemptCount = 0;
@@ -4148,23 +4761,30 @@ function InitGiscus() {
                 var dataAttr = _a.dataAttr;
                 return dataAttr;
             })),
-            subtree: true,
+            subtree: true
         });
         attrObservers.set(root, attrObserver);
     }
     function stopWatchingForInlineStyles() {
-        treeObservers.forEach(function (o) { return o.disconnect(); });
-        attrObservers.forEach(function (o) { return o.disconnect(); });
+        treeObservers.forEach(function (o) {
+            return o.disconnect();
+        });
+        attrObservers.forEach(function (o) {
+            return o.disconnect();
+        });
         treeObservers.clear();
         attrObservers.clear();
     }
     var inlineStyleCache = new WeakMap();
-    var filterProps = ['brightness', 'contrast', 'grayscale', 'sepia', 'mode'];
+    var filterProps = ["brightness", "contrast", "grayscale", "sepia", "mode"];
     function getInlineStyleCacheKey(el, theme) {
-        return INLINE_STYLE_ATTRS
-            .map(function (attr) { return "".concat(attr, "=\"").concat(el.getAttribute(attr), "\""); })
-            .concat(filterProps.map(function (prop) { return "".concat(prop, "=\"").concat(theme[prop], "\""); }))
-            .join(' ');
+        return INLINE_STYLE_ATTRS.map(function (attr) {
+            return "".concat(attr, '="').concat(el.getAttribute(attr), '"');
+        })
+            .concat(filterProps.map(function (prop) {
+            return "".concat(prop, '="').concat(theme[prop], '"');
+        }))
+            .join(" ");
     }
     function shouldIgnoreInlineStyle(element, selectors) {
         for (var i = 0, len = selectors.length; i < len; i++) {
@@ -4182,27 +4802,28 @@ function InitGiscus() {
         }
         var unsetProps = new Set(Object.keys(overrides));
         function setCustomProp(targetCSSProp, modifierCSSProp, cssVal) {
-            var isPropertyVariable = targetCSSProp.startsWith('--');
+            var isPropertyVariable = targetCSSProp.startsWith("--");
             var _a = isPropertyVariable ? {} : overrides[targetCSSProp], customProp = _a.customProp, dataAttr = _a.dataAttr;
-            var mod = getModifiableCSSDeclaration(modifierCSSProp, cssVal, {}, variablesStore, ignoreImageSelectors, null);
+            var mod = getModifiableCSSDeclaration(modifierCSSProp, cssVal, { style: element.style }, variablesStore, ignoreImageSelectors, null);
             if (!mod) {
                 return;
             }
             var value = mod.value;
-            if (typeof value === 'function') {
+            if (typeof value === "function") {
                 value = value(theme);
             }
-            if (isPropertyVariable && typeof value === 'object') {
+            if (isPropertyVariable && typeof value === "object") {
                 var typedValue = value;
                 typedValue.declarations.forEach(function (_a) {
                     var property = _a.property, value = _a.value;
-                    !(value instanceof Promise) && element.style.setProperty(property, value);
+                    !(value instanceof Promise) &&
+                        element.style.setProperty(property, value);
                 });
             }
             else {
                 element.style.setProperty(customProp, value);
                 if (!element.hasAttribute(dataAttr)) {
-                    element.setAttribute(dataAttr, '');
+                    element.setAttribute(dataAttr, "");
                 }
                 unsetProps.delete(targetCSSProp);
             }
@@ -4215,30 +4836,33 @@ function InitGiscus() {
                 return;
             }
         }
-        if (element.hasAttribute('bgcolor')) {
-            var value = element.getAttribute('bgcolor');
-            if (value.match(/^[0-9a-f]{3}$/i) || value.match(/^[0-9a-f]{6}$/i)) {
+        if (element.hasAttribute("bgcolor")) {
+            var value = element.getAttribute("bgcolor");
+            if (value.match(/^[0-9a-f]{3}$/i) ||
+                value.match(/^[0-9a-f]{6}$/i)) {
                 value = "#".concat(value);
             }
-            setCustomProp('background-color', 'background-color', value);
+            setCustomProp("background-color", "background-color", value);
         }
-        if (element.hasAttribute('color') && element.rel !== 'mask-icon') {
-            var value = element.getAttribute('color');
-            if (value.match(/^[0-9a-f]{3}$/i) || value.match(/^[0-9a-f]{6}$/i)) {
+        if (element.hasAttribute("color") && element.rel !== "mask-icon") {
+            var value = element.getAttribute("color");
+            if (value.match(/^[0-9a-f]{3}$/i) ||
+                value.match(/^[0-9a-f]{6}$/i)) {
                 value = "#".concat(value);
             }
-            setCustomProp('color', 'color', value);
+            setCustomProp("color", "color", value);
         }
         if (element instanceof SVGElement) {
-            if (element.hasAttribute('fill')) {
+            if (element.hasAttribute("fill")) {
                 var SMALL_SVG_LIMIT_1 = 32;
-                var value_1 = element.getAttribute('fill');
-                if (value_1 !== 'none') {
+                var value_1 = element.getAttribute("fill");
+                if (value_1 !== "none") {
                     if (!(element instanceof SVGTextElement)) {
                         var handleSVGElement = function () {
                             var _a = element.getBoundingClientRect(), width = _a.width, height = _a.height;
-                            var isBg = (width > SMALL_SVG_LIMIT_1 || height > SMALL_SVG_LIMIT_1);
-                            setCustomProp('fill', isBg ? 'background-color' : 'color', value_1);
+                            var isBg = width > SMALL_SVG_LIMIT_1 ||
+                                height > SMALL_SVG_LIMIT_1;
+                            setCustomProp("fill", isBg ? "background-color" : "color", value_1);
                         };
                         if (isReadyStateComplete()) {
                             handleSVGElement();
@@ -4248,57 +4872,64 @@ function InitGiscus() {
                         }
                     }
                     else {
-                        setCustomProp('fill', 'color', value_1);
+                        setCustomProp("fill", "color", value_1);
                     }
                 }
             }
-            if (element.hasAttribute('stop-color')) {
-                setCustomProp('stop-color', 'background-color', element.getAttribute('stop-color'));
+            if (element.hasAttribute("stop-color")) {
+                setCustomProp("stop-color", "background-color", element.getAttribute("stop-color"));
             }
         }
-        if (element.hasAttribute('stroke')) {
-            var value = element.getAttribute('stroke');
-            setCustomProp('stroke', element instanceof SVGLineElement || element instanceof SVGTextElement ? 'border-color' : 'color', value);
+        if (element.hasAttribute("stroke")) {
+            var value = element.getAttribute("stroke");
+            setCustomProp("stroke", element instanceof SVGLineElement ||
+                element instanceof SVGTextElement
+                ? "border-color"
+                : "color", value);
         }
-        element.style && iterateCSSDeclarations(element.style, function (property, value) {
-            if (property === 'background-image' && value.includes('url')) {
-                return;
-            }
-            if (overrides.hasOwnProperty(property) || (property.startsWith('--') && !normalizedPropList[property])) {
-                setCustomProp(property, property, value);
-            }
-            else {
-                var overridenProp = normalizedPropList[property];
-                if (overridenProp &&
-                    (!element.style.getPropertyValue(overridenProp) && !element.hasAttribute(overridenProp))) {
-                    if (overridenProp === 'background-color' && element.hasAttribute('bgcolor')) {
-                        return;
-                    }
-                    element.style.setProperty(property, '');
+        element.style &&
+            iterateCSSDeclarations(element.style, function (property, value) {
+                if (property === "background-image" && value.includes("url")) {
+                    return;
                 }
-            }
-        });
-        if (element.style && element instanceof SVGTextElement && element.style.fill) {
-            setCustomProp('fill', 'color', element.style.getPropertyValue('fill'));
+                if (overrides.hasOwnProperty(property) ||
+                    (property.startsWith("--") && !normalizedPropList[property])) {
+                    setCustomProp(property, property, value);
+                }
+                else {
+                    var overridenProp = normalizedPropList[property];
+                    if (overridenProp &&
+                        !element.style.getPropertyValue(overridenProp) &&
+                        !element.hasAttribute(overridenProp)) {
+                        if (overridenProp === "background-color" &&
+                            element.hasAttribute("bgcolor")) {
+                            return;
+                        }
+                        element.style.setProperty(property, "");
+                    }
+                }
+            });
+        if (element.style &&
+            element instanceof SVGTextElement &&
+            element.style.fill) {
+            setCustomProp("fill", "color", element.style.getPropertyValue("fill"));
         }
         forEach(unsetProps, function (cssProp) {
             element.removeAttribute(overrides[cssProp].dataAttr);
         });
         inlineStyleCache.set(element, getInlineStyleCacheKey(element, theme));
     }
-    var metaThemeColorName = 'theme-color';
-    var metaThemeColorSelector = "meta[name=\"".concat(metaThemeColorName, "\"]");
+    var metaThemeColorName = "theme-color";
+    var metaThemeColorSelector = 'meta[name="'.concat(metaThemeColorName, '"]');
     var srcMetaThemeColor = null;
     var observer = null;
     function changeMetaThemeColor(meta, theme) {
         srcMetaThemeColor = srcMetaThemeColor || meta.content;
-        try {
-            var color = parse(srcMetaThemeColor);
-            meta.content = modifyBackgroundColor(color, theme);
+        var color = parseColorWithCache(srcMetaThemeColor);
+        if (!color) {
+            return;
         }
-        catch (err) {
-            logWarn(err);
-        }
+        meta.content = modifyBackgroundColor(color, theme);
     }
     function changeMetaThemeColorWhenAvailable(theme) {
         var meta = document.querySelector(metaThemeColorSelector);
@@ -4314,7 +4945,8 @@ function InitGiscus() {
                     var addedNodes = mutations[i].addedNodes;
                     for (var j = 0; j < addedNodes.length; j++) {
                         var node = addedNodes[j];
-                        if (node instanceof HTMLMetaElement && node.name === metaThemeColorName) {
+                        if (node instanceof HTMLMetaElement &&
+                            node.name === metaThemeColorName) {
                             observer.disconnect();
                             observer = null;
                             changeMetaThemeColor(node, theme);
@@ -4337,18 +4969,18 @@ function InitGiscus() {
         }
     }
     var themeCacheKeys = [
-        'mode',
-        'brightness',
-        'contrast',
-        'grayscale',
-        'sepia',
-        'darkSchemeBackgroundColor',
-        'darkSchemeTextColor',
-        'lightSchemeBackgroundColor',
-        'lightSchemeTextColor',
+        "mode",
+        "brightness",
+        "contrast",
+        "grayscale",
+        "sepia",
+        "darkSchemeBackgroundColor",
+        "darkSchemeTextColor",
+        "lightSchemeBackgroundColor",
+        "lightSchemeTextColor"
     ];
     function getThemeKey(theme) {
-        var resultKey = '';
+        var resultKey = "";
         themeCacheKeys.forEach(function (key) {
             resultKey += "".concat(key, ":").concat(theme[key], ";");
         });
@@ -4369,10 +5001,10 @@ function InitGiscus() {
         function modifySheet(options) {
             var rules = options.sourceCSSRules;
             var theme = options.theme, ignoreImageAnalysis = options.ignoreImageAnalysis, force = options.force, prepareSheet = options.prepareSheet, isAsyncCancelled = options.isAsyncCancelled;
-            var rulesChanged = (rulesModCache.size === 0);
+            var rulesChanged = rulesModCache.size === 0;
             var notFoundCacheKeys = new Set(rulesModCache.keys());
             var themeKey = getThemeKey(theme);
-            var themeChanged = (themeKey !== prevFilterKey);
+            var themeChanged = themeKey !== prevFilterKey;
             if (hasNonLoadedLink) {
                 wasRebuilt = true;
             }
@@ -4396,16 +5028,21 @@ function InitGiscus() {
                     return;
                 }
                 var modDecs = [];
-                rule.style && iterateCSSDeclarations(rule.style, function (property, value) {
-                    var mod = getModifiableCSSDeclaration(property, value, rule, variablesStore, ignoreImageAnalysis, isAsyncCancelled);
-                    if (mod) {
-                        modDecs.push(mod);
-                    }
-                });
+                rule.style &&
+                    iterateCSSDeclarations(rule.style, function (property, value) {
+                        var mod = getModifiableCSSDeclaration(property, value, rule, variablesStore, ignoreImageAnalysis, isAsyncCancelled);
+                        if (mod) {
+                            modDecs.push(mod);
+                        }
+                    });
                 var modRule = null;
                 if (modDecs.length > 0) {
                     var parentRule = rule.parentRule;
-                    modRule = { selector: rule.selectorText, declarations: modDecs, parentRule: parentRule };
+                    modRule = {
+                        selector: rule.selectorText,
+                        declarations: modDecs,
+                        parentRule: parentRule
+                    };
                     modRules.push(modRule);
                 }
                 rulesModCache.set(cssText, modRule);
@@ -4425,13 +5062,18 @@ function InitGiscus() {
                 var selector = rule.selector, declarations = rule.declarations;
                 var getDeclarationText = function (dec) {
                     var property = dec.property, value = dec.value, important = dec.important, sourceValue = dec.sourceValue;
-                    return "".concat(property, ": ").concat(value == null ? sourceValue : value).concat(important ? ' !important' : '', ";");
+                    return ""
+                        .concat(property, ": ")
+                        .concat(value == null ? sourceValue : value)
+                        .concat(important ? " !important" : "", ";");
                 };
-                var cssRulesText = '';
+                var cssRulesText = "";
                 declarations.forEach(function (declarations) {
                     cssRulesText += "".concat(getDeclarationText(declarations), " ");
                 });
-                var ruleText = "".concat(selector, " { ").concat(cssRulesText, " }");
+                var ruleText = ""
+                    .concat(selector, " { ")
+                    .concat(cssRulesText, " }");
                 target.insertRule(ruleText, index);
             }
             var asyncDeclarations = new Map();
@@ -4453,26 +5095,45 @@ function InitGiscus() {
                 parentGroup.rules.push(group);
                 return group;
             }
-            varTypeChangeCleaners.forEach(function (clear) { return clear(); });
+            varTypeChangeCleaners.forEach(function (clear) {
+                return clear();
+            });
             varTypeChangeCleaners.clear();
-            modRules.filter(function (r) { return r; }).forEach(function (_a) {
+            modRules
+                .filter(function (r) {
+                return r;
+            })
+                .forEach(function (_a) {
                 var selector = _a.selector, declarations = _a.declarations, parentRule = _a.parentRule;
                 var group = getGroup(parentRule);
-                var readyStyleRule = { selector: selector, declarations: [], isGroup: false };
+                var readyStyleRule = {
+                    selector: selector,
+                    declarations: [],
+                    isGroup: false
+                };
                 var readyDeclarations = readyStyleRule.declarations;
                 group.rules.push(readyStyleRule);
                 function handleAsyncDeclaration(property, modified, important, sourceValue) {
                     var asyncKey = ++asyncDeclarationCounter;
-                    var asyncDeclaration = { property: property, value: null, important: important, asyncKey: asyncKey, sourceValue: sourceValue };
+                    var asyncDeclaration = {
+                        property: property,
+                        value: null,
+                        important: important,
+                        asyncKey: asyncKey,
+                        sourceValue: sourceValue
+                    };
                     readyDeclarations.push(asyncDeclaration);
                     var currentRenderId = renderId;
                     modified.then(function (asyncValue) {
-                        if (!asyncValue || isAsyncCancelled() || currentRenderId !== renderId) {
+                        if (!asyncValue ||
+                            isAsyncCancelled() ||
+                            currentRenderId !== renderId) {
                             return;
                         }
                         asyncDeclaration.value = asyncValue;
                         asyncQueue.add(function () {
-                            if (isAsyncCancelled() || currentRenderId !== renderId) {
+                            if (isAsyncCancelled() ||
+                                currentRenderId !== renderId) {
                                 return;
                             }
                             rebuildAsyncRule(asyncKey);
@@ -4486,7 +5147,13 @@ function InitGiscus() {
                     var initialIndex = readyDeclarations.length;
                     var oldDecs = [];
                     if (varDecs.length === 0) {
-                        var tempDec = { property: property, value: sourceValue, important: important, sourceValue: sourceValue, varKey: varKey };
+                        var tempDec = {
+                            property: property,
+                            value: sourceValue,
+                            important: important,
+                            sourceValue: sourceValue,
+                            varKey: varKey
+                        };
                         readyDeclarations.push(tempDec);
                         oldDecs = [tempDec];
                     }
@@ -4495,41 +5162,66 @@ function InitGiscus() {
                             handleAsyncDeclaration(mod.property, mod.value, important, sourceValue);
                         }
                         else {
-                            var readyDec = { property: mod.property, value: mod.value, important: important, sourceValue: sourceValue, varKey: varKey };
+                            var readyDec = {
+                                property: mod.property,
+                                value: mod.value,
+                                important: important,
+                                sourceValue: sourceValue,
+                                varKey: varKey
+                            };
                             readyDeclarations.push(readyDec);
                             oldDecs.push(readyDec);
                         }
                     });
                     onTypeChange.addListener(function (newDecs) {
-                        if (isAsyncCancelled() || currentRenderId !== renderId) {
+                        if (isAsyncCancelled() ||
+                            currentRenderId !== renderId) {
                             return;
                         }
                         var readyVarDecs = newDecs.map(function (mod) {
-                            return { property: mod.property, value: mod.value, important: important, sourceValue: sourceValue, varKey: varKey };
+                            return {
+                                property: mod.property,
+                                value: mod.value,
+                                important: important,
+                                sourceValue: sourceValue,
+                                varKey: varKey
+                            };
                         });
                         var index = readyDeclarations.indexOf(oldDecs[0], initialIndex);
                         readyDeclarations.splice.apply(readyDeclarations, __spreadArray([index, oldDecs.length], __read(readyVarDecs), false));
                         oldDecs = readyVarDecs;
                         rebuildVarRule(varKey);
                     });
-                    varTypeChangeCleaners.add(function () { return onTypeChange.removeListeners(); });
+                    varTypeChangeCleaners.add(function () {
+                        return onTypeChange.removeListeners();
+                    });
                 }
                 declarations.forEach(function (_a) {
                     var property = _a.property, value = _a.value, important = _a.important, sourceValue = _a.sourceValue;
-                    if (typeof value === 'function') {
+                    if (typeof value === "function") {
                         var modified = value(theme);
                         if (modified instanceof Promise) {
                             handleAsyncDeclaration(property, modified, important, sourceValue);
                         }
-                        else if (property.startsWith('--')) {
+                        else if (property.startsWith("--")) {
                             handleVarDeclarations(property, modified, important, sourceValue);
                         }
                         else {
-                            readyDeclarations.push({ property: property, value: modified, important: important, sourceValue: sourceValue });
+                            readyDeclarations.push({
+                                property: property,
+                                value: modified,
+                                important: important,
+                                sourceValue: sourceValue
+                            });
                         }
                     }
                     else {
-                        readyDeclarations.push({ property: property, value: value, important: important, sourceValue: sourceValue });
+                        readyDeclarations.push({
+                            property: property,
+                            value: value,
+                            important: important,
+                            sourceValue: sourceValue
+                        });
                     }
                 });
             });
@@ -4561,10 +5253,18 @@ function InitGiscus() {
                     rule.declarations.forEach(function (_a) {
                         var asyncKey = _a.asyncKey, varKey = _a.varKey;
                         if (asyncKey != null) {
-                            asyncDeclarations.set(asyncKey, { rule: rule, target: target, index: index });
+                            asyncDeclarations.set(asyncKey, {
+                                rule: rule,
+                                target: target,
+                                index: index
+                            });
                         }
                         if (varKey != null) {
-                            varDeclarations.set(varKey, { rule: rule, target: target, index: index });
+                            varDeclarations.set(varKey, {
+                                rule: rule,
+                                target: target,
+                                index: index
+                            });
                         }
                     });
                     setRule(target, index, rule);
@@ -4583,7 +5283,10 @@ function InitGiscus() {
             }
             buildStyleSheet();
         }
-        return { modifySheet: modifySheet, shouldRebuildStyle: shouldRebuildStyle };
+        return {
+            modifySheet: modifySheet,
+            shouldRebuildStyle: shouldRebuildStyle
+        };
     }
     var STYLE_SELECTOR = 'style, link[rel*="stylesheet" i]:not([disabled])';
     function isFontsGoogleApiStyle(element) {
@@ -4592,7 +5295,7 @@ function InitGiscus() {
         }
         try {
             var elementURL = new URL(element.href);
-            return elementURL.hostname === 'fonts.googleapis.com';
+            return elementURL.hostname === "fonts.googleapis.com";
         }
         catch (err) {
             logInfo("Couldn't construct ".concat(element.href, " as URL"));
@@ -4600,17 +5303,20 @@ function InitGiscus() {
         }
     }
     function shouldManageStyle(element) {
-        return (((element instanceof HTMLStyleElement) ||
-            (element instanceof SVGStyleElement) ||
+        return ((element instanceof HTMLStyleElement ||
+            element instanceof SVGStyleElement ||
             (element instanceof HTMLLinkElement &&
                 element.rel &&
-                element.rel.toLowerCase().includes('stylesheet') &&
+                element.rel.toLowerCase().includes("stylesheet") &&
+                element.href &&
                 !element.disabled &&
-                (isFirefox ? !element.href.startsWith('moz-extension://') : true) &&
+                (isFirefox
+                    ? !element.href.startsWith("moz-extension://")
+                    : true) &&
                 !isFontsGoogleApiStyle(element))) &&
-            !element.classList.contains('darkreader') &&
-            element.media.toLowerCase() !== 'print' &&
-            !element.classList.contains('stylus'));
+            !element.classList.contains("darkreader") &&
+            element.media.toLowerCase() !== "print" &&
+            !element.classList.contains("stylus"));
     }
     function getManageableStyles(node, results, deep) {
         if (results === void 0) {
@@ -4622,10 +5328,16 @@ function InitGiscus() {
         if (shouldManageStyle(node)) {
             results.push(node);
         }
-        else if (node instanceof Element || (isShadowDomSupported && node instanceof ShadowRoot) || node === document) {
-            forEach(node.querySelectorAll(STYLE_SELECTOR), function (style) { return getManageableStyles(style, results, false); });
+        else if (node instanceof Element ||
+            (isShadowDomSupported && node instanceof ShadowRoot) ||
+            node === document) {
+            forEach(node.querySelectorAll(STYLE_SELECTOR), function (style) {
+                return getManageableStyles(style, results, false);
+            });
             if (deep) {
-                iterateShadowHosts(node, function (host) { return getManageableStyles(host.shadowRoot, results, false); });
+                iterateShadowHosts(node, function (host) {
+                    return getManageableStyles(host.shadowRoot, results, false);
+                });
             }
         }
         return results;
@@ -4633,7 +5345,7 @@ function InitGiscus() {
     var syncStyleSet = new WeakSet();
     var corsStyleSet = new WeakSet();
     var canOptimizeUsingProxy$1 = false;
-    document.addEventListener('__darkreader__inlineScriptsAllowed', function () {
+    document.addEventListener("__darkreader__inlineScriptsAllowed", function () {
         canOptimizeUsingProxy$1 = true;
     });
     var loadingLinkCounter = 0;
@@ -4645,11 +5357,16 @@ function InitGiscus() {
         var update = _a.update, loadingStart = _a.loadingStart, loadingEnd = _a.loadingEnd;
         var prevStyles = [];
         var next = element;
-        while ((next = next.nextElementSibling) && next.matches('.darkreader')) {
+        while ((next = next.nextElementSibling) &&
+            next.matches(".darkreader")) {
             prevStyles.push(next);
         }
-        var corsCopy = prevStyles.find(function (el) { return el.matches('.darkreader--cors') && !corsStyleSet.has(el); }) || null;
-        var syncStyle = prevStyles.find(function (el) { return el.matches('.darkreader--sync') && !syncStyleSet.has(el); }) || null;
+        var corsCopy = prevStyles.find(function (el) {
+            return el.matches(".darkreader--cors") && !corsStyleSet.has(el);
+        }) || null;
+        var syncStyle = prevStyles.find(function (el) {
+            return el.matches(".darkreader--sync") && !syncStyleSet.has(el);
+        }) || null;
         var corsCopyPositionWatcher = null;
         var syncStylePositionWatcher = null;
         var cancelAsyncOperations = false;
@@ -4658,9 +5375,15 @@ function InitGiscus() {
         var observer = new MutationObserver(function () {
             update();
         });
-        var observerOptions = { attributes: true, childList: true, subtree: true, characterData: true };
+        var observerOptions = {
+            attributes: true,
+            childList: true,
+            subtree: true,
+            characterData: true
+        };
         function containsCSSImport() {
-            return element instanceof HTMLStyleElement && element.textContent.trim().match(cssImportRegex);
+            return (element instanceof HTMLStyleElement &&
+                element.textContent.trim().match(cssImportRegex));
         }
         function hasImports(cssRules, checkCrossOrigin) {
             var result = false;
@@ -4670,7 +5393,8 @@ function InitGiscus() {
                     rule = cssRules[i];
                     if (rule.href) {
                         if (checkCrossOrigin) {
-                            if (rule.href.startsWith('http') && !rule.href.startsWith(location.origin)) {
+                            if (rule.href.startsWith("http") &&
+                                !rule.href.startsWith(location.origin)) {
                                 result = true;
                                 break cssRulesLoop;
                             }
@@ -4686,26 +5410,20 @@ function InitGiscus() {
         }
         function getRulesSync() {
             if (corsCopy) {
-                logInfo('[getRulesSync] Using cors-copy.');
                 return corsCopy.sheet.cssRules;
             }
             if (containsCSSImport()) {
-                logInfo('[getRulesSync] CSSImport detected.');
                 return null;
             }
             var cssRules = safeGetSheetRules();
             if (element instanceof HTMLLinkElement &&
                 !isRelativeHrefOnAbsolutePath(element.href) &&
                 hasImports(cssRules, false)) {
-                logInfo('[getRulesSync] CSSImportRule detected on non-local href.');
                 return null;
             }
             if (hasImports(cssRules, true)) {
-                logInfo('[getRulesSync] Cross-Origin CSSImportRule detected.');
                 return null;
             }
-            logInfo('[getRulesSync] Using cssRules.');
-            !cssRules && logWarn('[getRulesSync] cssRules is null, trying again.');
             return cssRules;
         }
         function insertStyle() {
@@ -4722,12 +5440,13 @@ function InitGiscus() {
             }
         }
         function createSyncStyle() {
-            syncStyle = element instanceof SVGStyleElement ?
-                document.createElementNS('http://www.w3.org/2000/svg', 'style') :
-                document.createElement('style');
-            syncStyle.classList.add('darkreader');
-            syncStyle.classList.add('darkreader--sync');
-            syncStyle.media = 'screen';
+            syncStyle =
+                element instanceof SVGStyleElement
+                    ? document.createElementNS("http://www.w3.org/2000/svg", "style")
+                    : document.createElement("style");
+            syncStyle.classList.add("darkreader");
+            syncStyle.classList.add("darkreader--sync");
+            syncStyle.media = "screen";
             if (element.title) {
                 syncStyle.title = element.title;
             }
@@ -4738,17 +5457,16 @@ function InitGiscus() {
         var loadingLinkId = ++loadingLinkCounter;
         function getRulesAsync() {
             return __awaiter(this, void 0, void 0, function () {
-                var cssText, cssBasePath, _a, cssRules, accessError, err_1, fullCSSText, err_2;
+                var cssText, cssBasePath, _a, cssRules, accessError, fullCSSText;
                 var _b;
                 return __generator(this, function (_c) {
                     switch (_c.label) {
                         case 0:
                             if (!(element instanceof HTMLLinkElement))
                                 return [3, 7];
-                            _a = __read(getRulesOrError(), 2), cssRules = _a[0], accessError = _a[1];
-                            if (accessError) {
-                                logWarn(accessError);
-                            }
+                            (_a = __read(getRulesOrError(), 2)),
+                                (cssRules = _a[0]),
+                                (accessError = _a[1]);
                             if (!((!cssRules && !accessError && !isSafari) ||
                                 (isSafari && !element.sheet) ||
                                 isStillLoadingError(accessError)))
@@ -4756,24 +5474,21 @@ function InitGiscus() {
                             _c.label = 1;
                         case 1:
                             _c.trys.push([1, 3, , 4]);
-                            logInfo("Linkelement ".concat(loadingLinkId, " is not loaded yet and thus will be await for"), element);
                             return [4, linkLoading(element, loadingLinkId)];
                         case 2:
                             _c.sent();
                             return [3, 4];
                         case 3:
-                            err_1 = _c.sent();
-                            logWarn(err_1);
+                            _c.sent();
                             wasLoadingError = true;
                             return [3, 4];
                         case 4:
                             if (cancelAsyncOperations) {
                                 return [2, null];
                             }
-                            _b = __read(getRulesOrError(), 2), cssRules = _b[0], accessError = _b[1];
-                            if (accessError) {
-                                logWarn(accessError);
-                            }
+                            (_b = __read(getRulesOrError(), 2)),
+                                (cssRules = _b[0]),
+                                (accessError = _b[1]);
                             _c.label = 5;
                         case 5:
                             if (cssRules) {
@@ -4810,16 +5525,16 @@ function InitGiscus() {
                             corsCopy = createCORSCopy(element, fullCSSText);
                             return [3, 12];
                         case 11:
-                            err_2 = _c.sent();
-                            logWarn(err_2);
+                            _c.sent();
                             return [3, 12];
                         case 12:
                             if (corsCopy) {
-                                corsCopyPositionWatcher = watchForNodePosition(corsCopy, 'prev-sibling');
+                                corsCopyPositionWatcher = watchForNodePosition(corsCopy, "prev-sibling");
                                 return [2, corsCopy.sheet.cssRules];
                             }
                             _c.label = 13;
-                        case 13: return [2, null];
+                        case 13:
+                            return [2, null];
                     }
                 });
             });
@@ -4828,7 +5543,6 @@ function InitGiscus() {
             var rules = getRulesSync();
             if (!rules) {
                 if (options.secondRound) {
-                    logWarn('Detected dead-lock at details(), returning early to prevent it.');
                     return null;
                 }
                 if (isLoadingRules || wasLoadingError) {
@@ -4836,14 +5550,15 @@ function InitGiscus() {
                 }
                 isLoadingRules = true;
                 loadingStart();
-                getRulesAsync().then(function (results) {
+                getRulesAsync()
+                    .then(function (results) {
                     isLoadingRules = false;
                     loadingEnd();
                     if (results) {
                         update();
                     }
-                }).catch(function (err) {
-                    logWarn(err);
+                })
+                    .catch(function (err) {
                     isLoadingRules = false;
                     loadingEnd();
                 });
@@ -4870,7 +5585,7 @@ function InitGiscus() {
                 syncStylePositionWatcher && syncStylePositionWatcher.stop();
                 insertStyle();
                 if (syncStyle.sheet == null) {
-                    syncStyle.textContent = '';
+                    syncStyle.textContent = "";
                 }
                 var sheet = syncStyle.sheet;
                 removeCSSRulesFromSheet(sheet);
@@ -4878,7 +5593,7 @@ function InitGiscus() {
                     syncStylePositionWatcher.run();
                 }
                 else {
-                    syncStylePositionWatcher = watchForNodePosition(syncStyle, 'prev-sibling', function () {
+                    syncStylePositionWatcher = watchForNodePosition(syncStyle, "prev-sibling", function () {
                         forceRenderStyle = true;
                         buildOverrides();
                     });
@@ -4894,11 +5609,15 @@ function InitGiscus() {
                     theme: theme,
                     ignoreImageAnalysis: ignoreImageAnalysis,
                     force: force,
-                    isAsyncCancelled: function () { return cancelAsyncOperations; },
+                    isAsyncCancelled: function () {
+                        return cancelAsyncOperations;
+                    }
                 });
                 isOverrideEmpty = syncStyle.sheet.cssRules.length === 0;
                 if (sheetModifier.shouldRebuildStyle()) {
-                    addReadyStateCompleteListener(function () { return update(); });
+                    addReadyStateCompleteListener(function () {
+                        return update();
+                    });
                 }
             }
             buildOverrides();
@@ -4915,19 +5634,18 @@ function InitGiscus() {
             }
         }
         function isStillLoadingError(error) {
-            return error && error.message && error.message.includes('loading');
+            return error && error.message && error.message.includes("loading");
         }
         function safeGetSheetRules() {
             var _a = __read(getRulesOrError(), 2), cssRules = _a[0], err = _a[1];
             if (err) {
-                logWarn(err);
                 return null;
             }
             return cssRules;
         }
         function watchForSheetChanges() {
             watchForSheetChangesUsingProxy();
-            if (!isThunderbird && !(canOptimizeUsingProxy$1 && element.sheet)) {
+            if (!(canOptimizeUsingProxy$1 && element.sheet)) {
                 watchForSheetChangesUsingRAF();
             }
         }
@@ -4974,7 +5692,7 @@ function InitGiscus() {
                 update();
             }
             areSheetChangesPending = true;
-            if (typeof queueMicrotask === 'function') {
+            if (typeof queueMicrotask === "function") {
                 queueMicrotask(handleSheetChanges);
             }
             else {
@@ -4982,10 +5700,10 @@ function InitGiscus() {
             }
         }
         function watchForSheetChangesUsingProxy() {
-            element.addEventListener('__darkreader__updateSheet', onSheetChange);
+            element.addEventListener("__darkreader__updateSheet", onSheetChange);
         }
         function stopWatchingForSheetChangesUsingProxy() {
-            element.removeEventListener('__darkreader__updateSheet', onSheetChange);
+            element.removeEventListener("__darkreader__updateSheet", onSheetChange);
         }
         function stopWatchingForSheetChanges() {
             stopWatchingForSheetChangesUsingProxy();
@@ -5023,10 +5741,8 @@ function InitGiscus() {
             }
             moveCount++;
             if (moveCount > maxMoveCount) {
-                logWarn('Style sheet was moved multiple times', element);
                 return;
             }
-            logWarn('Restore style', syncStyle, element);
             insertStyle();
             corsCopyPositionWatcher && corsCopyPositionWatcher.skip();
             syncStylePositionWatcher && syncStylePositionWatcher.skip();
@@ -5041,55 +5757,75 @@ function InitGiscus() {
             pause: pause,
             destroy: destroy,
             watch: watch,
-            restore: restore,
+            restore: restore
         };
     }
     function linkLoading(link, loadingId) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2, new Promise(function (resolve, reject) {
+                return [
+                    2,
+                    new Promise(function (resolve, reject) {
                         var cleanUp = function () {
-                            link.removeEventListener('load', onLoad);
-                            link.removeEventListener('error', onError);
+                            link.removeEventListener("load", onLoad);
+                            link.removeEventListener("error", onError);
                             rejectorsForLoadingLinks.delete(loadingId);
                         };
                         var onLoad = function () {
                             cleanUp();
-                            logInfo("Linkelement ".concat(loadingId, " has been loaded"));
                             resolve();
                         };
                         var onError = function () {
                             cleanUp();
-                            reject("Linkelement ".concat(loadingId, " couldn't be loaded. ").concat(link.href));
+                            reject("Linkelement "
+                                .concat(loadingId, " couldn't be loaded. ")
+                                .concat(link.href));
                         };
                         rejectorsForLoadingLinks.set(loadingId, function () {
                             cleanUp();
                             reject();
                         });
-                        link.addEventListener('load', onLoad);
-                        link.addEventListener('error', onError);
+                        link.addEventListener("load", onLoad);
+                        link.addEventListener("error", onError);
                         if (!link.href) {
                             onError();
                         }
-                    })];
+                    })
+                ];
             });
         });
     }
     function getCSSImportURL(importDeclaration) {
-        return getCSSURLValue(importDeclaration.substring(7).trim().replace(/;$/, '').replace(/screen$/, ''));
+        return getCSSURLValue(importDeclaration
+            .substring(7)
+            .trim()
+            .replace(/;$/, "")
+            .replace(/screen$/, ""));
     }
     function loadText(url) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        if (!url.startsWith('data:'))
+                        if (!url.startsWith("data:"))
                             return [3, 3];
                         return [4, fetch(url)];
-                    case 1: return [4, (_a.sent()).text()];
-                    case 2: return [2, _a.sent()];
-                    case 3: return [4, bgFetch({ url: url, responseType: 'text', mimeType: 'text/css', origin: window.location.origin })];
-                    case 4: return [2, _a.sent()];
+                    case 1:
+                        return [4, _a.sent().text()];
+                    case 2:
+                        return [2, _a.sent()];
+                    case 3:
+                        return [
+                            4,
+                            bgFetch({
+                                url: url,
+                                responseType: "text",
+                                mimeType: "text/css",
+                                origin: window.location.origin
+                            })
+                        ];
+                    case 4:
+                        return [2, _a.sent()];
                 }
             });
         });
@@ -5099,7 +5835,7 @@ function InitGiscus() {
             cache = new Map();
         }
         return __awaiter(this, void 0, void 0, function () {
-            var importMatches, importMatches_1, importMatches_1_1, match, importURL, absoluteURL, importedCSS, err_3, e_1_1;
+            var importMatches, importMatches_1, importMatches_1_1, match, importURL, absoluteURL, importedCSS, e_1_1;
             var e_1, _a;
             return __generator(this, function (_b) {
                 switch (_b.label) {
@@ -5111,7 +5847,8 @@ function InitGiscus() {
                         _b.label = 1;
                     case 1:
                         _b.trys.push([1, 10, 11, 12]);
-                        importMatches_1 = __values(importMatches), importMatches_1_1 = importMatches_1.next();
+                        (importMatches_1 = __values(importMatches)),
+                            (importMatches_1_1 = importMatches_1.next());
                         _b.label = 2;
                     case 2:
                         if (!!importMatches_1_1.done)
@@ -5130,14 +5867,16 @@ function InitGiscus() {
                     case 4:
                         importedCSS = _b.sent();
                         cache.set(absoluteURL, importedCSS);
-                        return [4, replaceCSSImports(importedCSS, getCSSBaseBath(absoluteURL), cache)];
+                        return [
+                            4,
+                            replaceCSSImports(importedCSS, getCSSBaseBath(absoluteURL), cache)
+                        ];
                     case 5:
                         importedCSS = _b.sent();
                         return [3, 7];
                     case 6:
-                        err_3 = _b.sent();
-                        logWarn(err_3);
-                        importedCSS = '';
+                        _b.sent();
+                        importedCSS = "";
                         return [3, 7];
                     case 7:
                         cssText = cssText.split(match).join(importedCSS);
@@ -5145,14 +5884,17 @@ function InitGiscus() {
                     case 8:
                         importMatches_1_1 = importMatches_1.next();
                         return [3, 2];
-                    case 9: return [3, 12];
+                    case 9:
+                        return [3, 12];
                     case 10:
                         e_1_1 = _b.sent();
                         e_1 = { error: e_1_1 };
                         return [3, 12];
                     case 11:
                         try {
-                            if (importMatches_1_1 && !importMatches_1_1.done && (_a = importMatches_1.return))
+                            if (importMatches_1_1 &&
+                                !importMatches_1_1.done &&
+                                (_a = importMatches_1.return))
                                 _a.call(importMatches_1);
                         }
                         finally {
@@ -5171,10 +5913,10 @@ function InitGiscus() {
         if (!cssText) {
             return null;
         }
-        var cors = document.createElement('style');
-        cors.classList.add('darkreader');
-        cors.classList.add('darkreader--cors');
-        cors.media = 'screen';
+        var cors = document.createElement("style");
+        cors.classList.add("darkreader");
+        cors.classList.add("darkreader--cors");
+        cors.media = "screen";
         cors.textContent = cssText;
         srcElement.parentNode.insertBefore(cors, srcElement.nextSibling);
         cors.sheet.disabled = true;
@@ -5189,10 +5931,10 @@ function InitGiscus() {
         if (!isDefinedSelectorSupported) {
             return;
         }
-        forEach(root.querySelectorAll(':not(:defined)'), function (el) {
+        forEach(root.querySelectorAll(":not(:defined)"), function (el) {
             var tag = el.tagName.toLowerCase();
-            if (!tag.includes('-')) {
-                var extendedTag = el.getAttribute('is');
+            if (!tag.includes("-")) {
+                var extendedTag = el.getAttribute("is");
                 if (extendedTag) {
                     tag = extendedTag;
                 }
@@ -5214,7 +5956,7 @@ function InitGiscus() {
         });
     }
     var canOptimizeUsingProxy = false;
-    document.addEventListener('__darkreader__inlineScriptsAllowed', function () {
+    document.addEventListener("__darkreader__inlineScriptsAllowed", function () {
         canOptimizeUsingProxy = true;
     });
     var resolvers = new Map();
@@ -5228,19 +5970,27 @@ function InitGiscus() {
     function customElementsWhenDefined(tag) {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                return [2, new Promise(function (resolve) {
-                        if (window.customElements && typeof customElements.whenDefined === 'function') {
-                            customElements.whenDefined(tag).then(function () { return resolve(); });
+                return [
+                    2,
+                    new Promise(function (resolve) {
+                        if (window.customElements &&
+                            typeof customElements.whenDefined === "function") {
+                            customElements.whenDefined(tag).then(function () {
+                                return resolve();
+                            });
                         }
                         else if (canOptimizeUsingProxy) {
                             resolvers.set(tag, resolve);
-                            document.dispatchEvent(new CustomEvent('__darkreader__addUndefinedResolver', { detail: { tag: tag } }));
+                            document.dispatchEvent(new CustomEvent("__darkreader__addUndefinedResolver", { detail: { tag: tag } }));
                         }
                         else {
                             var checkIfDefined_1 = function () {
                                 var elements = undefinedGroups.get(tag);
                                 if (elements && elements.size > 0) {
-                                    if (elements.values().next().value.matches(':defined')) {
+                                    if (elements
+                                        .values()
+                                        .next()
+                                        .value.matches(":defined")) {
                                         resolve();
                                     }
                                     else {
@@ -5250,7 +6000,8 @@ function InitGiscus() {
                             };
                             requestAnimationFrame(checkIfDefined_1);
                         }
-                    })];
+                    })
+                ];
             });
         });
     }
@@ -5260,7 +6011,7 @@ function InitGiscus() {
     function unsubscribeFromDefineCustomElements() {
         elementsDefinitionCallback = null;
         undefinedGroups.clear();
-        document.removeEventListener('__darkreader__isDefined', handleIsDefined);
+        document.removeEventListener("__darkreader__isDefined", handleIsDefined);
     }
     function watchForStyleChanges(currentStyles, update, shadowRootDiscovered) {
         stopWatchingForStyleChanges();
@@ -5282,17 +6033,28 @@ function InitGiscus() {
         currentStyles.forEach(saveStylePosition);
         function handleStyleOperations(operations) {
             var createdStyles = operations.createdStyles, removedStyles = operations.removedStyles, movedStyles = operations.movedStyles;
-            createdStyles.forEach(function (s) { return saveStylePosition(s); });
-            movedStyles.forEach(function (s) { return saveStylePosition(s); });
-            removedStyles.forEach(function (s) { return forgetStylePosition(s); });
-            createdStyles.forEach(function (s) { return prevStyles.add(s); });
-            removedStyles.forEach(function (s) { return prevStyles.delete(s); });
-            if (createdStyles.size + removedStyles.size + movedStyles.size > 0) {
+            createdStyles.forEach(function (s) {
+                return saveStylePosition(s);
+            });
+            movedStyles.forEach(function (s) {
+                return saveStylePosition(s);
+            });
+            removedStyles.forEach(function (s) {
+                return forgetStylePosition(s);
+            });
+            createdStyles.forEach(function (s) {
+                return prevStyles.add(s);
+            });
+            removedStyles.forEach(function (s) {
+                return prevStyles.delete(s);
+            });
+            if (createdStyles.size + removedStyles.size + movedStyles.size >
+                0) {
                 update({
                     created: Array.from(createdStyles),
                     removed: Array.from(removedStyles),
                     moved: Array.from(movedStyles),
-                    updated: [],
+                    updated: []
                 });
             }
         }
@@ -5301,10 +6063,26 @@ function InitGiscus() {
             var createdStyles = new Set();
             var removedStyles = new Set();
             var movedStyles = new Set();
-            additions.forEach(function (node) { return getManageableStyles(node).forEach(function (style) { return createdStyles.add(style); }); });
-            deletions.forEach(function (node) { return getManageableStyles(node).forEach(function (style) { return removedStyles.add(style); }); });
-            moves.forEach(function (node) { return getManageableStyles(node).forEach(function (style) { return movedStyles.add(style); }); });
-            handleStyleOperations({ createdStyles: createdStyles, removedStyles: removedStyles, movedStyles: movedStyles });
+            additions.forEach(function (node) {
+                return getManageableStyles(node).forEach(function (style) {
+                    return createdStyles.add(style);
+                });
+            });
+            deletions.forEach(function (node) {
+                return getManageableStyles(node).forEach(function (style) {
+                    return removedStyles.add(style);
+                });
+            });
+            moves.forEach(function (node) {
+                return getManageableStyles(node).forEach(function (style) {
+                    return movedStyles.add(style);
+                });
+            });
+            handleStyleOperations({
+                createdStyles: createdStyles,
+                removedStyles: removedStyles,
+                movedStyles: movedStyles
+            });
             additions.forEach(function (n) {
                 iterateShadowHosts(n, subscribeForShadowRootChanges);
                 collectUndefinedElements(n);
@@ -5326,11 +6104,17 @@ function InitGiscus() {
                 }
             });
             styles.forEach(function (s) {
-                if (!createdStyles.has(s) && !removedStyles.has(s) && didStylePositionChange(s)) {
+                if (!createdStyles.has(s) &&
+                    !removedStyles.has(s) &&
+                    didStylePositionChange(s)) {
                     movedStyles.add(s);
                 }
             });
-            handleStyleOperations({ createdStyles: createdStyles, removedStyles: removedStyles, movedStyles: movedStyles });
+            handleStyleOperations({
+                createdStyles: createdStyles,
+                removedStyles: removedStyles,
+                movedStyles: movedStyles
+            });
             iterateShadowHosts(root, subscribeForShadowRootChanges);
             collectUndefinedElements(root);
         }
@@ -5343,7 +6127,8 @@ function InitGiscus() {
                     if (shouldManageStyle(target)) {
                         updatedStyles.add(target);
                     }
-                    else if (target instanceof HTMLLinkElement && target.disabled) {
+                    else if (target instanceof HTMLLinkElement &&
+                        target.disabled) {
                         removedStyles.add(target);
                     }
                 }
@@ -5353,17 +6138,21 @@ function InitGiscus() {
                     updated: Array.from(updatedStyles),
                     created: [],
                     removed: Array.from(removedStyles),
-                    moved: [],
+                    moved: []
                 });
             }
         }
         function observe(root) {
             var treeObserver = createOptimizedTreeObserver(root, {
                 onMinorMutations: handleMinorTreeMutations,
-                onHugeMutations: handleHugeTreeMutations,
+                onHugeMutations: handleHugeTreeMutations
             });
             var attrObserver = new MutationObserver(handleAttributeMutations);
-            attrObserver.observe(root, { attributes: true, attributeFilter: ['rel', 'disabled', 'media'], subtree: true });
+            attrObserver.observe(root, {
+                attributes: true,
+                attributeFilter: ["rel", "disabled", "media", "href"],
+                subtree: true
+            });
             observers.push(treeObserver, attrObserver);
             observedRoots.add(root);
         }
@@ -5379,7 +6168,9 @@ function InitGiscus() {
         iterateShadowHosts(document.documentElement, subscribeForShadowRootChanges);
         watchWhenCustomElementsDefined(function (hosts) {
             var newStyles = [];
-            hosts.forEach(function (host) { return push(newStyles, getManageableStyles(host.shadowRoot)); });
+            hosts.forEach(function (host) {
+                return push(newStyles, getManageableStyles(host.shadowRoot));
+            });
             update({ created: newStyles, updated: [], removed: [], moved: [] });
             hosts.forEach(function (host) {
                 var shadowRoot = host.shadowRoot;
@@ -5391,11 +6182,13 @@ function InitGiscus() {
                 collectUndefinedElements(shadowRoot);
             });
         });
-        document.addEventListener('__darkreader__isDefined', handleIsDefined);
+        document.addEventListener("__darkreader__isDefined", handleIsDefined);
         collectUndefinedElements(document);
     }
     function resetObservers() {
-        observers.forEach(function (o) { return o.disconnect(); });
+        observers.forEach(function (o) {
+            return o.disconnect();
+        });
         observers.splice(0, observers.length);
         observedRoots = new WeakSet();
     }
@@ -5404,14 +6197,22 @@ function InitGiscus() {
         unsubscribeFromDefineCustomElements();
     }
     function hexify(number) {
-        return ((number < 16 ? '0' : '') + number.toString(16));
+        return (number < 16 ? "0" : "") + number.toString(16);
     }
     function generateUID() {
-        if ('randomUUID' in crypto) {
+        if ("randomUUID" in crypto) {
             var uuid = crypto.randomUUID();
-            return uuid.substring(0, 8) + uuid.substring(9, 13) + uuid.substring(14, 18) + uuid.substring(19, 23) + uuid.substring(24);
+            return (uuid.substring(0, 8) +
+                uuid.substring(9, 13) +
+                uuid.substring(14, 18) +
+                uuid.substring(19, 23) +
+                uuid.substring(24));
         }
-        return Array.from(crypto.getRandomValues(new Uint8Array(16))).map(function (x) { return hexify(x); }).join('');
+        return Array.from(crypto.getRandomValues(new Uint8Array(16)))
+            .map(function (x) {
+            return hexify(x);
+        })
+            .join("");
     }
     var adoptedStyleOverrides = new WeakMap();
     var overrideList = new WeakSet();
@@ -5468,7 +6269,9 @@ function InitGiscus() {
                     theme: theme,
                     ignoreImageAnalysis: ignoreImageAnalysis,
                     force: false,
-                    isAsyncCancelled: function () { return cancelAsyncOperations; },
+                    isAsyncCancelled: function () {
+                        return cancelAsyncOperations;
+                    }
                 });
             });
         }
@@ -5478,72 +6281,80 @@ function InitGiscus() {
         };
     }
     function injectProxy(enableStyleSheetsProxy) {
-        document.dispatchEvent(new CustomEvent('__darkreader__inlineScriptsAllowed'));
-        var addRuleDescriptor = Object.getOwnPropertyDescriptor(CSSStyleSheet.prototype, 'addRule');
-        var insertRuleDescriptor = Object.getOwnPropertyDescriptor(CSSStyleSheet.prototype, 'insertRule');
-        var deleteRuleDescriptor = Object.getOwnPropertyDescriptor(CSSStyleSheet.prototype, 'deleteRule');
-        var removeRuleDescriptor = Object.getOwnPropertyDescriptor(CSSStyleSheet.prototype, 'removeRule');
-        var documentStyleSheetsDescriptor = enableStyleSheetsProxy ?
-            Object.getOwnPropertyDescriptor(Document.prototype, 'styleSheets') : null;
+        document.dispatchEvent(new CustomEvent("__darkreader__inlineScriptsAllowed"));
+        var addRuleDescriptor = Object.getOwnPropertyDescriptor(CSSStyleSheet.prototype, "addRule");
+        var insertRuleDescriptor = Object.getOwnPropertyDescriptor(CSSStyleSheet.prototype, "insertRule");
+        var deleteRuleDescriptor = Object.getOwnPropertyDescriptor(CSSStyleSheet.prototype, "deleteRule");
+        var removeRuleDescriptor = Object.getOwnPropertyDescriptor(CSSStyleSheet.prototype, "removeRule");
+        var documentStyleSheetsDescriptor = enableStyleSheetsProxy
+            ? Object.getOwnPropertyDescriptor(Document.prototype, "styleSheets")
+            : null;
         var shouldWrapHTMLElement = [
-            'baidu.com',
-            'baike.baidu.com',
-            'ditu.baidu.com',
-            'map.baidu.com',
-            'maps.baidu.com',
-            'haokan.baidu.com',
-            'pan.baidu.com',
-            'passport.baidu.com',
-            'tieba.baidu.com',
-            'www.baidu.com'
+            "baidu.com",
+            "baike.baidu.com",
+            "ditu.baidu.com",
+            "map.baidu.com",
+            "maps.baidu.com",
+            "haokan.baidu.com",
+            "pan.baidu.com",
+            "passport.baidu.com",
+            "tieba.baidu.com",
+            "www.baidu.com"
         ].includes(location.hostname);
-        var getElementsByTagNameDescriptor = shouldWrapHTMLElement ?
-            Object.getOwnPropertyDescriptor(Element.prototype, 'getElementsByTagName') : null;
+        var getElementsByTagNameDescriptor = shouldWrapHTMLElement
+            ? Object.getOwnPropertyDescriptor(Element.prototype, "getElementsByTagName")
+            : null;
         var cleanUp = function () {
-            Object.defineProperty(CSSStyleSheet.prototype, 'addRule', addRuleDescriptor);
-            Object.defineProperty(CSSStyleSheet.prototype, 'insertRule', insertRuleDescriptor);
-            Object.defineProperty(CSSStyleSheet.prototype, 'deleteRule', deleteRuleDescriptor);
-            Object.defineProperty(CSSStyleSheet.prototype, 'removeRule', removeRuleDescriptor);
-            document.removeEventListener('__darkreader__cleanUp', cleanUp);
-            document.removeEventListener('__darkreader__addUndefinedResolver', addUndefinedResolver);
+            Object.defineProperty(CSSStyleSheet.prototype, "addRule", addRuleDescriptor);
+            Object.defineProperty(CSSStyleSheet.prototype, "insertRule", insertRuleDescriptor);
+            Object.defineProperty(CSSStyleSheet.prototype, "deleteRule", deleteRuleDescriptor);
+            Object.defineProperty(CSSStyleSheet.prototype, "removeRule", removeRuleDescriptor);
+            document.removeEventListener("__darkreader__cleanUp", cleanUp);
+            document.removeEventListener("__darkreader__addUndefinedResolver", addUndefinedResolver);
             if (enableStyleSheetsProxy) {
-                Object.defineProperty(Document.prototype, 'styleSheets', documentStyleSheetsDescriptor);
+                Object.defineProperty(Document.prototype, "styleSheets", documentStyleSheetsDescriptor);
             }
             if (shouldWrapHTMLElement) {
-                Object.defineProperty(Element.prototype, 'getElementsByTagName', getElementsByTagNameDescriptor);
+                Object.defineProperty(Element.prototype, "getElementsByTagName", getElementsByTagNameDescriptor);
             }
         };
         var addUndefinedResolver = function (e) {
             customElements.whenDefined(e.detail.tag).then(function () {
-                document.dispatchEvent(new CustomEvent('__darkreader__isDefined', { detail: { tag: e.detail.tag } }));
+                document.dispatchEvent(new CustomEvent("__darkreader__isDefined", {
+                    detail: { tag: e.detail.tag }
+                }));
             });
         };
-        document.addEventListener('__darkreader__cleanUp', cleanUp);
-        document.addEventListener('__darkreader__addUndefinedResolver', addUndefinedResolver);
-        var updateSheetEvent = new Event('__darkreader__updateSheet');
+        document.addEventListener("__darkreader__cleanUp", cleanUp);
+        document.addEventListener("__darkreader__addUndefinedResolver", addUndefinedResolver);
+        var updateSheetEvent = new Event("__darkreader__updateSheet");
         function proxyAddRule(selector, style, index) {
             addRuleDescriptor.value.call(this, selector, style, index);
-            if (this.ownerNode && !this.ownerNode.classList.contains('darkreader')) {
+            if (this.ownerNode &&
+                !this.ownerNode.classList.contains("darkreader")) {
                 this.ownerNode.dispatchEvent(updateSheetEvent);
             }
             return -1;
         }
         function proxyInsertRule(rule, index) {
             var returnValue = insertRuleDescriptor.value.call(this, rule, index);
-            if (this.ownerNode && !this.ownerNode.classList.contains('darkreader')) {
+            if (this.ownerNode &&
+                !this.ownerNode.classList.contains("darkreader")) {
                 this.ownerNode.dispatchEvent(updateSheetEvent);
             }
             return returnValue;
         }
         function proxyDeleteRule(index) {
             deleteRuleDescriptor.value.call(this, index);
-            if (this.ownerNode && !this.ownerNode.classList.contains('darkreader')) {
+            if (this.ownerNode &&
+                !this.ownerNode.classList.contains("darkreader")) {
                 this.ownerNode.dispatchEvent(updateSheetEvent);
             }
         }
         function proxyRemoveRule(index) {
             removeRuleDescriptor.value.call(this, index);
-            if (this.ownerNode && !this.ownerNode.classList.contains('darkreader')) {
+            if (this.ownerNode &&
+                !this.ownerNode.classList.contains("darkreader")) {
                 this.ownerNode.dispatchEvent(updateSheetEvent);
             }
         }
@@ -5552,7 +6363,7 @@ function InitGiscus() {
             var getCurrentValue = function () {
                 var docSheets = documentStyleSheetsDescriptor.get.call(_this);
                 var filteredSheets = __spreadArray([], __read(docSheets), false).filter(function (styleSheet) {
-                    return !styleSheet.ownerNode.classList.contains('darkreader');
+                    return !styleSheet.ownerNode.classList.contains("darkreader");
                 });
                 filteredSheets.item = function (item) {
                     return filteredSheets[item];
@@ -5570,13 +6381,13 @@ function InitGiscus() {
         }
         function proxyGetElementsByTagName(tagName) {
             var _this = this;
-            if (tagName !== 'style') {
+            if (tagName !== "style") {
                 return getElementsByTagNameDescriptor.value.call(this, tagName);
             }
             var getCurrentElementValue = function () {
                 var elements = getElementsByTagNameDescriptor.value.call(_this, tagName);
                 return Object.setPrototypeOf(__spreadArray([], __read(elements), false).filter(function (element) {
-                    return !element.classList.contains('darkreader');
+                    return !element.classList.contains("darkreader");
                 }), NodeList.prototype);
             };
             var elements = getCurrentElementValue();
@@ -5588,15 +6399,19 @@ function InitGiscus() {
             elements = new Proxy(elements, nodeListBehavior);
             return elements;
         }
-        Object.defineProperty(CSSStyleSheet.prototype, 'addRule', Object.assign({}, addRuleDescriptor, { value: proxyAddRule }));
-        Object.defineProperty(CSSStyleSheet.prototype, 'insertRule', Object.assign({}, insertRuleDescriptor, { value: proxyInsertRule }));
-        Object.defineProperty(CSSStyleSheet.prototype, 'deleteRule', Object.assign({}, deleteRuleDescriptor, { value: proxyDeleteRule }));
-        Object.defineProperty(CSSStyleSheet.prototype, 'removeRule', Object.assign({}, removeRuleDescriptor, { value: proxyRemoveRule }));
+        Object.defineProperty(CSSStyleSheet.prototype, "addRule", Object.assign({}, addRuleDescriptor, { value: proxyAddRule }));
+        Object.defineProperty(CSSStyleSheet.prototype, "insertRule", Object.assign({}, insertRuleDescriptor, { value: proxyInsertRule }));
+        Object.defineProperty(CSSStyleSheet.prototype, "deleteRule", Object.assign({}, deleteRuleDescriptor, { value: proxyDeleteRule }));
+        Object.defineProperty(CSSStyleSheet.prototype, "removeRule", Object.assign({}, removeRuleDescriptor, { value: proxyRemoveRule }));
         if (enableStyleSheetsProxy) {
-            Object.defineProperty(Document.prototype, 'styleSheets', Object.assign({}, documentStyleSheetsDescriptor, { get: proxyDocumentStyleSheets }));
+            Object.defineProperty(Document.prototype, "styleSheets", Object.assign({}, documentStyleSheetsDescriptor, {
+                get: proxyDocumentStyleSheets
+            }));
         }
         if (shouldWrapHTMLElement) {
-            Object.defineProperty(Element.prototype, 'getElementsByTagName', Object.assign({}, getElementsByTagNameDescriptor, { value: proxyGetElementsByTagName }));
+            Object.defineProperty(Element.prototype, "getElementsByTagName", Object.assign({}, getElementsByTagNameDescriptor, {
+                value: proxyGetElementsByTagName
+            }));
         }
     }
     var INSTANCE_ID = generateUID();
@@ -5613,11 +6428,11 @@ function InitGiscus() {
         }
         var element = root.querySelector(".".concat(className));
         if (!element) {
-            element = document.createElement('style');
-            element.classList.add('darkreader');
+            element = document.createElement("style");
+            element.classList.add("darkreader");
             element.classList.add(className);
-            element.media = 'screen';
-            element.textContent = '';
+            element.media = "screen";
+            element.textContent = "";
         }
         return element;
     }
@@ -5627,67 +6442,77 @@ function InitGiscus() {
         }
         var element = root.querySelector(".".concat(className));
         if (!element) {
-            element = document.createElement('script');
-            element.classList.add('darkreader');
+            element = document.createElement("script");
+            element.classList.add("darkreader");
             element.classList.add(className);
         }
         return element;
     }
     var nodePositionWatchers = new Map();
     function setupNodePositionWatcher(node, alias) {
-        nodePositionWatchers.has(alias) && nodePositionWatchers.get(alias).stop();
-        nodePositionWatchers.set(alias, watchForNodePosition(node, 'parent'));
+        nodePositionWatchers.has(alias) &&
+            nodePositionWatchers.get(alias).stop();
+        nodePositionWatchers.set(alias, watchForNodePosition(node, "parent"));
     }
     function stopStylePositionWatchers() {
-        forEach(nodePositionWatchers.values(), function (watcher) { return watcher.stop(); });
+        forEach(nodePositionWatchers.values(), function (watcher) {
+            return watcher.stop();
+        });
         nodePositionWatchers.clear();
     }
     function createStaticStyleOverrides() {
-        var fallbackStyle = createOrUpdateStyle('darkreader--fallback', document);
-        fallbackStyle.textContent = getModifiedFallbackStyle(filter, { strict: true });
+        var fallbackStyle = createOrUpdateStyle("darkreader--fallback", document);
+        fallbackStyle.textContent = getModifiedFallbackStyle(filter, {
+            strict: true
+        });
         document.head.insertBefore(fallbackStyle, document.head.firstChild);
-        setupNodePositionWatcher(fallbackStyle, 'fallback');
-        var userAgentStyle = createOrUpdateStyle('darkreader--user-agent');
+        setupNodePositionWatcher(fallbackStyle, "fallback");
+        var userAgentStyle = createOrUpdateStyle("darkreader--user-agent");
         userAgentStyle.textContent = getModifiedUserAgentStyle(filter, isIFrame$1, filter.styleSystemControls);
         document.head.insertBefore(userAgentStyle, fallbackStyle.nextSibling);
-        setupNodePositionWatcher(userAgentStyle, 'user-agent');
-        var textStyle = createOrUpdateStyle('darkreader--text');
+        setupNodePositionWatcher(userAgentStyle, "user-agent");
+        var textStyle = createOrUpdateStyle("darkreader--text");
         if (filter.useFont || filter.textStroke > 0) {
             textStyle.textContent = createTextStyle(filter);
         }
         else {
-            textStyle.textContent = '';
+            textStyle.textContent = "";
         }
         document.head.insertBefore(textStyle, fallbackStyle.nextSibling);
-        setupNodePositionWatcher(textStyle, 'text');
-        var invertStyle = createOrUpdateStyle('darkreader--invert');
+        setupNodePositionWatcher(textStyle, "text");
+        var invertStyle = createOrUpdateStyle("darkreader--invert");
         if (fixes && Array.isArray(fixes.invert) && fixes.invert.length > 0) {
             invertStyle.textContent = [
-                "".concat(fixes.invert.join(', '), " {"),
-                "    filter: ".concat(getCSSFilterValue(__assign(__assign({}, filter), { contrast: filter.mode === 0 ? filter.contrast : clamp(filter.contrast - 10, 0, 100) })), " !important;"),
-                '}',
-            ].join('\n');
+                "".concat(fixes.invert.join(", "), " {"),
+                "    filter: ".concat(getCSSFilterValue(__assign(__assign({}, filter), {
+                    contrast: filter.mode === 0
+                        ? filter.contrast
+                        : clamp(filter.contrast - 10, 0, 100)
+                })), " !important;"),
+                "}"
+            ].join("\n");
         }
         else {
-            invertStyle.textContent = '';
+            invertStyle.textContent = "";
         }
         document.head.insertBefore(invertStyle, textStyle.nextSibling);
-        setupNodePositionWatcher(invertStyle, 'invert');
-        var inlineStyle = createOrUpdateStyle('darkreader--inline');
+        setupNodePositionWatcher(invertStyle, "invert");
+        var inlineStyle = createOrUpdateStyle("darkreader--inline");
         inlineStyle.textContent = getInlineOverrideStyle();
         document.head.insertBefore(inlineStyle, invertStyle.nextSibling);
-        setupNodePositionWatcher(inlineStyle, 'inline');
-        var overrideStyle = createOrUpdateStyle('darkreader--override');
-        overrideStyle.textContent = fixes && fixes.css ? replaceCSSTemplates(fixes.css) : '';
+        setupNodePositionWatcher(inlineStyle, "inline");
+        var overrideStyle = createOrUpdateStyle("darkreader--override");
+        overrideStyle.textContent =
+            fixes && fixes.css ? replaceCSSTemplates(fixes.css) : "";
         document.head.appendChild(overrideStyle);
-        setupNodePositionWatcher(overrideStyle, 'override');
-        var variableStyle = createOrUpdateStyle('darkreader--variables');
+        setupNodePositionWatcher(overrideStyle, "override");
+        var variableStyle = createOrUpdateStyle("darkreader--variables");
         var selectionColors = getSelectionColor(filter);
         var darkSchemeBackgroundColor = filter.darkSchemeBackgroundColor, darkSchemeTextColor = filter.darkSchemeTextColor, lightSchemeBackgroundColor = filter.lightSchemeBackgroundColor, lightSchemeTextColor = filter.lightSchemeTextColor, mode = filter.mode;
         var schemeBackgroundColor = mode === 0 ? lightSchemeBackgroundColor : darkSchemeBackgroundColor;
         var schemeTextColor = mode === 0 ? lightSchemeTextColor : darkSchemeTextColor;
-        schemeBackgroundColor = modifyBackgroundColor(parse(schemeBackgroundColor), filter);
-        schemeTextColor = modifyForegroundColor(parse(schemeTextColor), filter);
+        schemeBackgroundColor = modifyBackgroundColor(parseColorWithCache(schemeBackgroundColor), filter);
+        schemeTextColor = modifyForegroundColor(parseColorWithCache(schemeTextColor), filter);
         variableStyle.textContent = [
             ":root {",
             "   --darkreader-neutral-background: ".concat(schemeBackgroundColor, ";"),
@@ -5695,76 +6520,95 @@ function InitGiscus() {
             "   --darkreader-selection-background: ".concat(selectionColors.backgroundColorSelection, ";"),
             "   --darkreader-selection-text: ".concat(selectionColors.foregroundColorSelection, ";"),
             "}"
-        ].join('\n');
+        ].join("\n");
         document.head.insertBefore(variableStyle, inlineStyle.nextSibling);
-        setupNodePositionWatcher(variableStyle, 'variables');
-        var rootVarsStyle = createOrUpdateStyle('darkreader--root-vars');
+        setupNodePositionWatcher(variableStyle, "variables");
+        var rootVarsStyle = createOrUpdateStyle("darkreader--root-vars");
         document.head.insertBefore(rootVarsStyle, variableStyle.nextSibling);
-        var proxyScript = createOrUpdateScript('darkreader--proxy');
-        proxyScript.append("(".concat(injectProxy, ")(!").concat(fixes && fixes.disableStyleSheetsProxy, ")"));
-        document.head.insertBefore(proxyScript, rootVarsStyle.nextSibling);
-        proxyScript.remove();
+        var injectProxyArg = !(fixes && fixes.disableStyleSheetsProxy);
+        {
+            var proxyScript = createOrUpdateScript("darkreader--proxy");
+            proxyScript.append("(".concat(injectProxy, ")(").concat(injectProxyArg, ")"));
+            document.head.insertBefore(proxyScript, rootVarsStyle.nextSibling);
+            proxyScript.remove();
+        }
     }
     var shadowRootsWithOverrides = new Set();
     function createShadowStaticStyleOverrides(root) {
-        var inlineStyle = createOrUpdateStyle('darkreader--inline', root);
+        var inlineStyle = createOrUpdateStyle("darkreader--inline", root);
         inlineStyle.textContent = getInlineOverrideStyle();
         root.insertBefore(inlineStyle, root.firstChild);
-        var overrideStyle = createOrUpdateStyle('darkreader--override', root);
-        overrideStyle.textContent = fixes && fixes.css ? replaceCSSTemplates(fixes.css) : '';
+        var overrideStyle = createOrUpdateStyle("darkreader--override", root);
+        overrideStyle.textContent =
+            fixes && fixes.css ? replaceCSSTemplates(fixes.css) : "";
         root.insertBefore(overrideStyle, inlineStyle.nextSibling);
-        var invertStyle = createOrUpdateStyle('darkreader--invert', root);
+        var invertStyle = createOrUpdateStyle("darkreader--invert", root);
         if (fixes && Array.isArray(fixes.invert) && fixes.invert.length > 0) {
             invertStyle.textContent = [
-                "".concat(fixes.invert.join(', '), " {"),
-                "    filter: ".concat(getCSSFilterValue(__assign(__assign({}, filter), { contrast: filter.mode === 0 ? filter.contrast : clamp(filter.contrast - 10, 0, 100) })), " !important;"),
-                '}',
-            ].join('\n');
+                "".concat(fixes.invert.join(", "), " {"),
+                "    filter: ".concat(getCSSFilterValue(__assign(__assign({}, filter), {
+                    contrast: filter.mode === 0
+                        ? filter.contrast
+                        : clamp(filter.contrast - 10, 0, 100)
+                })), " !important;"),
+                "}"
+            ].join("\n");
         }
         else {
-            invertStyle.textContent = '';
+            invertStyle.textContent = "";
         }
         root.insertBefore(invertStyle, overrideStyle.nextSibling);
         shadowRootsWithOverrides.add(root);
     }
     function replaceCSSTemplates($cssText) {
         return $cssText.replace(/\${(.+?)}/g, function (_, $color) {
-            var color = tryParseColor($color);
+            var color = parseColorWithCache($color);
             if (color) {
                 return modifyColor(color, filter);
             }
-            logWarn("Couldn't parse CSSTemplate's color.");
             return $color;
         });
     }
     function cleanFallbackStyle() {
-        var fallback = document.querySelector('.darkreader--fallback');
+        var fallback = document.querySelector(".darkreader--fallback");
         if (fallback) {
-            fallback.textContent = '';
+            fallback.textContent = "";
         }
     }
     function createDynamicStyleOverrides() {
         cancelRendering();
         var allStyles = getManageableStyles(document);
         var newManagers = allStyles
-            .filter(function (style) { return !styleManagers.has(style); })
-            .map(function (style) { return createManager(style); });
+            .filter(function (style) {
+            return !styleManagers.has(style);
+        })
+            .map(function (style) {
+            return createManager(style);
+        });
         newManagers
-            .map(function (manager) { return manager.details({ secondRound: false }); })
-            .filter(function (detail) { return detail && detail.rules.length > 0; })
+            .map(function (manager) {
+            return manager.details({ secondRound: false });
+        })
+            .filter(function (detail) {
+            return detail && detail.rules.length > 0;
+        })
             .forEach(function (detail) {
             variablesStore.addRulesForMatching(detail.rules);
         });
         variablesStore.matchVariablesAndDependants();
         variablesStore.setOnRootVariableChange(function () {
-            variablesStore.putRootVars(document.head.querySelector('.darkreader--root-vars'), filter);
+            variablesStore.putRootVars(document.head.querySelector(".darkreader--root-vars"), filter);
         });
-        variablesStore.putRootVars(document.head.querySelector('.darkreader--root-vars'), filter);
-        styleManagers.forEach(function (manager) { return manager.render(filter, ignoredImageAnalysisSelectors); });
+        variablesStore.putRootVars(document.head.querySelector(".darkreader--root-vars"), filter);
+        styleManagers.forEach(function (manager) {
+            return manager.render(filter, ignoredImageAnalysisSelectors);
+        });
         if (loadingStyles.size === 0) {
             cleanFallbackStyle();
         }
-        newManagers.forEach(function (manager) { return manager.watch(); });
+        newManagers.forEach(function (manager) {
+            return manager.watch();
+        });
         var inlineStyleElements = toArray(document.querySelectorAll(INLINE_STYLE_SELECTOR));
         iterateShadowHosts(document.documentElement, function (host) {
             createShadowStaticStyleOverrides(host.shadowRoot);
@@ -5773,19 +6617,20 @@ function InitGiscus() {
                 push(inlineStyleElements, elements);
             }
         });
-        inlineStyleElements.forEach(function (el) { return overrideInlineStyle(el, filter, ignoredInlineSelectors, ignoredImageAnalysisSelectors); });
+        inlineStyleElements.forEach(function (el) {
+            return overrideInlineStyle(el, filter, ignoredInlineSelectors, ignoredImageAnalysisSelectors);
+        });
         handleAdoptedStyleSheets(document);
     }
     var loadingStylesCounter = 0;
     var loadingStyles = new Set();
     function createManager(element) {
         var loadingStyleId = ++loadingStylesCounter;
-        logInfo("New manager for element, with loadingStyleID ".concat(loadingStyleId), element);
         function loadingStart() {
             if (!isDOMReady() || !didDocumentShowUp) {
                 loadingStyles.add(loadingStyleId);
                 logInfo("Current amount of styles loading: ".concat(loadingStyles.size));
-                var fallbackStyle = document.querySelector('.darkreader--fallback');
+                var fallbackStyle = document.querySelector(".darkreader--fallback");
                 if (!fallbackStyle.textContent) {
                     fallbackStyle.textContent = getModifiedFallbackStyle(filter, { strict: false });
                 }
@@ -5793,8 +6638,9 @@ function InitGiscus() {
         }
         function loadingEnd() {
             loadingStyles.delete(loadingStyleId);
-            logInfo("Removed loadingStyle ".concat(loadingStyleId, ", now awaiting: ").concat(loadingStyles.size));
-            logInfo("To-do to be loaded", loadingStyles);
+            logInfo("Removed loadingStyle "
+                .concat(loadingStyleId, ", now awaiting: ")
+                .concat(loadingStyles.size));
             if (loadingStyles.size === 0 && isDOMReady()) {
                 cleanFallbackStyle();
             }
@@ -5808,7 +6654,11 @@ function InitGiscus() {
             variablesStore.matchVariablesAndDependants();
             manager.render(filter, ignoredImageAnalysisSelectors);
         }
-        var manager = manageStyle(element, { update: update, loadingStart: loadingStart, loadingEnd: loadingEnd });
+        var manager = manageStyle(element, {
+            update: update,
+            loadingStart: loadingStart,
+            loadingEnd: loadingEnd
+        });
         styleManagers.set(element, manager);
         return manager;
     }
@@ -5820,8 +6670,12 @@ function InitGiscus() {
         }
     }
     var throttledRenderAllStyles = throttle(function (callback) {
-        styleManagers.forEach(function (manager) { return manager.render(filter, ignoredImageAnalysisSelectors); });
-        adoptedStyleManagers.forEach(function (manager) { return manager.render(filter, ignoredImageAnalysisSelectors); });
+        styleManagers.forEach(function (manager) {
+            return manager.render(filter, ignoredImageAnalysisSelectors);
+        });
+        adoptedStyleManagers.forEach(function (manager) {
+            return manager.render(filter, ignoredImageAnalysisSelectors);
+        });
         callback && callback();
     });
     var cancelRendering = function () {
@@ -5832,7 +6686,6 @@ function InitGiscus() {
             cleanFallbackStyle();
             return;
         }
-        logWarn("DOM is ready, but still have styles being loaded.", loadingStyles);
     }
     var documentVisibilityListener = null;
     var didDocumentShowUp = !document.hidden;
@@ -5846,11 +6699,11 @@ function InitGiscus() {
             }
         };
         if (!alreadyWatching) {
-            document.addEventListener('visibilitychange', documentVisibilityListener);
+            document.addEventListener("visibilitychange", documentVisibilityListener);
         }
     }
     function stopWatchingForDocumentVisibility() {
-        document.removeEventListener('visibilitychange', documentVisibilityListener);
+        document.removeEventListener("visibilitychange", documentVisibilityListener);
         documentVisibilityListener = null;
     }
     function createThemeAndWatchForUpdates() {
@@ -5877,33 +6730,48 @@ function InitGiscus() {
                 }
             }
         }
-        catch (err) {
-            logWarn('Error occured in handleAdoptedStyleSheets: ', err);
-        }
+        catch (err) { }
     }
     function watchForUpdates() {
         var managedStyles = Array.from(styleManagers.keys());
         watchForStyleChanges(managedStyles, function (_a) {
             var created = _a.created, updated = _a.updated, removed = _a.removed, moved = _a.moved;
             var stylesToRemove = removed;
-            var stylesToManage = created.concat(updated).concat(moved)
-                .filter(function (style) { return !styleManagers.has(style); });
-            var stylesToRestore = moved
-                .filter(function (style) { return styleManagers.has(style); });
-            logInfo("Styles to be removed:", stylesToRemove);
-            stylesToRemove.forEach(function (style) { return removeManager(style); });
-            var newManagers = stylesToManage
-                .map(function (style) { return createManager(style); });
+            var stylesToManage = created
+                .concat(updated)
+                .concat(moved)
+                .filter(function (style) {
+                return !styleManagers.has(style);
+            });
+            var stylesToRestore = moved.filter(function (style) {
+                return styleManagers.has(style);
+            });
+            stylesToRemove.forEach(function (style) {
+                return removeManager(style);
+            });
+            var newManagers = stylesToManage.map(function (style) {
+                return createManager(style);
+            });
             newManagers
-                .map(function (manager) { return manager.details({ secondRound: false }); })
-                .filter(function (detail) { return detail && detail.rules.length > 0; })
+                .map(function (manager) {
+                return manager.details({ secondRound: false });
+            })
+                .filter(function (detail) {
+                return detail && detail.rules.length > 0;
+            })
                 .forEach(function (detail) {
                 variablesStore.addRulesForMatching(detail.rules);
             });
             variablesStore.matchVariablesAndDependants();
-            newManagers.forEach(function (manager) { return manager.render(filter, ignoredImageAnalysisSelectors); });
-            newManagers.forEach(function (manager) { return manager.watch(); });
-            stylesToRestore.forEach(function (style) { return styleManagers.get(style).restore(); });
+            newManagers.forEach(function (manager) {
+                return manager.render(filter, ignoredImageAnalysisSelectors);
+            });
+            newManagers.forEach(function (manager) {
+                return manager.watch();
+            });
+            stylesToRestore.forEach(function (style) {
+                return styleManagers.get(style).restore();
+            });
         }, function (shadowRoot) {
             createShadowStaticStyleOverrides(shadowRoot);
             handleAdoptedStyleSheets(shadowRoot);
@@ -5911,36 +6779,53 @@ function InitGiscus() {
         watchForInlineStyles(function (element) {
             overrideInlineStyle(element, filter, ignoredInlineSelectors, ignoredImageAnalysisSelectors);
             if (element === document.documentElement) {
-                var styleAttr = element.getAttribute('style') || '';
-                if (styleAttr.includes('--')) {
+                var styleAttr = element.getAttribute("style") || "";
+                if (styleAttr.includes("--")) {
                     variablesStore.matchVariablesAndDependants();
-                    variablesStore.putRootVars(document.head.querySelector('.darkreader--root-vars'), filter);
+                    variablesStore.putRootVars(document.head.querySelector(".darkreader--root-vars"), filter);
                 }
             }
         }, function (root) {
             createShadowStaticStyleOverrides(root);
             var inlineStyleElements = root.querySelectorAll(INLINE_STYLE_SELECTOR);
             if (inlineStyleElements.length > 0) {
-                forEach(inlineStyleElements, function (el) { return overrideInlineStyle(el, filter, ignoredInlineSelectors, ignoredImageAnalysisSelectors); });
+                forEach(inlineStyleElements, function (el) {
+                    return overrideInlineStyle(el, filter, ignoredInlineSelectors, ignoredImageAnalysisSelectors);
+                });
             }
         });
         addDOMReadyListener(onDOMReady);
     }
     function stopWatchingForUpdates() {
-        styleManagers.forEach(function (manager) { return manager.pause(); });
+        styleManagers.forEach(function (manager) {
+            return manager.pause();
+        });
         stopStylePositionWatchers();
         stopWatchingForStyleChanges();
         stopWatchingForInlineStyles();
         removeDOMReadyListener(onDOMReady);
         cleanReadyStateCompleteListeners();
     }
+    var metaObserver;
+    function addMetaListener() {
+        metaObserver = new MutationObserver(function () {
+            if (document.querySelector('meta[name="darkreader-lock"]')) {
+                metaObserver.disconnect();
+                removeDynamicTheme();
+            }
+        });
+        metaObserver.observe(document.head, { childList: true, subtree: true });
+    }
     function createDarkReaderInstanceMarker() {
-        var metaElement = document.createElement('meta');
-        metaElement.name = 'darkreader';
+        var metaElement = document.createElement("meta");
+        metaElement.name = "darkreader";
         metaElement.content = INSTANCE_ID;
         document.head.appendChild(metaElement);
     }
     function isAnotherDarkReaderInstanceActive() {
+        if (document.querySelector('meta[name="darkreader-lock"]')) {
+            return true;
+        }
         var meta = document.querySelector('meta[name="darkreader"]');
         if (meta) {
             if (meta.content !== INSTANCE_ID) {
@@ -5949,14 +6834,19 @@ function InitGiscus() {
             return false;
         }
         createDarkReaderInstanceMarker();
+        addMetaListener();
         return false;
     }
     function createOrUpdateDynamicTheme(filterConfig, dynamicThemeFixes, iframe) {
         filter = filterConfig;
         fixes = dynamicThemeFixes;
         if (fixes) {
-            ignoredImageAnalysisSelectors = Array.isArray(fixes.ignoreImageAnalysis) ? fixes.ignoreImageAnalysis : [];
-            ignoredInlineSelectors = Array.isArray(fixes.ignoreInlineStyle) ? fixes.ignoreInlineStyle : [];
+            ignoredImageAnalysisSelectors = Array.isArray(fixes.ignoreImageAnalysis)
+                ? fixes.ignoreImageAnalysis
+                : [];
+            ignoredInlineSelectors = Array.isArray(fixes.ignoreInlineStyle)
+                ? fixes.ignoreInlineStyle
+                : [];
         }
         else {
             ignoredImageAnalysisSelectors = [];
@@ -5972,15 +6862,17 @@ function InitGiscus() {
             if (isAnotherDarkReaderInstanceActive()) {
                 return;
             }
-            document.documentElement.setAttribute('data-darkreader-mode', 'dynamic');
-            document.documentElement.setAttribute('data-darkreader-scheme', filter.mode ? 'dark' : 'dimmed');
+            document.documentElement.setAttribute("data-darkreader-mode", "dynamic");
+            document.documentElement.setAttribute("data-darkreader-scheme", filter.mode ? "dark" : "dimmed");
             createThemeAndWatchForUpdates();
         }
         else {
             if (!isFirefox) {
-                var fallbackStyle = createOrUpdateStyle('darkreader--fallback');
+                var fallbackStyle = createOrUpdateStyle("darkreader--fallback");
                 document.documentElement.appendChild(fallbackStyle);
-                fallbackStyle.textContent = getModifiedFallbackStyle(filter, { strict: true });
+                fallbackStyle.textContent = getModifiedFallbackStyle(filter, {
+                    strict: true
+                });
             }
             var headObserver_1 = new MutationObserver(function () {
                 if (document.head) {
@@ -5996,39 +6888,42 @@ function InitGiscus() {
         }
     }
     function removeProxy() {
-        document.dispatchEvent(new CustomEvent('__darkreader__cleanUp'));
-        removeNode(document.head.querySelector('.darkreader--proxy'));
+        document.dispatchEvent(new CustomEvent("__darkreader__cleanUp"));
+        removeNode(document.head.querySelector(".darkreader--proxy"));
     }
     function removeDynamicTheme() {
         document.documentElement.removeAttribute("data-darkreader-mode");
         document.documentElement.removeAttribute("data-darkreader-scheme");
         cleanDynamicThemeCache();
-        removeNode(document.querySelector('.darkreader--fallback'));
+        removeNode(document.querySelector(".darkreader--fallback"));
         if (document.head) {
             restoreMetaThemeColor();
-            removeNode(document.head.querySelector('.darkreader--user-agent'));
-            removeNode(document.head.querySelector('.darkreader--text'));
-            removeNode(document.head.querySelector('.darkreader--invert'));
-            removeNode(document.head.querySelector('.darkreader--inline'));
-            removeNode(document.head.querySelector('.darkreader--override'));
-            removeNode(document.head.querySelector('.darkreader--variables'));
-            removeNode(document.head.querySelector('.darkreader--root-vars'));
+            removeNode(document.head.querySelector(".darkreader--user-agent"));
+            removeNode(document.head.querySelector(".darkreader--text"));
+            removeNode(document.head.querySelector(".darkreader--invert"));
+            removeNode(document.head.querySelector(".darkreader--inline"));
+            removeNode(document.head.querySelector(".darkreader--override"));
+            removeNode(document.head.querySelector(".darkreader--variables"));
+            removeNode(document.head.querySelector(".darkreader--root-vars"));
             removeNode(document.head.querySelector('meta[name="darkreader"]'));
             removeProxy();
         }
         shadowRootsWithOverrides.forEach(function (root) {
-            removeNode(root.querySelector('.darkreader--inline'));
-            removeNode(root.querySelector('.darkreader--override'));
+            removeNode(root.querySelector(".darkreader--inline"));
+            removeNode(root.querySelector(".darkreader--override"));
         });
         shadowRootsWithOverrides.clear();
-        forEach(styleManagers.keys(), function (el) { return removeManager(el); });
+        forEach(styleManagers.keys(), function (el) {
+            return removeManager(el);
+        });
         loadingStyles.clear();
         cleanLoadingLinks();
-        forEach(document.querySelectorAll('.darkreader'), removeNode);
+        forEach(document.querySelectorAll(".darkreader"), removeNode);
         adoptedStyleManagers.forEach(function (manager) {
             manager.destroy();
         });
         adoptedStyleManagers.splice(0);
+        metaObserver && metaObserver.disconnect();
     }
     function cleanDynamicThemeCache() {
         variablesStore.clear();
@@ -6037,6 +6932,7 @@ function InitGiscus() {
         cancelRendering();
         stopWatchingForUpdates();
         cleanModificationCache();
+        clearColorCache();
     }
     var blobRegex = /url\(\"(blob\:.*?)\"\)/g;
     function replaceBlobs(text) {
@@ -6053,12 +6949,17 @@ function InitGiscus() {
                         return [4, Promise.all(promises)];
                     case 1:
                         data = _a.sent();
-                        return [2, text.replace(blobRegex, function () { return "url(\"".concat(data.shift(), "\")"); })];
+                        return [
+                            2,
+                            text.replace(blobRegex, function () {
+                                return 'url("'.concat(data.shift(), '")');
+                            })
+                        ];
                 }
             });
         });
     }
-    var banner = "/*\n                        _______\n                       /       \\\n                      .==.    .==.\n                     ((  ))==((  ))\n                    / \"==\"    \"==\"\\\n                   /____|| || ||___\\\n       ________     ____    ________  ___    ___\n       |  ___  \\   /    \\   |  ___  \\ |  |  /  /\n       |  |  \\  \\ /  /\\  \\  |  |  \\  \\|  |_/  /\n       |  |   )  /  /__\\  \\ |  |__/  /|  ___  \\\n       |  |__/  /  ______  \\|  ____  \\|  |  \\  \\\n_______|_______/__/ ____ \\__\\__|___\\__\\__|___\\__\\____\n|  ___  \\ |  ____/ /    \\   |  ___  \\ |  ____|  ___  \\\n|  |  \\  \\|  |___ /  /\\  \\  |  |  \\  \\|  |___|  |  \\  \\\n|  |__/  /|  ____/  /__\\  \\ |  |   )  |  ____|  |__/  /\n|  ____  \\|  |__/  ______  \\|  |__/  /|  |___|  ____  \\\n|__|   \\__\\____/__/      \\__\\_______/ |______|__|   \\__\\\n                https://darkreader.org\n*/\n\n/*! Dark reader generated CSS | Licensed under MIT https://github.com/darkreader/darkreader/blob/master/LICENSE */\n";
+    var banner = '/*\n                        _______\n                       /       \\\n                      .==.    .==.\n                     ((  ))==((  ))\n                    / "=="    "=="\\\n                   /____|| || ||___\\\n       ________     ____    ________  ___    ___\n       |  ___  \\   /    \\   |  ___  \\ |  |  /  /\n       |  |  \\  \\ /  /\\  \\  |  |  \\  \\|  |_/  /\n       |  |   )  /  /__\\  \\ |  |__/  /|  ___  \\\n       |  |__/  /  ______  \\|  ____  \\|  |  \\  \\\n_______|_______/__/ ____ \\__\\__|___\\__\\__|___\\__\\____\n|  ___  \\ |  ____/ /    \\   |  ___  \\ |  ____|  ___  \\\n|  |  \\  \\|  |___ /  /\\  \\  |  |  \\  \\|  |___|  |  \\  \\\n|  |__/  /|  ____/  /__\\  \\ |  |   )  |  ____|  |__/  /\n|  ____  \\|  |__/  ______  \\|  |__/  /|  |___|  ____  \\\n|__|   \\__\\____/__/      \\__\\_______/ |______|__|   \\__\\\n                https://darkreader.org\n*/\n\n/*! Dark reader generated CSS | Licensed under MIT https://github.com/darkreader/darkreader/blob/main/LICENSE */\n';
     function collectCSS() {
         return __awaiter(this, void 0, void 0, function () {
             function addStaticCSS(selector, comment) {
@@ -6066,7 +6967,7 @@ function InitGiscus() {
                 if (staticStyle && staticStyle.textContent) {
                     css.push("/* ".concat(comment, " */"));
                     css.push(staticStyle.textContent);
-                    css.push('');
+                    css.push("");
                 }
             }
             var css, modifiedCSS, formattedCSS, _a, _b;
@@ -6074,30 +6975,34 @@ function InitGiscus() {
                 switch (_c.label) {
                     case 0:
                         css = [banner];
-                        addStaticCSS('.darkreader--fallback', 'Fallback Style');
-                        addStaticCSS('.darkreader--user-agent', 'User-Agent Style');
-                        addStaticCSS('.darkreader--text', 'Text Style');
-                        addStaticCSS('.darkreader--invert', 'Invert Style');
-                        addStaticCSS('.darkreader--variables', 'Variables Style');
+                        addStaticCSS(".darkreader--fallback", "Fallback Style");
+                        addStaticCSS(".darkreader--user-agent", "User-Agent Style");
+                        addStaticCSS(".darkreader--text", "Text Style");
+                        addStaticCSS(".darkreader--invert", "Invert Style");
+                        addStaticCSS(".darkreader--variables", "Variables Style");
                         modifiedCSS = [];
-                        document.querySelectorAll('.darkreader--sync').forEach(function (element) {
+                        document
+                            .querySelectorAll(".darkreader--sync")
+                            .forEach(function (element) {
                             forEach(element.sheet.cssRules, function (rule) {
-                                rule && rule.cssText && modifiedCSS.push(rule.cssText);
+                                rule &&
+                                    rule.cssText &&
+                                    modifiedCSS.push(rule.cssText);
                             });
                         });
                         if (!modifiedCSS.length)
                             return [3, 2];
-                        formattedCSS = formatCSS(modifiedCSS.join('\n'));
-                        css.push('/* Modified CSS */');
+                        formattedCSS = formatCSS(modifiedCSS.join("\n"));
+                        css.push("/* Modified CSS */");
                         _b = (_a = css).push;
                         return [4, replaceBlobs(formattedCSS)];
                     case 1:
                         _b.apply(_a, [_c.sent()]);
-                        css.push('');
+                        css.push("");
                         _c.label = 2;
                     case 2:
-                        addStaticCSS('.darkreader--override', 'Override Style');
-                        return [2, css.join('\n')];
+                        addStaticCSS(".darkreader--override", "Override Style");
+                        return [2, css.join("\n")];
                 }
             });
         });
@@ -6120,8 +7025,8 @@ function InitGiscus() {
             fixes = null;
         }
         var theme = __assign(__assign({}, DEFAULT_THEME), themeOptions);
-        if (theme.engine !== ThemeEngines.dynamicTheme) {
-            throw new Error('Theme engine is not supported.');
+        if (theme.engine !== ThemeEngine.dynamicTheme) {
+            throw new Error("Theme engine is not supported.");
         }
         createOrUpdateDynamicTheme(theme, fixes, isIFrame);
         isDarkReaderEnabled = true;
@@ -6133,10 +7038,10 @@ function InitGiscus() {
         removeDynamicTheme();
         isDarkReaderEnabled = false;
     }
-    var darkScheme = matchMedia('(prefers-color-scheme: dark)');
+    var darkScheme = matchMedia("(prefers-color-scheme: dark)");
     var store = {
         themeOptions: null,
-        fixes: null,
+        fixes: null
     };
     function handleColorScheme() {
         if (darkScheme.matches) {
@@ -6157,7 +7062,7 @@ function InitGiscus() {
             store = { themeOptions: themeOptions, fixes: fixes };
             handleColorScheme();
             if (isMatchMediaChangeEventListenerSupported) {
-                darkScheme.addEventListener('change', handleColorScheme);
+                darkScheme.addEventListener("change", handleColorScheme);
             }
             else {
                 darkScheme.addListener(handleColorScheme);
@@ -6165,7 +7070,7 @@ function InitGiscus() {
         }
         else {
             if (isMatchMediaChangeEventListenerSupported) {
-                darkScheme.removeEventListener('change', handleColorScheme);
+                darkScheme.removeEventListener("change", handleColorScheme);
             }
             else {
                 darkScheme.removeListener(handleColorScheme);
@@ -6177,8 +7082,10 @@ function InitGiscus() {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4, collectCSS()];
-                    case 1: return [2, _a.sent()];
+                    case 0:
+                        return [4, collectCSS()];
+                    case 1:
+                        return [2, _a.sent()];
                 }
             });
         });
@@ -6190,8 +7097,8 @@ function InitGiscus() {
     exports.exportGeneratedCSS = exportGeneratedCSS;
     exports.isEnabled = isEnabled;
     exports.setFetchMethod = setFetchMethod;
-    Object.defineProperty(exports, '__esModule', { value: true });
-}));
+    Object.defineProperty(exports, "__esModule", { value: true });
+});
 function InitSpoilers() {
     const spoilers = document.querySelectorAll('.spoiler');
     for (let i = 0, n = spoilers.length; i < n; i++) {
