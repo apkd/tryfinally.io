@@ -23,7 +23,7 @@
     "build-img-1": "yarn imagemin assets/img/cover --out-dir=assets/img-min/cover --plugin.webp.method=6 --plugin.webp.quality=90 --plugin.webp.autofilter=true --plugin.webp.crop.x=0 --plugin.webp.crop.y=512 --plugin.webp.crop.width=2048 --plugin.webp.crop.height=400",
     "build-img-2": "yarn imagemin assets/img/cover --out-dir=assets/img-min/thumb --plugin.webp.method=6 --plugin.webp.quality=80 --plugin.webp.autofilter=true --plugin.webp.resize.width=800 --plugin.webp.resize.height=0",
     "build-img-3": "yarn imagemin assets/img/site  --out-dir=assets/img-min/site  --plugin.webp.method=6 --plugin.webp.quality=90 --plugin.webp.autofilter=true",
-    "build-search": "yarn shx rm -r assets/pagefind/ && yarn pagefind --source _site --bundle-dir ../assets/pagefind/"
+    "build-search": "yarn shx mkdir -p assets/pagefind/ && yarn shx rm -r assets/pagefind/ && yarn pagefind --source _site --bundle-dir ../assets/pagefind/"
   }
 }
 
