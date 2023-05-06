@@ -396,7 +396,7 @@ This makes it easy to share lighting between scenes, switch between sun options,
 > Usually you'll want to define a global volume so that the sun is constant throughout the scene, but you can also use a local volume to modify the light parameters in a specific area.[^0]
 > This example is HDRP-specific, but you should be able to adapt it to URP with little problem.
 
-[^0]: Make your game for long enough and you'll need this hack eventually.
+[^0]: Don't laugh. Make your game for long enough and you'll need this hack eventually.
 
 ```csharp
 using UnityEngine;
@@ -502,7 +502,7 @@ public sealed class TimeScaleVolumeComponent : VolumeComponent, IUpdatableVolume
 ## Other gameplay-related ideas
 
 - You can use a volume component to set audio settings.
-  - Modify FMOD snapshots based on the camera position.
+  - Play FMOD snapshots and modify their weights based on the camera position.
   - Play different music and ambience based on the camera position.
   - Adjust global sound parameters, eg. reverb.
 - You can change gravity (and other gameplay parameters) based on the camera's position in the scene.
