@@ -536,12 +536,11 @@ function InitGiscus() {
         localStorage.setItem(GISCUS_SESSION_KEY, JSON.stringify(session));
         history.replaceState(undefined, document.title, cleanedLocation);
     }
-    else {
+    else if (savedSession) {
         try {
-            session = JSON.parse(savedSession) || '';
+            session = JSON.parse(savedSession);
         }
         catch (e) {
-            session = '';
             localStorage.removeItem(GISCUS_SESSION_KEY);
             console.warn(`${formatError(e === null || e === void 0 ? void 0 : e.message)} Session has been cleared.`);
         }
@@ -593,16 +592,11 @@ function InitGiscus() {
         if (!data.giscus.error)
             return;
         const message = data.giscus.error;
-        if (message.includes('Bad credentials') || message.includes('Invalid state value')) {
-            if (localStorage.getItem(GISCUS_SESSION_KEY) !== null) {
-                localStorage.removeItem(GISCUS_SESSION_KEY);
-                console.warn(`${formatError(message)} Session has been cleared.`);
-                delete params.session;
-                iframeElement.src = `${giscusOrigin}/widget?${new URLSearchParams(params)}`;
-            }
-            else if (!savedSession) {
-                console.error(`${formatError(message)} No session is stored initially. ${suggestion}`);
-            }
+        if (message.includes('Bad credentials') || message.includes('Invalid state value') || message.includes('State has expired')) {
+            localStorage.removeItem(GISCUS_SESSION_KEY);
+            console.warn(`${formatError(message)} Session has been cleared.`);
+            delete params.session;
+            iframeElement.src = `${giscusOrigin}/widget?${new URLSearchParams(params)}`;
         }
         else if (message.includes('Discussion not found')) {
             console.warn(`[giscus] ${message}. A new discussion will be created if a comment/reaction is submitted.`);
