@@ -40,7 +40,7 @@ post_class: post-template
             </ul>
             {% endif %}
 
-            <h1 class="post-title">{{ page.title | markdownify }}</h1>
+            <h1 class="post-title" data-pagefind-meta="title">{{ page.title | markdownify }}</h1>
         </div>
 
         {% if page.image %}
@@ -121,6 +121,7 @@ post_class: post-template
                         {% if page.license == "cc-zero" %}
                         <a class="nounderline" href="https://creativecommons.org/publicdomain/zero/1.0/"> {% include svg/cc.svg %} {% include svg/cc-zero.svg %}</a>
                         {% endif %}
+                        <em>tryfinally.dev</em>
                     </p>
                     {% endif %}
 
