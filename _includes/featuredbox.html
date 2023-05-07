@@ -17,11 +17,11 @@
                 <div class="h-100 card-group">
                     <div class="card">
                         <div class="card-body ps-lg-0">
-                            <h2 class="card-title">
+                            <h1 class="card-title">
                                 <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-                            </h2>
+                            </h1>
 
-                            <h4 class="card-text">{{ post.excerpt | strip_html | truncatewords:25 | markdownify }}</h4>
+                            <span class="card-text">{{ post.excerpt | strip_html | truncatewords:25 | markdownify }}</span>
                         </div>
                         <div class="card-footer ps-lg-0 b-0 mt-auto mb-2">
                             <div class="d-flex align-content-center">

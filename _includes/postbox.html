@@ -32,10 +32,10 @@
             </div>
         </a>
         <div class="card-body pb-0">
-            <h2 class="card-title">
+            <h1 class="card-title">
                 <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.title | markdownify }}</a>
-            </h2>
-            <h4 class="card-text">{{ post.excerpt | strip_html | truncatewords:30 | markdownify }}</h4>
+            </h1>
+            <span class="card-text">{{ post.excerpt | strip_html | truncatewords:30 | markdownify }}</span>
         </div>
         <div class="card-footer mb-1">
             <div class="d-flex justify-content-between align-items-end">
