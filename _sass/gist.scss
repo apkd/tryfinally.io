@@ -70,12 +70,16 @@ body .gist-meta a {
 }
 
 body .gist .blob-code-inner {
-  color: $lineno;
+  color: $code;
 }
 
 body .gist .blob-num {
   font-style: italic !important;
   text-align: left;
+}
+
+body .gist .pl-kos {
+  color: white;
 }
 
 body .gist .blob-num,
@@ -112,11 +116,10 @@ body .gist .pl-c1 {
 body .gist .pl-s1,
 body .gist .pl-s1 .pl-pse .pl-s2,
 body .gist .pl-sv {
-  color: $keyword;
+  color: $code;
 }
 
 body .gist .pl-s1 .pl-s2,
-body .gist .pl-smi,
 body .gist .pl-smp,
 body .gist .pl-stj,
 body .gist .pl-e,
@@ -135,6 +138,7 @@ body .gist .pl-mo,
 body .gist .pl-mp,
 body .gist .pl-mr,
 body .gist .pl-ms,
+body .gist .pl-smi,
 body .gist .pl-s1 .pl-v,
 body .gist .pl-s3 {
   color: $keyword;
@@ -174,8 +178,6 @@ body .gist .pl-id,
 body .gist .pl-ii {
   color: $comments;
 }
-/*! purgecss end ignore */
-
 
 @media (prefers-color-scheme: light) {
   body .gist .gist-file {
@@ -183,3 +185,4 @@ body .gist .pl-ii {
     filter: invert(1) hue-rotate(180deg) saturate(2);
   }
 }
+/*! purgecss end ignore */
