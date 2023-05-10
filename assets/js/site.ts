@@ -1,4 +1,4 @@
-/// <reference path='./accelerator.ts' />
+/* /// <reference path='./accelerator.ts' /> */
 /// <reference path='./applause-button.ts' />
 /// <reference path='./gist-embed.ts' />
 /// <reference path='./goatcounter.ts' />
@@ -6,6 +6,7 @@
 /// <reference path='../../node_modules/darkreader/darkreader.js' />
 /// <reference types='darkreader' />
 declare var unityWebGLInstance: any;
+declare var InitializePost: Function;
 
 function InitSpoilers() {
     const spoilers = document.querySelectorAll('.spoiler');
@@ -50,31 +51,34 @@ function InitDarkModeButton() {
     }
 }
 
-function InitAccelerate() {
-    accelerate(BeforeAcceleratedPageLoad, AfterAcceleratedPageLoad, ShowNetworkError);
-
-    function BeforeAcceleratedPageLoad() {
-        if (window.unityWebGLInstance != undefined) {
-            window.unityWebGLInstance.Quit();
-            window.unityWebGLInstance = undefined;
-        }
-    }
-
-    function AfterAcceleratedPageLoad() {
-        InitSpoilers();
-        InitGistEmbed();
-        InitGiscus();
-        InitDarkModeButton();
-        InitSearch();
-        GoatCounterCountHit();
-    }
-
-    function ShowNetworkError() {
-        let error = document.querySelector('#error-alert');
-        error.innerHTML = "<strong>Unable to navigate to page.</strong> I don't mean to shift the blame, but please check your network connection.";
-        error.classList.remove('.d-none');
-    }
-}
+// function InitAccelerate() {
+//     accelerate(BeforeAcceleratedPageLoad, AfterAcceleratedPageLoad, ShowNetworkError);
+//
+//     function BeforeAcceleratedPageLoad() {
+//         if (window.unityWebGLInstance != undefined) {
+//             window.unityWebGLInstance.Quit();
+//             window.unityWebGLInstance = undefined;
+//         }
+//     }
+//
+//     function AfterAcceleratedPageLoad() {
+//         InitSpoilers();
+//         InitGistEmbed();
+//         InitGiscus();
+//         InitDarkModeButton();
+//         InitSearch();
+//         GoatCounterCountHit();
+//         if (InitializePost) {
+//             InitializePost();
+//         }
+//     }
+//
+//     function ShowNetworkError() {
+//         let error = document.querySelector('#error-alert');
+//         error.innerHTML = "<strong>Unable to navigate to page.</strong> I don't mean to shift the blame, but please check your network connection.";
+//         error.classList.remove('.d-none');
+//     }
+// }
 
 function InitSearch() {
     if (document.querySelector("#search")) {
@@ -88,7 +92,7 @@ function InitSearch() {
 }
 
 InitDarkMode();
-InitAccelerate();
+// InitAccelerate();
 InitDarkModeButton();
 InitSpoilers();
 InitApplauseButton();
