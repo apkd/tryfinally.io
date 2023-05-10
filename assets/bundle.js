@@ -1,129 +1,4 @@
 "use strict";
-function accelerate(beforeLoading, afterLoading, onError) {
-    let url = document.location.href;
-    let metaKeyIsPressed = false;
-    function ajax(url) {
-        return new window.Promise(function (resolve, reject) {
-            const req = new XMLHttpRequest();
-            req.open('GET', url, true);
-            req.onload = function () {
-                if (req.status >= 200 && req.status < 400) {
-                    resolve(req.response);
-                    return;
-                }
-                reject(req.response);
-            };
-            req.onerror = function () {
-                reject(Error('Network error'));
-            };
-            req.send();
-        });
-    }
-    function updateObject(obj, body) {
-        const attrs = body.attributes;
-        let i = 0;
-        const size = attrs.length;
-        for (; i < size; i++) {
-            obj.attrs[attrs[i].name] = attrs[i].value;
-        }
-        return obj;
-    }
-    function updateHistory(head, body) {
-        const obj = updateObject({
-            head: head.innerHTML,
-            content: body.innerHTML,
-            attrs: {}
-        }, body);
-        window.history.pushState(obj, '', url);
-        window.addEventListener('popstate', onPopState.bind(this), false);
-    }
-    function parseDom(data) {
-        const parser = new DOMParser();
-        return parser.parseFromString(data, 'text/html');
-    }
-    function updateBodyAttributes(data) {
-        Object.keys(data).forEach(function (key) {
-            const value = data[key];
-            document.body.setAttribute(key, value);
-        });
-    }
-    function onPopState(event) {
-        beforeLoading();
-        const data = event.state;
-        if (data != null) {
-            updateBodyAttributes(data.attrs);
-            document.body.innerHTML = data.content;
-            const dom = parseDom(data.head);
-            document.title = dom.head.querySelector('title').innerText;
-        }
-        url = window.location.href;
-        processPageContent();
-        afterLoading();
-    }
-    function onLoadPage(data) {
-        const dom = parseDom(data);
-        const head = dom.head;
-        const body = dom.body;
-        document.body = body;
-        document.title = head.querySelector('title').innerText;
-        document.querySelector('link[rel="canonical"][href]').outerHTML = head.querySelector('link[rel="canonical"][href]').outerHTML;
-        updateHistory(head, body);
-        window.scrollTo(0, 0);
-        processPageContent();
-        afterLoading();
-    }
-    function onClick(element) {
-        beforeLoading();
-        url = element.href;
-        ajax(url)
-            .then(onLoadPage.bind(this))
-            .catch(onError);
-    }
-    function replaceHistory() {
-        const body = document.body;
-        const obj = updateObject({
-            head: document.head.innerHTML,
-            content: body.innerHTML,
-            attrs: {}
-        }, body);
-        window.history.replaceState(obj, '', url);
-    }
-    function addEventListeners() {
-        window.addEventListener('keydown', function (event) {
-            if (event.metaKey || event.ctrlKey) {
-                metaKeyIsPressed = true;
-            }
-        });
-        window.addEventListener('keyup', function (event) {
-            if (event.metaKey || event.ctrlKey) {
-                metaKeyIsPressed = false;
-            }
-        });
-    }
-    function processPageContent() {
-        const links = document.querySelectorAll('a:not([data-accelerate="false"]):not([target=_blank])');
-        links.forEach((element) => {
-            if (element.hostname !== window.location.hostname) {
-                return;
-            }
-            if (element.protocol !== window.location.protocol) {
-                return;
-            }
-            if (/#/.test(element.href)) {
-                return;
-            }
-            element.addEventListener('click', function (event) {
-                if (!metaKeyIsPressed) {
-                    event.preventDefault();
-                    onClick(element);
-                }
-            }, false);
-        });
-    }
-    addEventListeners();
-    replaceHistory();
-    processPageContent();
-}
 function InitApplauseButton() {
     const API = "https://applause.nocebo.games";
     const getClaps = (api, url) => fetch(`${api}/get-claps` + (url ? `?url=${url}` : ""), { headers: { "Content-Type": "text/plain" } })
@@ -7129,28 +7004,6 @@ function InitDarkModeButton() {
         buttons[i].addEventListener('click', ToggleDarkMode);
     }
 }
-function InitAccelerate() {
-    accelerate(BeforeAcceleratedPageLoad, AfterAcceleratedPageLoad, ShowNetworkError);
-    function BeforeAcceleratedPageLoad() {
-        if (window.unityWebGLInstance != undefined) {
-            window.unityWebGLInstance.Quit();
-            window.unityWebGLInstance = undefined;
-        }
-    }
-    function AfterAcceleratedPageLoad() {
-        InitSpoilers();
-        InitGistEmbed();
-        InitGiscus();
-        InitDarkModeButton();
-        InitSearch();
-        GoatCounterCountHit();
-    }
-    function ShowNetworkError() {
-        let error = document.querySelector('#error-alert');
-        error.innerHTML = "<strong>Unable to navigate to page.</strong> I don't mean to shift the blame, but please check your network connection.";
-        error.classList.remove('.d-none');
-    }
-}
 function InitSearch() {
     if (document.querySelector("#search")) {
         return new PagefindUI({ element: "#search", bundlePath: "/assets/pagefind/" });
@@ -7160,7 +7013,6 @@ function InitSearch() {
     }
 }
 InitDarkMode();
-InitAccelerate();
 InitDarkModeButton();
 InitSpoilers();
 InitApplauseButton();
