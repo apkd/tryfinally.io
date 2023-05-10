@@ -40,7 +40,7 @@ Engine features:
 - mpvfxknlr gtdqs cfssjfa, ipbaonzb gse gteqfi qundv
 {:style="font-family:fallkhar; font-weight:900"}
 
-# **[Uncursed](https://uncursed.io/)** | *side project*{:.small}
+# **[Uncursed](https://uncursed.io/)** | *video game project*{:.small}
 
 > Action Roguelite with RPG elements, swaths of epic loot and sweet archery combat. Coming soon!
 
@@ -53,7 +53,19 @@ Engine features:
 - No ads, no cash shop, no catch. They don't make 'em like that any more
 - [Open-sourced](https://github.com/apkd/uncursed.io) the [project website](https://uncursed.io/)
 
-# **[Dungeno](https://uncursed.io/#dungeon)** | *side project*{:.small}
+# **[Bunny Game](https://store.steampowered.com/app/2180890/Bunny_Game/)** | *video game project*{:.small}
+
+> Bunny Game is an online, cooperative bunny survival challenge! You and your friends have to use your wit, creativity, and logic to survive this dangerous world - time passes, seasons change and weather adjusts dynamically.
+
+- Originally created for the [TK & Sensei Game Jam](https://itch.io/jam/tk-sensei-game-jam/rate/1716478)
+- 4-player online co-op
+- Lots of quests to complete and environmental challenges to overcome
+- Dynamic weather and day/night cycle
+- Stylized graphics and beautiful lighting achieved with Unity's High Definition Render Pipeline
+- [Open-sourced](https://github.com/apkd/bunny.nocebo.games) the [project website](https://bunny.nocebo.games/)
+- [Wishlist it on Steam!](https://store.steampowered.com/app/2180890/Bunny_Game/)
+
+# **[Dungeno](https://uncursed.io/#dungeon)** | *video game project*{:.small}
 
 > Discord-based MUD-like multiplayer RPG. Coming soon!
 
