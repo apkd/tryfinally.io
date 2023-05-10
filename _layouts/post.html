@@ -64,7 +64,6 @@ post_class: post-template
             <div class="col-md-8" >
                 <div class="card mx-1" style="max-width: 512px">
                     <div class="card-body">
-
                         {% if page.tags and page.tags.size > 1 %}
                         <!-- todo: fix spacing when there are no tags-->
                         <div class="text-end" style="margin-bottom: -40px;">
@@ -81,7 +80,7 @@ post_class: post-template
                         <ol start="0">
                             {% assign series = site.categories[category] | reverse %}
                             {% for post in series %}
-                            <li><a href="{{ post.url }}">{{ post.title | xml_escape }}</a></li>
+                            <li><a href="{{ post.url }}">{{ post.title | markdownify | remove: "<p>" | remove: "</p>"}}</a></li>
                             {% endfor %}
                         </ol>
                     </div>
