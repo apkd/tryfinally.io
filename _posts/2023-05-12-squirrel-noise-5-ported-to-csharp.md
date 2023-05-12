@@ -3,7 +3,7 @@ layout: post
 title: "Snippet: C# version of `SquirrelNoise5`"
 excerpt: "High-performance stateless noise/hash functions written by Squirrel Eiserloh. Useful for procedural generation and noise generation."
 thumbtext: "SquirrelNoise5.cs"
-image: assets/img-min/cover/NDUjrvZKMeE.webp
+image: assets/img-min/social/NDUjrvZKMeE.webp
 categories: []
 tags: [unity, csharp]
 author: apkd

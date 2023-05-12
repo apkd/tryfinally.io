@@ -3,7 +3,7 @@ layout: post
 title: "Forcing Unity inspectors to redraw every frame"
 excerpt: "Use `Editor.RequiresConstantRepaint` to make sure your custom inspector doesn't skip any updates"
 thumbtext: "RequiresConstantRepaint"
-image: assets/img-min/cover/mkvpA0BA-9E.webp
+image: assets/img-min/social/mkvpA0BA-9E.webp
 categories: [unity-protips]
 tags: [unity, csharp]
 author: apkd

@@ -3,7 +3,7 @@ layout: post
 title: "Ray-mesh intersection in Unity Editor"
 excerpt: "Unity has a built-in `IntersectRayMesh` function, but it's internal and editor-only... here's how you use it."
 thumbtext: "IntersectRayMesh"
-image: assets/img-min/cover/VOigE30bMhg.webp
+image: assets/img-min/social/VOigE30bMhg.webp
 categories: ["unity-protips"]
 tags: [csharp, unity]
 author: apkd

@@ -3,7 +3,7 @@ layout: post
 title: "Notifying Unity about texture modifications"
 excerpt: "Use `Texture.IncrementUpdateCount()` to let Unity know that a texture has changed"
 thumbtext: "IncrementUpdateCount"
-image: assets/img-min/cover/yn97LNy0bao.webp
+image: assets/img-min/social/yn97LNy0bao.webp
 categories: [unity-protips]
 tags: [unity, csharp]
 author: apkd

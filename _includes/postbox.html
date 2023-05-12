@@ -20,7 +20,7 @@
                 <figure>
                     {% if post.image %}
                     <img style="height:250px; width:100%" class="{% if post.image contains '.gif' %}crisp-edges{% endif %}"
-                         src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image | replace_first: 'assets/img-min/cover/', 'assets/img-min/thumb/' }}{% endif %}" 
+                         src="{% if post.image contains '://' %}{{ post.image }}{% else %}{{ site.baseurl }}/{{ post.image | replace_first: 'assets/img-min/social/', 'assets/img-min/thumb/' }}{% endif %}" 
                          alt="{{ post.title | xml_escape }}"
                          {% if forloop.index0 > 0 %}loading="lazy"{% endif %}
                          >

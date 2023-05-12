@@ -3,7 +3,7 @@ layout: post
 title: "Unity Package Cheatsheet"
 excerpt: "A handy reference of all UPM packages and related links"
 thumbtext: "UPM"
-image: assets/img-min/cover/YJGq5H9ofy0.webp
+image: assets/img-min/social/YJGq5H9ofy0.webp
 categories: [unity-protips]
 tags: [unity]
 author: apkd

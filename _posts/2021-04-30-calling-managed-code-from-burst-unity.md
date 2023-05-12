@@ -3,7 +3,7 @@ layout: post
 title: "Calling managed code from Burst"
 excerpt: "Find out how to call Mono code from Burst-compiled jobs and functions"
 thumbtext: "Burst ➟ Mono"
-image: assets/img-min/cover/xDsaGQJumBY.webp
+image: assets/img-min/social/xDsaGQJumBY.webp
 categories: []
 tags: [unity, csharp, dots]
 author: apkd

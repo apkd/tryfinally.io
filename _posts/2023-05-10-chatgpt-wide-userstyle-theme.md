@@ -3,7 +3,7 @@ layout: post
 title: "Snippet: Wider ChatGPT conversation window"
 excerpt: "Your ticket to an ~~immersive~~ sensible ChatGPT experience."
 thumbtext: "WideGPT"
-image: assets/img-min/cover/qLkLRF7xdt4.webp
+image: assets/img-min/social/qLkLRF7xdt4.webp
 categories: []
 tags: [chatgpt]
 author: apkd

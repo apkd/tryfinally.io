@@ -17,7 +17,7 @@
     <link data-pagefind-meta="url[href]" href="{{ page.url }}">
 
     {% if page.image %}
-    <meta data-pagefind-meta="image[content]" content="{% if page.image contains '://' %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image | replace_first: 'assets/img-min/cover/', 'assets/img-min/thumb/' }}{% endif %}" property="og:image">
+    <meta data-pagefind-meta="image[content]" content="{% if page.image contains '://' %}{{ page.image }}{% else %}{{ site.baseurl }}/{{ page.image | replace_first: 'assets/img-min/social/', 'assets/img-min/thumb/' }}{% endif %}">
     {% endif %}
 
     {% seo %}

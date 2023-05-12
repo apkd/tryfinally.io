@@ -3,7 +3,7 @@ layout: post
 title: "Probability distribution sampling in C# using StatDist and Troschuetz.Random"
 excerpt: "Learn how to sample various common probability distributions in C#"
 thumbtext: StatDist + TRandom
-image: assets/img-min/cover/J9mO6DVgPJY.webp
+image: assets/img-min/social/J9mO6DVgPJY.webp
 categories: [csharp]
 tags: [csharp]
 author: apkd

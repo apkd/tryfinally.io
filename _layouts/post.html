@@ -45,7 +45,7 @@ post_class: post-template
 
         {% if page.image %}
         <div class="featured-image-container mb-4">
-            <img width="2048" height="400" class="featured-image" fetchpriority="high" src="{% if page.image contains ' ://' %} {{ page.image }}{% else %}{{site.baseurl }}/{{ page.image }}{% endif %}" alt="{{ page.title }}">
+            <img width="2048" height="400" class="featured-image" fetchpriority="high" src="{% if page.image contains ' ://' %} {{ page.image | replace_first: 'assets/img-min/social/', 'assets/img-min/cover/'  }}{% else %}{{site.baseurl }}/{{ page.image | replace_first: 'assets/img-min/social/', 'assets/img-min/cover/'  }}{% endif %}" alt="{{ page.title }}">
             {% comment %}
             {% if page.thumbtext %}
             <div class="featured-image-text">{{ page.thumbtext }}</div>

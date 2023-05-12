@@ -80,4 +80,6 @@ exclude: [
 code:
   cs: "{:.language-cs.highlight}"
   sh: "{:.language-sh.highlight}"
+  js: "{:.language-js.highlight}"
+  css: "{:.language-css.highlight}"
   cpp: "{:.language-cpp.highlight}"

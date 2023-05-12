@@ -3,7 +3,7 @@ layout: post
 title: "Using Unity asset labels"
 excerpt: "Don't get your hopes up"
 thumbtext: Asset labels
-image: assets/img-min/cover/aHhhdKUP77M.webp
+image: assets/img-min/social/aHhhdKUP77M.webp
 categories: [unity-protips]
 tags: [unity, csharp]
 author: apkd

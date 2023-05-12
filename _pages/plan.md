@@ -2,7 +2,7 @@
 layout: post
 permalink: /.plan
 title: "all according to `.plan`"
-image: assets/img-min/cover/rRS54e00uoQ.webp
+image: assets/img-min/social/rRS54e00uoQ.webp
 author: apkd
 likeable: false
 editable: false

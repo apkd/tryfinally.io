@@ -8,7 +8,7 @@ tags: [ unity, csharp ]
 series: true
 featured: false
 license: cc-by
-image: assets/img-min/cover/R79qkPYvrcM.webp
+image: assets/img-min/social/R79qkPYvrcM.webp
 ---
 
 **Detours are a way to replace the implementation of a C# method.**

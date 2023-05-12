@@ -3,7 +3,7 @@ layout: post
 title: "Snippet: partial repository cloning w/ git sparse-checkout"
 excerpt: "Use `git sparse-checkout` and `git clone --filter` to clone only part of a large repository"
 thumbtext: git sparse-checkout
-image: assets/img-min/cover/0bXb4TQ2y-k.webp
+image: assets/img-min/social/0bXb4TQ2y-k.webp
 categories: []
 tags: [git]
 author: apkd

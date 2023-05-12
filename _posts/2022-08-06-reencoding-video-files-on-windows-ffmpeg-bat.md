@@ -3,7 +3,7 @@ layout: post
 title: "Snippet: quickly re-encoding video files w/ ffmpeg on Windows"
 excerpt: "Quick `.bat` script to re-encode `yt-dlp`'d video files to H.264"
 thumbtext: "reencode.bat"
-image: assets/img-min/cover/vg0Mph2RmI4.webp
+image: assets/img-min/social/vg0Mph2RmI4.webp
 categories: []
 tags: [ffmpeg]
 author: apkd

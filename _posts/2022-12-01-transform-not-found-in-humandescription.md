@@ -3,7 +3,7 @@ layout: post
 title: "Quick fix: `Transform 'X' not found in HumanDescription`"
 excerpt: "When you're attaching a GameObject to a bone of an animated character using the Humanoid rig you might encounter this error (Unity 2021.3.2f1)."
 thumbtext: ""
-image: assets/img-min/cover/YBg0ptVCOOU.webp
+image: assets/img-min/social/YBg0ptVCOOU.webp
 categories: []
 tags: [unity]
 author: apkd

@@ -3,7 +3,7 @@ layout: post
 title: "Pump Up The Volume: Writing custom Volume Components in Unity"
 excerpt: "You can create custom Volume Components to find a blended set of parameters determined by the camera's position within the scene."
 thumbtext: "VolumeComponent"
-image: assets/img-min/cover/zYD_XzNyRyo.webp
+image: assets/img-min/social/zYD_XzNyRyo.webp
 categories: [unity-protips]
 tags: [unity, csharp, hdrp, urp]
 author: apkd
