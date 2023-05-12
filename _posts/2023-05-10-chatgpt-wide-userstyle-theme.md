@@ -28,9 +28,14 @@ I can't be the only one who needed this.
 
 # Installation
 
-To install via [TamperMonkey](https://tampermonkey.net/), simply click here:<br> [https://gist.githubusercontent.com/apkd/3c3372cffb0076a014a2ec0acdd23bbb/raw/widegpt.user.js](https://gist.githubusercontent.com/apkd/3c3372cffb0076a014a2ec0acdd23bbb/raw/widegpt.user.js)
+## Stylus (and other UserStyle managers)
 
-Otherwise, you can paste the source above into a new script in your favorite UserScript manager.
+Copy the `.css` snippet and paste it into [Stylus](https://add0n.com/stylus.html) or some other UserStyle manager of choice.
+You can also install it directly from [userstyles.world](https://userstyles.world/style/9802/widegpt).
+
+## TamperMonkey (and other UserScript managers)
+To install via [TamperMonkey](https://tampermonkey.net/), simply [click here](https://gist.githubusercontent.com/apkd/3c3372cffb0076a014a2ec0acdd23bbb/raw/widegpt.user.js).
+Otherwise, you can paste the `.user.js` snippet above into a new script in your favorite UserScript manager.
 
 # Other tips
 
