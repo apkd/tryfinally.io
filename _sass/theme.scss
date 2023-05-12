@@ -16,6 +16,10 @@ html {
   scrollbar-width: thin;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 .article-content > table thead,
 .article-footer,
