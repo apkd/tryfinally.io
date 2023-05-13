@@ -323,12 +323,18 @@ code.language-plaintext.highlighter-rouge {
   margin: 0 -0.1rem 0.15rem -0.1rem;
   display: inline-block;
   vertical-align: middle;
+  white-space: -moz-pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: pre-wrap;
+  word-wrap: anywhere;
+  overflow-wrap: anywhere;
 }
 
 a:not(:hover) code {
   text-decoration: underline dotted currentColor;
   text-decoration-thickness: 0.5px;
   transition: color 0.3s;
+
   span {
     text-decoration: underline dotted currentColor;
     text-decoration-thickness: 0.5px;
@@ -340,6 +346,7 @@ a:hover code {
   text-decoration: underline dotted $code;
   color: $code !important;
   transition: color 0.3s;
+
   span {
     text-decoration: underline dotted $code;
     color: $code !important;
@@ -375,7 +382,6 @@ pre {
   font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures contextual;
   font-feature-settings: "calt" 1, "liga" 1;
   font-size: .65rem;
-  white-space: pre;
   overflow: auto;
   border-radius: 0;
   line-height: 1.6;

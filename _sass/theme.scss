@@ -4,6 +4,13 @@
   print-color-adjust: exact !important;
 }
 
+// https://stackoverflow.com/questions/3226001/some-font-sizes-rendered-larger-on-safari-iphone
+@media screen and (max-device-width: 480px){
+  body{
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
 body {
   font-family: "Anaheim", "Courier New", sans-serif;
   color: #000;
@@ -16,6 +23,7 @@ html {
   scrollbar-width: thin;
 }
 
+// fix horizontal overflow in some edge cases on very small screens
 html, body {
   max-width: 100%;
   overflow-x: hidden;
