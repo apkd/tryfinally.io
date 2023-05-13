@@ -16,10 +16,7 @@ contributors: []
 
 When you're attaching a GameObject to a bone of an animated character using the Humanoid rig you might encounter the error (as of Unity 2021.3.2f1):
 
-```log
-Transform 'Attachment' not found in HumanDescription.
-```
-{:.h5}
+`Transform 'Attachment' not found in HumanDescription.`{:.h4.keyword}
 
 The character `Animator`{{site.code.cs}} will stop working, so sweeping it under the rug is not an option. `Attachment` refers to the name of a game object attached to the character hierarchy. Enabling stack traces reveals that during scene rendering, the animator attempts to initialize itself and it fails while binding avatar bones to the transform hierarchy in the scene.
 
