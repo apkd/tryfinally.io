@@ -81,13 +81,13 @@ function InitDarkModeButton() {
 // }
 
 function InitSearch() {
-    if (document.querySelector("#search")) {
+    if (document.querySelector("#pagefind-search-box")) {
         // @ts-ignore
-        return new PagefindUI({element: "#search", bundlePath: "/assets/pagefind/"});
+        return new PagefindUI({element: "#pagefind-search-box", bundlePath: "/assets/pagefind/"});
     }
-    if (document.querySelector("#search-unity-docs")) {
+    if (document.querySelector("#pagefind-search-box-unity-docs")) {
         // @ts-ignore
-        return new PagefindUI({element: "#search-unity-docs", bundlePath: "/assets/pagefind-unity-docs/", baseUrl: "https://docs.unity3d.com/", showImages: false});
+        return new PagefindUI({element: "#pagefind-search-box-unity-docs", bundlePath: "/assets/pagefind-unity-docs/", baseUrl: "https://docs.unity3d.com/", showImages: false});
     }
 }
 
