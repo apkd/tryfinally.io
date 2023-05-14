@@ -535,8 +535,10 @@ span.post-read {
 
 .navbar .nav-item a.nav-link {
   color: #333;
-  text-decoration: underline dotted currentColor;
-  text-decoration-thickness: 0.5px;
+  :not(.nounderline){
+    text-decoration: underline dotted currentColor;
+    text-decoration-thickness: 0.5px;
+  }
 }
 
 .navbar .nav-item.active a.nav-link {

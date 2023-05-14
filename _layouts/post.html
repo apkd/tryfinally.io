@@ -94,11 +94,11 @@ post_class: post-template
 
                     {% if page.contributors and page.contributors.size > 0 %}
                     <p class="post-etc my-0">
-                        <em>contributors</em>
+                        <em>by</em>
                     </p>
                     <p class="mb-3 avatar-32" style="margin-right: 1px">
                         {% for contributor in page.contributors %}
-                        <a href="https://github.com/{{ contributor }}" title="{{ contributor }}">
+                        <a href="https://github.com/{{ contributor }}" title="{{ contributor }}" class="nounderline">
                             {% avatar user=contributor %}
                         </a>
                         {% endfor %}

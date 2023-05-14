@@ -44,9 +44,11 @@
                                     <span class="avatar-24">
                                         {% if post.contributors %}
                                             {% for contributor in post.contributors %}
+                                            {% if contributor != post.author %}
                                             <a href="https://github.com/{{ contributor }}" title="{{ contributor }}">
                                                 {% avatar user=contributor %}
                                             </a>
+                                            {% endif %}
                                             {% endfor %}
                                         {% endif %}
                                     </span>
