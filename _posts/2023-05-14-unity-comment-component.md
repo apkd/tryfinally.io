@@ -30,9 +30,9 @@ I put this together a while ago. Maybe you'll find it useful.
 
 Either paste the script below into your project, or install it as a package via the [Unity Package Manager](https://docs.unity3d.com/Manual/upm-ui-giturl.html) using this URL:[^1]
 
-<div markdown="1">
-`https://gist.github.com/19c183d115953f26c62cbdced7fab5a2.git`{:.highlight.language-scheme.h4}
-</div>
+<a href="https://gist.github.com/19c183d115953f26c62cbdced7fab5a2.git" markdown="1">
+`https://gist.github.com/19c183d115953f26c62cbdced7fab5a2.git`{:.highlight.language-diff.h5}
+</a>
 
 # Source
 

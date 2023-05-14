@@ -1,6 +1,6 @@
 ---
 layout: post
-permalink: /.plan
+permalink: "/debug/.plan"
 title: "all according to `.plan`"
 image: assets/img-min/social/rRS54e00uoQ.webp
 author: apkd
