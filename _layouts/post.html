@@ -105,6 +105,12 @@ post_class: post-template
                     </p>
                     {% endif %}
 
+                    <p class="mb-0">
+                        <time datetime="{{ page.date | date:' %Y-%m-%d' }}">
+                            <em>{{ page.date | date: "%B %-d, %Y" | downcase}}</em>
+                        </time>
+                    </p>
+
                     {% if page.license %}
                     <p class="post-etc mb-0">
                         {% if page.license == "cc-by" %}
@@ -129,12 +135,6 @@ post_class: post-template
                         <a href="https://unsplash.com/photos/{{ page.image | split: '/' | last | split: '.' | first }}"><em>cover image credit</em></a>
                     </p>
                     {% endif %}
-
-                    <p class="mb-0">
-                        <time datetime="{{ page.date | date:' %Y-%m-%d' }}">
-                            <em>{{ page.date | date: "%B %-d, %Y" | downcase}}</em>
-                        </time>
-                    </p>
 
                 </div>
             </div>
