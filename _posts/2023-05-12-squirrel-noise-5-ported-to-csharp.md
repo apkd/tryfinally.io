@@ -10,7 +10,6 @@ author: apkd
 series: false
 featured: false
 hidden: false
-contributors: [SquirrelEiserloh]
 ---
 
 Originally published [here by Squirrel Eiserloh](https://twitter.com/SquirrelTweets/status/1421251894274625536).
