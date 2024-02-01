@@ -9,7 +9,7 @@ tags: [chatgpt]
 author: apkd
 series: false
 featured: false
-hidden: false
+hidden: true
 license: cc-by
 contributors: []
 ---
